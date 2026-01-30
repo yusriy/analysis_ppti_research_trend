@@ -1,0 +1,458 @@
+---
+title: "PPTI Journal Targeting Report (Last Two Years)"
+author: "Pusat Pengajian Teknologi Industri (PPTI)"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: flatly
+    toc: true
+    toc_float: true
+---
+
+<style>
+:root{
+  --bg1:#f7f9ff;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --shadow: 0 14px 30px rgba(0,0,0,.10);
+  --radius: 18px;
+}
+
+body{
+  background: linear-gradient(135deg, #f5f7ff 0%, #f7fbff 55%, #fff7fb 100%);
+  color: var(--text);
+}
+
+h1{
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+h2, h3{
+  font-weight: 750;
+  margin-top: 28px !important;
+}
+
+details{
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(31,41,55,.08);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  margin: 12px 0 18px 0;
+}
+details summary{
+  cursor: pointer;
+}
+
+hr{
+  opacity: .2;
+}
+
+.stat-card{
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+  background: var(--card);
+}
+
+.stat-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height: 6px;
+  background: linear-gradient(90deg, #6366f1, #22c55e, #06b6d4, #f97316, #ec4899);
+}
+
+.stat-card .card-body{
+  padding: 16px 18px;
+}
+
+.card-title{
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 6px;
+}
+
+.stat-value{
+  font-size: 34px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.badge-pill{
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-weight: 700;
+}
+
+/* Table polish (kable / DT) */
+table{
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+thead{
+  background: linear-gradient(90deg, rgba(99,102,241,.15), rgba(34,197,94,.15), rgba(236,72,153,.12));
+}
+thead th{
+  font-weight: 800 !important;
+}
+tbody tr:hover{
+  background: rgba(99,102,241,.06) !important;
+}
+
+/* Make links nicer */
+a{
+  text-decoration: none;
+  font-weight: 700;
+}
+a:hover{
+  text-decoration: underline;
+}
+</style>
+
+
+<style>
+.hero-header{
+  background: linear-gradient(135deg,
+    #6366f1 0%,
+    #22c55e 45%,
+    #06b6d4 70%,
+    #ec4899 100%);
+  color: white;
+  padding: 36px 40px;
+  border-radius: 22px;
+  margin: 10px 0 35px 0;
+  box-shadow: 0 20px 45px rgba(0,0,0,.18);
+}
+
+.hero-content h1{
+  font-size: 38px;
+  font-weight: 900;
+  margin-bottom: 6px;
+  letter-spacing: -0.8px;
+}
+
+.hero-subtitle{
+  font-size: 18px;
+  opacity: .95;
+  margin-bottom: 14px;
+}
+
+.hero-meta{
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-weight: 600;
+  opacity: .9;
+}
+
+.hero-meta span{
+  background: rgba(255,255,255,.18);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+</style>
+
+  
+
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  results = "asis"
+)
+library(dplyr)
+library(readr)
+library(lubridate)
+library(kableExtra)
+library(DT)
+library(ggplot2)
+library(stringr)
+library(htmltools)
+
+
+
+```
+
+
+
+
+# 📌 Report Objective
+
+This report lists journals where PPTI lecturers published within the **last two years**.  
+It serves as a **recommended journal targeting reference** for future manuscript submissions.
+
+---
+
+<details>
+<summary><b>How to use this report</b></summary>
+<ul>
+  <li>Use the search box to find journals quickly.</li>
+  <li>Sort by <b>Total Citations</b> to identify high-impact outlets.</li>
+  <li>Click Scopus links to view the top cited articles.</li>
+</ul>
+</details>
+
+
+
+```{r}
+pub_data <- read_csv("ppti_journal_publications.csv")
+summary_data <- read_csv("journal_publication_summary.csv")
+
+# Ensure summary_data is ONE row per Journal (prevents row multiplication after join)
+summary_clean <- summary_data %>%
+  group_by(Journal) %>%
+  summarise(across(everything(), ~ first(.x)), .groups = "drop")
+
+
+```
+
+---
+
+
+```{r}
+pub_data$Date <- as.Date(pub_data$Date)
+
+pub_recent <- pub_data %>%
+  filter(between(year(Date), 2023, 2025))
+
+```
+
+---
+
+
+```{r}
+# 🧹 Extract Unique Journals Only (for summary counts)
+journal_unique <- pub_recent %>%
+  distinct(Journal)
+
+
+```
+
+---
+
+# 📊 Summary
+
+```{r}
+total_journals <- n_distinct(pub_recent$Journal)
+total_authors  <- n_distinct(pub_recent$Name)
+
+```
+
+### ✔ Total Target Journals: **`r total_journals`**  
+### ✔ Total PPTI Contributors: **`r total_authors`**
+
+---
+
+```{r, echo=FALSE}
+cutoff_text <- "2023–2025"
+
+cards <- tags$div(class = "row",
+  tags$div(class = "col-sm-4",
+    tags$div(class = "card stat-card",
+      tags$div(class = "card-body",
+        tags$div(class = "d-flex justify-content-between align-items-start",
+          tags$div(
+            tags$div(class = "card-title", "Total Target Journals"),
+            tags$p(class = "stat-value", total_journals)
+          ),
+          tags$span(class = "badge badge-pill",
+                    style = "background:rgba(99,102,241,.15); color:#3730a3;", "📚")
+        )
+      )
+    )
+  ),
+
+  tags$div(class = "col-sm-4",
+    tags$div(class = "card stat-card",
+      tags$div(class = "card-body",
+        tags$div(class = "d-flex justify-content-between align-items-start",
+          tags$div(
+            tags$div(class = "card-title", "Total PPTI Contributors"),
+            tags$p(class = "stat-value", total_authors)
+          ),
+          tags$span(class = "badge badge-pill",
+                    style = "background:rgba(34,197,94,.15); color:#166534;", "👩‍🔬")
+        )
+      )
+    )
+  ),
+
+  tags$div(class = "col-sm-4",
+    tags$div(class = "card stat-card",
+      tags$div(class = "card-body",
+        tags$div(class = "d-flex justify-content-between align-items-start",
+          tags$div(
+            tags$div(class = "card-title", "Publication Window"),
+            tags$p(class = "stat-value", style = "font-size:26px;", cutoff_text)
+          ),
+          tags$span(class = "badge badge-pill",
+                    style = "background:rgba(236,72,153,.12); color:#9d174d;", "🗓️")
+        )
+      )
+    )
+  )
+)
+
+browsable(cards)
+
+
+```
+# 🏆 Recommended Journal Target List
+
+```{r}
+# ---- Detect citations column in publication data ----
+pub_cite_col <- intersect(
+  c("Citations", "Citation Count", "Citation_Count", "CitationCount", "Cited by", "Cited_By"),
+  names(pub_recent)
+)
+pub_cite_col <- if (length(pub_cite_col) > 0) pub_cite_col[1] else NA_character_
+
+# ---- 1) Create TOP 5 Scopus links per journal (by citations) ----
+top5_links <- pub_recent %>%
+  mutate(
+    Citations_num = if (!is.na(pub_cite_col))
+                      as.numeric(.data[[pub_cite_col]]) else NA_real_
+  ) %>%
+  arrange(Journal, desc(Citations_num)) %>%
+  group_by(Journal) %>%
+  slice_head(n = 5) %>%
+  summarise(
+    Top_5_Scopus_Links = paste0(
+      "<ul>",
+      paste0("<li><a href='", Link, "' target='_blank'>Scopus</a></li>", collapse = ""),
+      "</ul>"
+    ),
+    .groups = "drop"
+  )
+
+# ---- 2) Count publications + total citations (correct counts) ----
+journal_counts <- pub_recent %>%
+  group_by(Journal) %>%
+  summarise(
+    Publication_Count = n(),
+    Total_Citations = if (!is.na(pub_cite_col))
+      sum(as.numeric(.data[[pub_cite_col]]), na.rm = TRUE) else NA_real_,
+    .groups = "drop"
+  )
+
+# ---- 3) Join everything together ----
+journal_list <- journal_counts %>%
+  left_join(summary_clean, by = "Journal") %>%
+  left_join(top5_links, by = "Journal")
+
+# ---- 3b) Style Open Access as colourful badges (modern UI) ----
+journal_list <- journal_list %>%
+  mutate(
+    `Open Access` = case_when(
+      is.na(`Open Access`) ~
+        "<span class='badge badge-pill' style='background:rgba(107,114,128,.12); color:#374151;'>NA</span>",
+
+      grepl("yes|gold|open", tolower(`Open Access`)) ~
+        "<span class='badge badge-pill' style='background:rgba(34,197,94,.15); color:#166534;'>Open</span>",
+
+      grepl("hybrid", tolower(`Open Access`)) ~
+        "<span class='badge badge-pill' style='background:rgba(99,102,241,.15); color:#3730a3;'>Hybrid</span>",
+
+      TRUE ~
+        "<span class='badge badge-pill' style='background:rgba(244,63,94,.12); color:#9f1239;'>Closed</span>"
+    )
+  )
+
+
+# ---- 4) Standardise metadata column names ----
+#impact_col <- intersect(c("Impact Factor", "Impact.Factor", "Impact_Factor", "ImpactFactor", "IF"),
+ #                       names(journal_list))
+#oa_col     <- intersect(c("Open Access", "Open.Access", "Open_Access", "OpenAccess", "OA"),
+#                        names(journal_list))
+
+#journal_list <- journal_list %>%
+#  mutate(
+ #   `Impact Factor` = if (length(impact_col) > 0)
+ #                       suppressWarnings(as.numeric(.data[[impact_col[1]]])) else NA_real_,
+ #   `Open Access`   = if (length(oa_col) > 0)
+#                        .data[[oa_col[1]]] else NA
+#  )
+#- **Impact Factor**: Journal quality indicator 
+
+# ---- 5) Render table ----
+datatable(
+  journal_list %>%
+    select(any_of(c(
+      "Journal",
+      "Publication_Count",
+      "Total_Citations",
+      "Open Access",
+      "Top_5_Scopus_Links"
+    ))) %>%
+    arrange(desc(Publication_Count), desc(Total_Citations)),
+
+  escape = FALSE,
+  rownames = FALSE,
+  filter = "top",
+  options = list(
+    pageLength = 10,
+    autoWidth = TRUE,
+    scrollX = TRUE
+  )
+)
+
+
+```
+
+```{r}
+top10 <- journal_list %>%
+  arrange(desc(Publication_Count)) %>%
+  slice_head(n = 10) %>%
+  mutate(Journal = str_wrap(Journal, width = 28)) %>%     # wrap long names
+  arrange(Publication_Count)                              # so bars go bottom->top
+
+ggplot(top10, aes(x = Publication_Count, y = reorder(Journal, Publication_Count), fill = Publication_Count)) +
+  geom_col(width = 0.75) +
+  geom_text(aes(label = Publication_Count),
+            hjust = -0.15, size = 4, fontface = "bold") +
+  scale_x_continuous(expand = expansion(mult = c(0, 0.12))) +
+  labs(
+    title = "Top 10 Journals by Publication Count (2023–2025)",
+    subtitle = "PPTI publications count per journal",
+    x = "Publication Count",
+    y = NULL
+  ) +
+  theme_minimal(base_size = 9.5) +
+  theme(
+    plot.title = element_text(face = "bold", size = 16),
+    plot.subtitle = element_text(color = "gray40"),
+    axis.text.y = element_text(face = "bold"),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    legend.position = "none",
+    plot.margin = margin(10, 40, 12, 10)
+  )
+```
+---
+
+# 📌 Interpretation Guide
+
+- **Citations**: Visibility and research influence  
+- **Open Access**: Suitable for grant-funded and high-impact dissemination  
+- **Publication Count**: Proven PPTI publication success  
+- **Scopus Link**: Reference article for targeting and scope matching  
+
+
+---
+
+# 🕒 Auto Generated Time
+
+Report generated on:
+
+**`r Sys.time()`**
+

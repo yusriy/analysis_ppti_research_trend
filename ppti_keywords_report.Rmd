@@ -1,0 +1,560 @@
+---
+title: "PPTI Keyword Impact Report"
+subtitle: "School of Industrial Technology (PPTI) — Citations & Publications Insights"
+pagetitle: "PPTI Keyword Impact Report | School of Industrial Technology"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+    df_print: paged
+    theme: null
+params:
+  top_n: 25
+  min_pubs_core: 10
+  min_cites_core: 100
+  csv_citations: "keyword_citation_counts.csv"
+  csv_publications: "keyword_publication_count.csv"
+  csv_journals: "keywords_journal_top.csv"
+---
+
+```{r params_fix, include=FALSE}
+# If this Rmd is run outside Knit, params may not exist.
+if (!exists("params")) {
+  params <- list(
+    top_n = 25,
+    min_pubs_core = 10,
+    min_cites_core = 100,
+    csv_citations = "keyword_citation_counts.csv",
+    csv_publications = "keyword_publication_count.csv",
+    csv_journals = "keywords_journal_top.csv"
+  )
+}
+
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+library(dplyr)
+library(readr)
+library(stringr)
+library(ggplot2)
+library(scales)
+
+# modern UI
+library(bslib)
+library(DT)
+library(plotly)
+library(htmltools)
+
+# ---------- helpers ----------
+norm_key <- function(x) str_to_lower(str_squish(as.character(x)))
+
+pick_col <- function(df, candidates) {
+  nms <- names(df)
+  nms_low <- str_to_lower(nms)
+  idx <- match(str_to_lower(candidates), nms_low, nomatch = 0)
+  if (all(idx == 0)) return(NA_character_)
+  nms[idx[idx != 0][1]]
+}
+
+safe_read_csv <- function(path) read_csv(path, show_col_types = FALSE, progress = FALSE)
+
+# ----- Theme (Bootstrap 5) -----
+bs_theme_set(
+  bs_theme(
+    version = 5,
+    bootswatch = "minty",
+    base_font = font_google("Inter"),
+    heading_font = font_google("Poppins"),
+    code_font = font_google("JetBrains Mono")
+  )
+)
+
+
+```
+<style>
+.hero {
+  padding: 18px 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(0,123,255,.10), rgba(40,167,69,.10));
+  border: 1px solid rgba(0,0,0,.06);
+  margin-bottom: 18px;
+}
+
+.kpi-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0 22px 0;
+}
+.kpi{
+  border-radius: 16px;
+  padding: 14px 14px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.07);
+  box-shadow: 0 6px 20px rgba(0,0,0,.04);
+}
+.kpi .label{ font-size: .85rem; color:#6c757d; }
+.kpi .value{ font-size: 1.35rem; font-weight: 800; margin-top: 4px; }
+.kpi .hint{ font-size: .80rem; color:#6c757d; margin-top: 4px; }
+
+@media (max-width: 992px){
+  .kpi-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 576px){
+  .kpi-grid{ grid-template-columns: repeat(1, minmax(0, 1fr)); }
+}
+
+/* Typography */
+h2 { margin-top: 1.3rem; font-weight: 900; letter-spacing: -0.2px; }
+h3 { margin-top: 1rem; font-weight: 800; color: #0b5ed7; letter-spacing: -0.15px; }
+p  { line-height: 1.55; }
+
+/* Section card wrapper */
+.section {
+  border-radius: 18px;
+  padding: 16px 16px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  margin: 16px 0 22px 0;
+}
+
+/* Small note text */
+.note {
+  color:#6c757d;
+  font-size: .92rem;
+  margin-top: -6px;
+  margin-bottom: 10px;
+}
+
+/* DT table polish */
+table.dataTable {
+  border-radius: 14px !important;
+  overflow: hidden;
+}
+.dataTables_wrapper .dataTables_filter input {
+  border-radius: 999px !important;
+  padding: 6px 10px !important;
+  border: 1px solid rgba(0,0,0,.15) !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  border-radius: 10px !important;
+}
+.dataTables_wrapper .dataTables_info {
+  color: #6c757d !important;
+}
+
+/* Plotly chart container */
+.plotly {
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  padding: 6px;
+  background: #fff;
+}
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Floating back button */
+#backTop {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 9999;
+  background: #0b5ed7;
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+  text-decoration: none;
+}
+#backTop:hover { background: #084298; }
+</style>
+
+
+
+```{r}
+cit_raw <- safe_read_csv(params$csv_citations)
+pub_raw <- safe_read_csv(params$csv_publications)
+jr_raw  <- safe_read_csv(params$csv_journals)
+
+# --- detect columns ---
+cit_kw_col  <- pick_col(cit_raw, c("Keyword","keyword","Keywords","Term"))
+cit_val_col <- pick_col(cit_raw, c("Total Citations","Citations","citation_count","total_citations"))
+
+pub_kw_col  <- pick_col(pub_raw, c("Keyword","keyword","Keywords","Term"))
+pub_val_col <- pick_col(pub_raw, c("Publication Count","Publications","pub_count","count","publication_count"))
+
+jr_kw_col   <- pick_col(jr_raw,  c("Keywords","Keyword","keyword","Term"))
+jr_j_col    <- pick_col(jr_raw,  c("Journal","Source","journal"))
+jr_c_col    <- pick_col(jr_raw,  c("Count","count","N","n"))
+
+stopifnot(!is.na(cit_kw_col), !is.na(cit_val_col))
+stopifnot(!is.na(pub_kw_col), !is.na(pub_val_col))
+stopifnot(!is.na(jr_kw_col),  !is.na(jr_j_col), !is.na(jr_c_col))
+
+cit <- cit_raw %>%
+  transmute(keyword = norm_key(.data[[cit_kw_col]]),
+            citations = suppressWarnings(as.numeric(.data[[cit_val_col]]))) %>%
+  group_by(keyword) %>% summarise(citations = sum(citations, na.rm=TRUE), .groups="drop") %>%
+  filter(!is.na(keyword), keyword != "")
+
+pub <- pub_raw %>%
+  transmute(keyword = norm_key(.data[[pub_kw_col]]),
+            pubs = suppressWarnings(as.numeric(.data[[pub_val_col]]))) %>%
+  group_by(keyword) %>% summarise(pubs = sum(pubs, na.rm=TRUE), .groups="drop") %>%
+  filter(!is.na(keyword), keyword != "")
+
+jr <- jr_raw %>%
+  transmute(keyword = norm_key(.data[[jr_kw_col]]),
+            journal  = as.character(.data[[jr_j_col]]),
+            count    = suppressWarnings(as.numeric(.data[[jr_c_col]]))) %>%
+  group_by(keyword, journal) %>%
+  summarise(count = sum(count, na.rm=TRUE), .groups="drop") %>%
+  filter(!is.na(keyword), keyword != "", !is.na(journal), journal != "")
+
+```
+
+```{r}
+kw <- full_join(cit, pub, by="keyword") %>%
+  mutate(
+    citations = coalesce(citations, 0),
+    pubs      = coalesce(pubs, 0),
+    cit_per_pub = if_else(pubs > 0, citations / pubs, NA_real_),
+    impact_score = citations * log1p(pubs)
+  )
+
+n_keywords <- nrow(kw)
+total_cit  <- sum(kw$citations, na.rm=TRUE)
+total_pub  <- sum(kw$pubs, na.rm=TRUE)
+
+core <- kw %>%
+  filter(pubs >= params$min_pubs_core, citations >= params$min_cites_core) %>%
+  arrange(desc(citations), desc(pubs))
+
+```
+<div class="hero">
+  <h2 style="margin:0 0 6px 0;">Overview</h2>
+  <div style="color:#6c757d;">
+    Automated insight report from 3 internal CSV files (citations, publications, top journals).
+  </div>
+</div>
+
+<a id="top"></a>
+<a href="#sections" id="backTop">⬆ Sections</a>
+
+
+<a id="sections"></a>
+
+<div class="section"> <h2>Report Sections</h2> <div class="note">Click to jump to each part of the report.</div> <ul> <li><a href="#kpi">Key Performance Indicators</a></li> <li><a href="#core">Core Keywords (High Citations & Publications)</a></li> <li><a href="#citations">Top Keywords by Citations</a></li> <li><a href="#publications">Top Keywords by Publications</a></li> <li><a href="#emerging">Emerging High-Impact Keywords</a></li> <li><a href="#journals">Journals with Highest Keyword Frequency</a></li> </ul> </div>
+
+
+
+
+<div class="section" id="kpi">
+<h2>Key Performance Indicators</h2>
+<div class="note">Quick summary of keyword volume, citations, publications, and core keywords.</div>
+
+
+
+```{r}
+#core <- kw %>%
+#  filter(pubs >= params$min_pubs_core, citations >= params$min_cites_core) %>%
+#  arrange(desc(citations), desc(pubs))
+
+#core_tbl <- core %>%
+#  transmute(
+#    keyword,
+#    citations = fmt_int(citations),
+#    publications = fmt_int(pubs),
+#    citations_per_pub = fmt_num(cit_per_pub, 2),
+#    impact_score = fmt_num(impact_score, 2)
+#  )
+
+# KPI cards
+```{r}
+kpi <- tags$div(class="kpi-grid",
+  tags$div(class="kpi",
+    tags$div(class="label","Total keywords"),
+    tags$div(class="value", comma(n_keywords)),
+    tags$div(class="hint","Unique keyword entries after cleaning")
+  ),
+  tags$div(class="kpi",
+    tags$div(class="label","Total citations"),
+    tags$div(class="value", comma(total_cit)),
+    tags$div(class="hint","Sum of keyword citations")
+  ),
+  tags$div(class="kpi",
+    tags$div(class="label","Total publications"),
+    tags$div(class="value", comma(total_pub)),
+    tags$div(class="hint","Sum of keyword publication counts")
+  ),
+  tags$div(class="kpi",
+    tags$div(class="label","Core keywords"),
+    tags$div(class="value", comma(nrow(core))),
+    tags$div(class="hint", paste0("pubs ≥ ", params$min_pubs_core,
+                                 " & cites ≥ ", params$min_cites_core))
+  )
+)
+
+htmltools::HTML(as.character(kpi))
+
+
+```
+</div>
+
+```{r}
+top_journals <- jr %>%
+  arrange(keyword, desc(count)) %>%
+  group_by(keyword) %>%
+  slice_head(n = 3) %>%
+  summarise(top_journals = paste0(journal, " (", count, ")", collapse="; "),
+            .groups="drop")
+
+core_view <- core %>%
+  left_join(top_journals, by="keyword") %>%
+  transmute(
+    keyword,
+    citations = citations,
+    publications = pubs,
+    citations_per_pub = round(cit_per_pub, 2),
+    impact_score = round(impact_score, 2),
+    top_journals = coalesce(top_journals, "-")
+  )
+```
+
+<div class="section" id="core">
+<h2>Core Keywords (High Citations & Publications)</h2>
+
+
+Keywords that demonstrate strong combined performance in both citation impact and publication volume.
+
+
+
+```{r}
+DT::datatable(
+  core_view,
+  rownames = FALSE,
+  options = list(pageLength = 10,autoWidth = TRUE,lengthChange = FALSE)
+) %>%
+  DT::formatCurrency(c("citations","publications"), currency = "", interval = 3) %>%
+  DT::formatRound(c("citations_per_pub","impact_score"), digits = 2)
+
+
+```
+</div>
+
+```{r}
+top_cited <- kw %>% arrange(desc(citations)) %>% slice_head(n = params$top_n)
+
+p1 <- ggplot(
+  top_cited %>% mutate(keyword = reorder(keyword, citations)),
+  aes(
+    x = keyword, y = citations,
+    fill = citations,
+    text = paste0(
+      "<b>", keyword, "</b><br>",
+      "Citations: ", comma(citations), "<br>",
+      "Publications: ", comma(pubs), "<br>",
+      "Citations/pub: ", round(cit_per_pub, 2), "<br>",
+      "Impact score: ", round(impact_score, 2)
+    )
+  )
+) +
+  geom_col(width = 0.85) +
+  coord_flip() +
+  scale_fill_gradient(low = "#BFE8FF", high = "#005BBB", labels = comma) +
+  labs(
+    title = paste0("Top ", params$top_n, " Keywords by Citations"),
+    x = NULL, y = "Total citations", fill = "Citations"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    panel.grid.major.y = element_blank(),
+    legend.position = "none"
+  )
+
+```
+
+<div class="section" id="citations_chart">
+  <h2>Top Keywords by Citations (Chart)</h2>
+  <div class="note">Interactive bar chart (hover to see details).</div>
+```{r}
+plotly::ggplotly(p1, tooltip = "text") %>%
+  layout(margin = list(l = 40, r = 20, t = 60, b = 30))
+
+
+```
+
+  <p class="note"><a href="#sections">⬅ Back to sections</a></p>
+</div>
+
+
+<div class="section" id="citations">
+<h2>Top Keywords by Citations</h2>
+
+
+Detailed statistics for keywords shown in the citations chart.
+
+```{r}
+DT::datatable(
+  top_cited %>%
+    transmute(
+      keyword,
+      citations,
+      publications = pubs,
+      citations_per_pub = round(cit_per_pub, 2),
+      impact_score = round(impact_score, 2)
+    ),
+  rownames = FALSE,
+  options = list(pageLength = 10,autoWidth = TRUE,lengthChange = FALSE)
+) %>%
+  DT::formatCurrency(c("citations","publications"), currency="", interval=3)
+
+
+```
+
+</div>
+
+```{r}
+top_pubs <- kw %>% arrange(desc(pubs)) %>% slice_head(n = params$top_n)
+
+p2 <- ggplot(
+  top_pubs %>% mutate(keyword = reorder(keyword, pubs)),
+  aes(
+    x = keyword, y = pubs,
+    fill = pubs,
+    text = paste0(
+      "<b>", keyword, "</b><br>",
+      "Publications: ", comma(pubs), "<br>",
+      "Citations: ", comma(citations), "<br>",
+      "Citations/pub: ", round(cit_per_pub, 2), "<br>",
+      "Impact score: ", round(impact_score, 2)
+    )
+  )
+) +
+  geom_col(width = 0.85) +
+  coord_flip() +
+  scale_fill_gradient(low = "#C7F5D9", high = "#198754", labels = comma) +
+  labs(
+    title = paste0("Top ", params$top_n, " Keywords by Publications"),
+    x = NULL, y = "Publication count", fill = "Publications"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    panel.grid.major.y = element_blank(),
+    legend.position = "none"
+  )
+
+
+```
+<div class="section" id="publications_chart">
+  <h2>Top Keywords by Publications (Chart)</h2>
+  <div class="note">Interactive bar chart (hover to see details).</div>
+```{r}
+plotly::ggplotly(p2, tooltip = "text") %>%
+  layout(margin = list(l = 40, r = 20, t = 60, b = 30))
+
+```
+  <p class="note"><a href="#sections">⬅ Back to sections</a></p>
+</div>
+
+<div class="section" id="publications">
+<h2>Top Keywords by Publications</h2>
+
+
+Keywords ranked by number of publications
+```{r jr_overall_build}
+jr_overall <- jr %>%
+  group_by(journal) %>%
+  summarise(total_keyword_mentions = sum(count, na.rm=TRUE), .groups="drop") %>%
+  arrange(desc(total_keyword_mentions)) %>%
+  slice_head(n = params$top_n)
+```
+
+```{r}
+DT::datatable(
+  top_pubs %>%
+    transmute(
+      keyword,
+      publications = pubs,
+      citations,
+      citations_per_pub = round(cit_per_pub, 2),
+      impact_score = round(impact_score, 2)
+    ),
+  rownames = FALSE,
+  options = list(pageLength = 10,autoWidth = TRUE,lengthChange = FALSE)
+) %>%
+  DT::formatCurrency(c("citations","publications"), currency="", interval=3)
+
+
+```
+</div>
+
+<div class="section" id="emerging">
+<h2>Emerging High-Impact Keywords</h2>
+
+
+Keywords with high citation impact per publication but relatively low publication volume.
+
+```{r}
+# choose high-citation but low-output keywords
+emerging <- kw %>%
+  filter(pubs > 0, pubs <= 3, citations > 0) %>%
+  arrange(desc(cit_per_pub), desc(citations)) %>%
+  slice_head(n = params$top_n)
+```
+
+
+
+```{r}
+DT::datatable(
+  emerging %>%
+    transmute(
+      keyword,
+      citations,
+      publications = pubs,
+      citations_per_pub = round(cit_per_pub, 2)
+    ),
+  rownames = FALSE,
+  options = list(pageLength = 10,autoWidth = TRUE,lengthChange = FALSE)
+)%>%
+  DT::formatCurrency(c("citations","publications"), currency="", interval=3)
+
+
+```
+</div>
+<div class="section" id="journals">
+<h2>Journals with Highest Keyword Frequency</h2>
+
+
+Journals most frequently associated with high-impact keywords.
+```{r}
+jr_overall <- jr %>%
+  group_by(journal) %>%
+  summarise(total_keyword_mentions = sum(count, na.rm=TRUE), .groups="drop") %>%
+  arrange(desc(total_keyword_mentions)) %>%
+  slice_head(n = params$top_n)
+```
+
+
+```{r}
+DT::datatable(
+  jr_overall,
+  rownames = FALSE,
+  options = list(pageLength = 10,autoWidth = TRUE,lengthChange = FALSE)
+) %>%
+  DT::formatCurrency("total_keyword_mentions", currency="", interval=3)
+
+
+
+```
+</div>
