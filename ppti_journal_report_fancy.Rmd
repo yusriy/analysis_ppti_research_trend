@@ -1,12 +1,24 @@
 ---
-title: "PPTI Journal Targeting Report (Last Two Years)"
-author: "Pusat Pengajian Teknologi Industri (PPTI)"
-date: "`r Sys.Date()`"
+title: "Strategic Journal Targeting"
+subtitle: "Evidence-Based Journal Selection from Recent Publications"
+institute: "School of Industrial Technology, Universiti Sains Malaysia"
+author: 
+  - name: "Yusri Yusup"
+  - name: "Wan Zafira Wan Zakaria"
+  - name: "Lee Chee Keong"
+  - name: "Norli Ismail"
+  - name: "Abdorezza Mohammad Nafchi"
+  - name: "Mohd Nurazzi Norizan"
+  - name: "Melbi Mahardika"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
 output:
   html_document:
     theme: flatly
     toc: true
-    toc_float: true
+    toc_float: 
+      collapsed: true
+      smooth_scroll: true
+    number_sections: false
 ---
 
 <style>
@@ -132,7 +144,8 @@ a:hover{
 }
 
 .hero-content h1{
-  font-size: 38px;
+  font-size: 42px;
+  line-height: 1:1;
   font-weight: 900;
   margin-bottom: 6px;
   letter-spacing: -0.8px;
@@ -140,7 +153,7 @@ a:hover{
 
 .hero-subtitle{
   font-size: 18px;
-  opacity: .95;
+  opacity: .9;
   margin-bottom: 14px;
 }
 
@@ -184,9 +197,28 @@ library(htmltools)
 ```
 
 
+**Prepared by:**  
+Research Trends Committee,  
+School of Industrial Technology, Universiti Sains Malaysia
 
+## Executive Summary
 
-# 📌 Report Objective
+This report presents an evidence-based overview of journals in which PPTI academics
+have successfully published in the last two years. It is intended to support:
+
+- **Strategic journal targeting** for new manuscript submissions  
+- **Reduction of desk rejections** through scope and outlet alignment  
+- **Informed publication planning** aligned with PPTI research strengths  
+
+Key insights from the analysis show that:
+- A focused set of journals consistently accepts PPTI work
+- Several outlets demonstrate both **high publication frequency** and **strong citation visibility**
+- Open-access and hybrid journals feature prominently, supporting funder mandates
+
+This document should be used as a **living reference**, updated periodically to reflect
+emerging publication trends and shifts in journal performance.
+
+## Report Objective
 
 This report lists journals where PPTI lecturers published within the **last two years**.  
 It serves as a **recommended journal targeting reference** for future manuscript submissions.
@@ -205,8 +237,8 @@ It serves as a **recommended journal targeting reference** for future manuscript
 
 
 ```{r}
-pub_data <- read_csv("ppti_journal_publications.csv")
-summary_data <- read_csv("journal_publication_summary.csv")
+pub_data <- read_csv("data/ppti_journal_publications.csv")
+summary_data <- read_csv("data/journal_publication_summary.csv")
 
 # Ensure summary_data is ONE row per Journal (prevents row multiplication after join)
 summary_clean <- summary_data %>%
@@ -240,7 +272,7 @@ journal_unique <- pub_recent %>%
 
 ---
 
-# 📊 Summary
+## Summary
 
 ```{r}
 total_journals <- n_distinct(pub_recent$Journal)
@@ -248,8 +280,8 @@ total_authors  <- n_distinct(pub_recent$Name)
 
 ```
 
-### ✔ Total Target Journals: **`r total_journals`**  
-### ✔ Total PPTI Contributors: **`r total_authors`**
+### Total Target Journals: **`r total_journals`**  
+### Total PPTI Contributors: **`r total_authors`**
 
 ---
 
@@ -307,7 +339,7 @@ browsable(cards)
 
 
 ```
-# 🏆 Recommended Journal Target List
+## Recommended Journal Target List
 
 ```{r}
 # ---- Detect citations column in publication data ----
@@ -392,7 +424,7 @@ datatable(
       "Publication_Count",
       "Total_Citations",
       "Open Access",
-      "Top_5_Scopus_Links"
+      "Top_5_Scopus Links"
     ))) %>%
     arrange(desc(Publication_Count), desc(Total_Citations)),
 
@@ -422,8 +454,8 @@ ggplot(top10, aes(x = Publication_Count, y = reorder(Journal, Publication_Count)
             hjust = -0.15, size = 4, fontface = "bold") +
   scale_x_continuous(expand = expansion(mult = c(0, 0.12))) +
   labs(
-    title = "Top 10 Journals by Publication Count (2023–2025)",
-    subtitle = "PPTI publications count per journal",
+    title = "Top 10 Journals by Publication",
+    subtitle = "PPTI Publications Count per Journal",
     x = "Publication Count",
     y = NULL
   ) +
@@ -440,7 +472,7 @@ ggplot(top10, aes(x = Publication_Count, y = reorder(Journal, Publication_Count)
 ```
 ---
 
-# 📌 Interpretation Guide
+# Interpretation Guide
 
 - **Citations**: Visibility and research influence  
 - **Open Access**: Suitable for grant-funded and high-impact dissemination  
@@ -450,7 +482,7 @@ ggplot(top10, aes(x = Publication_Count, y = reorder(Journal, Publication_Count)
 
 ---
 
-# 🕒 Auto Generated Time
+# Auto Generated Time
 
 Report generated on:
 

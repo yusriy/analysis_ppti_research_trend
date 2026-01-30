@@ -13,9 +13,9 @@ params:
   top_n: 25
   min_pubs_core: 10
   min_cites_core: 100
-  csv_citations: "keyword_citation_counts.csv"
-  csv_publications: "keyword_publication_count.csv"
-  csv_journals: "keywords_journal_top.csv"
+  csv_citations: "data/keyword_citation_counts.csv"
+  csv_publications: "data/keyword_publication_count.csv"
+  csv_journals: "data/keywords_journal_top.csv"
 ---
 
 ```{r params_fix, include=FALSE}
