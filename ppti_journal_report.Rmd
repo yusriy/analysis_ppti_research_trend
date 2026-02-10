@@ -2,14 +2,9 @@
 title: "Strategic Journal Targeting"
 subtitle: "Evidence-Based Journal Selection from Recent Publications"
 institute: "School of Industrial Technology, Universiti Sains Malaysia"
+pagetitle: "Strategic Journal Targeting | PPTI"
 author: 
-  - name: "Yusri Yusup"
-  - name: "Wan Zafira Wan Zakaria"
-  - name: "Lee Chee Keong"
-  - name: "Norli Ismail"
-  - name: "Abdorezza Mohammad Nafchi"
-  - name: "Mohd Nurazzi Norizan"
-  - name: "Melbi Mahardika"
+  - name: "Yusri Yusup, Wan Zafira Wan Zakaria, Lee Chee Keong, Norli Ismail, Abdorezza Mohammad Nafchi, Mohd Nurazzi Norizan, Melbi Mahardika"
 date: "`r format(Sys.Date(), '%d %B %Y')`"
 output:
   html_document:
@@ -61,21 +56,20 @@ hr{
   opacity: .2;
 }
 
-.stat-card{
-  border: 0;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  position: relative;
-  background: var(--card);
+.stat-card {
+  border-top: 6px solid #111827;  /* charcoal */
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.stat-card {
+  border-top: 6px solid #111827;  /* charcoal */
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
 }
 
 .stat-card::before{
-  content:"";
-  position:absolute;
-  inset:0 0 auto 0;
-  height: 6px;
-  background: linear-gradient(90deg, #6366f1, #22c55e, #06b6d4, #f97316, #ec4899);
+  background: #111827 !important;  /* or blue/green/etc */
 }
 
 .stat-card .card-body{
@@ -145,7 +139,7 @@ a:hover{
 
 .hero-content h1{
   font-size: 42px;
-  line-height: 1:1;
+  line-height: 1.1;
   font-weight: 900;
   margin-bottom: 6px;
   letter-spacing: -0.8px;
@@ -197,11 +191,9 @@ library(htmltools)
 ```
 
 
-**Prepared by:**  
-Research Trends Committee,  
-School of Industrial Technology, Universiti Sains Malaysia
+**Prepared by:** Research Trends Committee 2025, School of Industrial Technology, Universiti Sains Malaysia.
 
-## Executive Summary
+# Executive Summary
 
 This report presents an evidence-based overview of journals in which PPTI academics
 have successfully published in the last two years. It is intended to support:
@@ -210,18 +202,12 @@ have successfully published in the last two years. It is intended to support:
 - **Reduction of desk rejections** through scope and outlet alignment  
 - **Informed publication planning** aligned with PPTI research strengths  
 
-Key insights from the analysis show that:
-- A focused set of journals consistently accepts PPTI work
-- Several outlets demonstrate both **high publication frequency** and **strong citation visibility**
-- Open-access and hybrid journals feature prominently, supporting funder mandates
-
 This document should be used as a **living reference**, updated periodically to reflect
 emerging publication trends and shifts in journal performance.
 
-## Report Objective
+### Report Objective
 
-This report lists journals where PPTI lecturers published within the **last two years**.  
-It serves as a **recommended journal targeting reference** for future manuscript submissions.
+This report lists journals where PPTI lecturers published within the **last two years**. It serves as a **recommended journal targeting reference** for future manuscript submissions.
 
 ---
 
@@ -249,30 +235,34 @@ summary_clean <- summary_data %>%
 ```
 
 ---
-
-
 ```{r}
+
+#pub_data$Date <- as.Date(pub_data$Date)
+
+#pub_recent <- pub_data %>%
+#  filter(between(year(Date), 2023, 2025))
+
 pub_data$Date <- as.Date(pub_data$Date)
 
+end_date   <- floor_date(Sys.Date(), "month") - days(1)
+start_date <- end_date %m-% months(24) + days(1)
+
 pub_recent <- pub_data %>%
-  filter(between(year(Date), 2023, 2025))
+  filter(Date >= start_date & Date <= end_date)
 
 ```
-
 ---
 
 
 ```{r}
-# 🧹 Extract Unique Journals Only (for summary counts)
+# Extract Unique Journals Only (for summary counts)
 journal_unique <- pub_recent %>%
   distinct(Journal)
-
-
 ```
 
 ---
 
-## Summary
+# Summary
 
 ```{r}
 total_journals <- n_distinct(pub_recent$Journal)
@@ -280,13 +270,18 @@ total_authors  <- n_distinct(pub_recent$Name)
 
 ```
 
-### Total Target Journals: **`r total_journals`**  
-### Total PPTI Contributors: **`r total_authors`**
-
 ---
 
 ```{r, echo=FALSE}
-cutoff_text <- "2023–2025"
+#cutoff_text <- "2023–2025"
+
+#cutoff_text <- paste0(year(start_date), "–", year(end_date))
+
+cutoff_text <- paste0(
+  format(start_date, "%b %Y"),
+  " – ",
+  format(end_date, "%b %Y")
+)
 
 cards <- tags$div(class = "row",
   tags$div(class = "col-sm-4",
@@ -298,7 +293,7 @@ cards <- tags$div(class = "row",
             tags$p(class = "stat-value", total_journals)
           ),
           tags$span(class = "badge badge-pill",
-                    style = "background:rgba(99,102,241,.15); color:#3730a3;", "📚")
+                    style = "background:rgba(99,102,241,.15); color:#3730a3;")
         )
       )
     )
@@ -313,7 +308,7 @@ cards <- tags$div(class = "row",
             tags$p(class = "stat-value", total_authors)
           ),
           tags$span(class = "badge badge-pill",
-                    style = "background:rgba(34,197,94,.15); color:#166534;", "👩‍🔬")
+                    style = "background:rgba(34,197,94,.15); color:#166534;")
         )
       )
     )
@@ -328,7 +323,7 @@ cards <- tags$div(class = "row",
             tags$p(class = "stat-value", style = "font-size:26px;", cutoff_text)
           ),
           tags$span(class = "badge badge-pill",
-                    style = "background:rgba(236,72,153,.12); color:#9d174d;", "🗓️")
+                    style = "background:rgba(236,72,153,.12); color:#9d174d;")
         )
       )
     )
@@ -339,7 +334,19 @@ browsable(cards)
 
 
 ```
-## Recommended Journal Target List
+# Recommended Journal Target List
+
+---
+
+## Interpretation Guide
+The terms used in this report is defined below.
+
+- **Citations**: Visibility and research influence.
+- **Open Access**: Suitable for grant-funded and high-impact dissemination. 
+- **Publication Count**: Proven PPTI publication success. 
+- **Scopus Link**: Reference article for targeting and scope matching.
+
+---
 
 ```{r}
 # ---- Detect citations column in publication data ----
@@ -401,22 +408,7 @@ journal_list <- journal_list %>%
   )
 
 
-# ---- 4) Standardise metadata column names ----
-#impact_col <- intersect(c("Impact Factor", "Impact.Factor", "Impact_Factor", "ImpactFactor", "IF"),
- #                       names(journal_list))
-#oa_col     <- intersect(c("Open Access", "Open.Access", "Open_Access", "OpenAccess", "OA"),
-#                        names(journal_list))
-
-#journal_list <- journal_list %>%
-#  mutate(
- #   `Impact Factor` = if (length(impact_col) > 0)
- #                       suppressWarnings(as.numeric(.data[[impact_col[1]]])) else NA_real_,
- #   `Open Access`   = if (length(oa_col) > 0)
-#                        .data[[oa_col[1]]] else NA
-#  )
-#- **Impact Factor**: Journal quality indicator 
-
-# ---- 5) Render table ----
+# ---- 4) Render table ----
 datatable(
   journal_list %>%
     select(any_of(c(
@@ -424,7 +416,7 @@ datatable(
       "Publication_Count",
       "Total_Citations",
       "Open Access",
-      "Top_5_Scopus Links"
+      "Top_5_Scopus_Links"
     ))) %>%
     arrange(desc(Publication_Count), desc(Total_Citations)),
 
@@ -432,7 +424,7 @@ datatable(
   rownames = FALSE,
   filter = "top",
   options = list(
-    pageLength = 10,
+    pageLength = 50,
     autoWidth = TRUE,
     scrollX = TRUE
   )
@@ -440,6 +432,8 @@ datatable(
 
 
 ```
+
+# Top 10 Journals
 
 ```{r}
 top10 <- journal_list %>%
@@ -470,21 +464,6 @@ ggplot(top10, aes(x = Publication_Count, y = reorder(Journal, Publication_Count)
     plot.margin = margin(10, 40, 12, 10)
   )
 ```
----
-
-# Interpretation Guide
-
-- **Citations**: Visibility and research influence  
-- **Open Access**: Suitable for grant-funded and high-impact dissemination  
-- **Publication Count**: Proven PPTI publication success  
-- **Scopus Link**: Reference article for targeting and scope matching  
 
 
----
-
-# Auto Generated Time
-
-Report generated on:
-
-**`r Sys.time()`**
 

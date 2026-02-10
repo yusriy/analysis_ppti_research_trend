@@ -1,14 +1,21 @@
 ---
-title: "PPTI Keyword Impact Report"
-subtitle: "School of Industrial Technology (PPTI) — Citations & Publications Insights"
-pagetitle: "PPTI Keyword Impact Report | School of Industrial Technology"
+title: "Keyword Impact Report"
+subtitle: "Citations and Publications Insights"
+institute: "School of Industrial Technology, Universiti Sains Malaysia"
+pagetitle: "Keyword Impact Report | PPTI"
+author: 
+  - name: "Yusri Yusup, Wan Zafira Wan Zakaria, Lee Chee Keong, Norli Ismail, Abdorezza Mohammad Nafchi, Mohd Nurazzi Norizan, Melbi Mahardika"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
 output:
   html_document:
+    theme: flatly
     toc: true
     toc_depth: 3
-    number_sections: true
+    toc_float:
+      collapsed: true
+      smooth_scroll: true
+    number_sections: false
     df_print: paged
-    theme: null
 params:
   top_n: 25
   min_pubs_core: 10
@@ -43,7 +50,7 @@ library(ggplot2)
 library(scales)
 
 # modern UI
-library(bslib)
+#library(bslib)
 library(DT)
 library(plotly)
 library(htmltools)
@@ -62,15 +69,14 @@ pick_col <- function(df, candidates) {
 safe_read_csv <- function(path) read_csv(path, show_col_types = FALSE, progress = FALSE)
 
 # ----- Theme (Bootstrap 5) -----
-bs_theme_set(
-  bs_theme(
-    version = 5,
-    bootswatch = "minty",
-    base_font = font_google("Inter"),
-    heading_font = font_google("Poppins"),
-    code_font = font_google("JetBrains Mono")
-  )
-)
+#bs_theme_set(
+#  bs_theme(
+#    version = 5,
+#    bootswatch = "flatly",
+#    base_font = font_google("Inter"),
+#    heading_font = font_google("Inter")
+#  )
+#)
 
 
 ```
@@ -78,9 +84,15 @@ bs_theme_set(
 .hero {
   padding: 18px 18px;
   border-radius: 18px;
-  background: linear-gradient(135deg, rgba(0,123,255,.10), rgba(40,167,69,.10));
+  background: rgba(255,255,255,.9);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
   border: 1px solid rgba(0,0,0,.06);
   margin-bottom: 18px;
+}
+
+.subtitle {
+  color: #111827 !important;   /* charcoal / near-black */
 }
 
 .kpi-grid{
@@ -89,12 +101,30 @@ bs_theme_set(
   gap: 12px;
   margin: 14px 0 22px 0;
 }
-.kpi{
-  border-radius: 16px;
-  padding: 14px 14px;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,.07);
-  box-shadow: 0 6px 20px rgba(0,0,0,.04);
+.stat-card{
+  position: relative;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  border-top: 6px solid #111827;
+  overflow: hidden;
+}
+
+.stat-card .card-body{
+  padding: 16px 18px;
+}
+
+.card-title{
+  color:#6b7280;
+  font-weight:700;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.stat-value{
+  font-size:34px;
+  font-weight:900;
 }
 .kpi .label{ font-size: .85rem; color:#6c757d; }
 .kpi .value{ font-size: 1.35rem; font-weight: 800; margin-top: 4px; }
@@ -113,13 +143,12 @@ h3 { margin-top: 1rem; font-weight: 800; color: #0b5ed7; letter-spacing: -0.15px
 p  { line-height: 1.55; }
 
 /* Section card wrapper */
-.section {
+.section{
   border-radius: 18px;
-  padding: 16px 16px;
-  background: rgba(255,255,255,.92);
-  border: 1px solid rgba(0,0,0,.06);
-  box-shadow: 0 10px 30px rgba(0,0,0,.06);
-  margin: 16px 0 22px 0;
+  padding: 18px 20px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  border: none;
 }
 
 /* Small note text */
@@ -239,28 +268,10 @@ core <- kw %>%
   arrange(desc(citations), desc(pubs))
 
 ```
-<div class="hero">
-  <h2 style="margin:0 0 6px 0;">Overview</h2>
-  <div style="color:#6c757d;">
-    Automated insight report from 3 internal CSV files (citations, publications, top journals).
-  </div>
-</div>
+**Prepared by:** Research Trends Committee 2025, School of Industrial Technology, Universiti Sains Malaysia.
 
-<a id="top"></a>
-<a href="#sections" id="backTop">⬆ Sections</a>
-
-
-<a id="sections"></a>
-
-<div class="section"> <h2>Report Sections</h2> <div class="note">Click to jump to each part of the report.</div> <ul> <li><a href="#kpi">Key Performance Indicators</a></li> <li><a href="#core">Core Keywords (High Citations & Publications)</a></li> <li><a href="#citations">Top Keywords by Citations</a></li> <li><a href="#publications">Top Keywords by Publications</a></li> <li><a href="#emerging">Emerging High-Impact Keywords</a></li> <li><a href="#journals">Journals with Highest Keyword Frequency</a></li> </ul> </div>
-
-
-
-
-<div class="section" id="kpi">
-<h2>Key Performance Indicators</h2>
-<div class="note">Quick summary of keyword volume, citations, publications, and core keywords.</div>
-
+# Executive Summary
+Automated insight report from 3 internal CSV files (citations, publications, top journals).
 
 
 ```{r}
@@ -279,35 +290,59 @@ core <- kw %>%
 
 # KPI cards
 ```{r}
-kpi <- tags$div(class="kpi-grid",
-  tags$div(class="kpi",
-    tags$div(class="label","Total keywords"),
-    tags$div(class="value", comma(n_keywords)),
-    tags$div(class="hint","Unique keyword entries after cleaning")
+kpi <- tags$div(class = "row",
+
+  tags$div(class = "col-sm-3",
+    tags$div(class = "card stat-card",
+      tags$div(class = "card-body",
+        tags$div(class = "card-title", "Total keywords"),
+        tags$div(class = "stat-value", comma(n_keywords)),
+        tags$div(class = "note", "Unique keyword entries after cleaning")
+      )
+    )
   ),
-  tags$div(class="kpi",
-    tags$div(class="label","Total citations"),
-    tags$div(class="value", comma(total_cit)),
-    tags$div(class="hint","Sum of keyword citations")
+
+  tags$div(class = "col-sm-3",
+    tags$div(class = "card stat-card",
+      tags$div(class = "card-body",
+        tags$div(class = "card-title", "Total citations"),
+        tags$div(class = "stat-value", comma(total_cit)),
+        tags$div(class = "note", "Sum of keyword citations")
+      )
+    )
   ),
-  tags$div(class="kpi",
-    tags$div(class="label","Total publications"),
-    tags$div(class="value", comma(total_pub)),
-    tags$div(class="hint","Sum of keyword publication counts")
+
+  tags$div(class = "col-sm-3",
+    tags$div(class = "card stat-card",
+      tags$div(class = "card-body",
+        tags$div(class = "card-title", "Total publications"),
+        tags$div(class = "stat-value", comma(total_pub)),
+        tags$div(class = "note", "Sum of keyword publication counts")
+      )
+    )
   ),
-  tags$div(class="kpi",
-    tags$div(class="label","Core keywords"),
-    tags$div(class="value", comma(nrow(core))),
-    tags$div(class="hint", paste0("pubs ≥ ", params$min_pubs_core,
-                                 " & cites ≥ ", params$min_cites_core))
+
+  tags$div(class = "col-sm-3",
+    tags$div(class = "card stat-card",
+      tags$div(class = "card-body",
+        tags$div(class = "card-title", "Core keywords"),
+        tags$div(class = "stat-value", comma(nrow(core))),
+        tags$div(
+          class = "note",
+          paste0("pubs ≥ ", params$min_pubs_core,
+                 " & cites ≥ ", params$min_cites_core)
+        )
+      )
+    )
   )
+
 )
 
 htmltools::HTML(as.character(kpi))
 
 
 ```
-</div>
+
 
 ```{r}
 top_journals <- jr %>%
@@ -329,10 +364,7 @@ core_view <- core %>%
   )
 ```
 
-<div class="section" id="core">
-<h2>Core Keywords (High Citations & Publications)</h2>
-
-
+# Core Keywords (High Citations and Publications)
 Keywords that demonstrate strong combined performance in both citation impact and publication volume.
 
 
@@ -341,14 +373,18 @@ Keywords that demonstrate strong combined performance in both citation impact an
 DT::datatable(
   core_view,
   rownames = FALSE,
-  options = list(pageLength = 10,autoWidth = TRUE,lengthChange = FALSE)
+  options = list(
+    pageLength = 10,
+    autoWidth = FALSE,
+    scrollX = TRUE
+  )
 ) %>%
   DT::formatCurrency(c("citations","publications"), currency = "", interval = 3) %>%
   DT::formatRound(c("citations_per_pub","impact_score"), digits = 2)
 
 
 ```
-</div>
+
 
 ```{r}
 top_cited <- kw %>% arrange(desc(citations)) %>% slice_head(n = params$top_n)
@@ -369,7 +405,7 @@ p1 <- ggplot(
 ) +
   geom_col(width = 0.85) +
   coord_flip() +
-  scale_fill_gradient(low = "#BFE8FF", high = "#005BBB", labels = comma) +
+  scale_fill_gradient(low = "#e5e7eb", high = "#111827") +
   labs(
     title = paste0("Top ", params$top_n, " Keywords by Citations"),
     x = NULL, y = "Total citations", fill = "Citations"
@@ -383,9 +419,9 @@ p1 <- ggplot(
 
 ```
 
-<div class="section" id="citations_chart">
-  <h2>Top Keywords by Citations (Chart)</h2>
-  <div class="note">Interactive bar chart (hover to see details).</div>
+# Top Keywords by Citations
+Interactive bar chart (hover to see details).
+
 ```{r}
 plotly::ggplotly(p1, tooltip = "text") %>%
   layout(margin = list(l = 40, r = 20, t = 60, b = 30))
@@ -393,14 +429,7 @@ plotly::ggplotly(p1, tooltip = "text") %>%
 
 ```
 
-  <p class="note"><a href="#sections">⬅ Back to sections</a></p>
-</div>
-
-
-<div class="section" id="citations">
-<h2>Top Keywords by Citations</h2>
-
-
+# Top Keywords by Citations
 Detailed statistics for keywords shown in the citations chart.
 
 ```{r}
@@ -414,14 +443,17 @@ DT::datatable(
       impact_score = round(impact_score, 2)
     ),
   rownames = FALSE,
-  options = list(pageLength = 10,autoWidth = TRUE,lengthChange = FALSE)
+  options = list(
+    pageLength = 10,
+    autoWidth = FALSE,
+    scrollX = TRUE
+  )
 ) %>%
   DT::formatCurrency(c("citations","publications"), currency="", interval=3)
 
 
 ```
 
-</div>
 
 ```{r}
 top_pubs <- kw %>% arrange(desc(pubs)) %>% slice_head(n = params$top_n)
@@ -442,7 +474,7 @@ p2 <- ggplot(
 ) +
   geom_col(width = 0.85) +
   coord_flip() +
-  scale_fill_gradient(low = "#C7F5D9", high = "#198754", labels = comma) +
+  scale_fill_gradient(low = "#e5e7eb", high = "#111827") +
   labs(
     title = paste0("Top ", params$top_n, " Keywords by Publications"),
     x = NULL, y = "Publication count", fill = "Publications"
@@ -456,22 +488,17 @@ p2 <- ggplot(
 
 
 ```
-<div class="section" id="publications_chart">
-  <h2>Top Keywords by Publications (Chart)</h2>
-  <div class="note">Interactive bar chart (hover to see details).</div>
+# Top Keywords by Publications
+Interactive bar chart (hover to see details).
 ```{r}
 plotly::ggplotly(p2, tooltip = "text") %>%
   layout(margin = list(l = 40, r = 20, t = 60, b = 30))
 
 ```
-  <p class="note"><a href="#sections">⬅ Back to sections</a></p>
-</div>
 
-<div class="section" id="publications">
-<h2>Top Keywords by Publications</h2>
-
-
+# Top Keywords by Publications
 Keywords ranked by number of publications
+
 ```{r jr_overall_build}
 jr_overall <- jr %>%
   group_by(journal) %>%
@@ -491,18 +518,17 @@ DT::datatable(
       impact_score = round(impact_score, 2)
     ),
   rownames = FALSE,
-  options = list(pageLength = 10,autoWidth = TRUE,lengthChange = FALSE)
+  options = list(
+    pageLength = 10,
+    autoWidth = FALSE,
+    scrollX = TRUE
+  )
 ) %>%
   DT::formatCurrency(c("citations","publications"), currency="", interval=3)
 
 
 ```
-</div>
-
-<div class="section" id="emerging">
-<h2>Emerging High-Impact Keywords</h2>
-
-
+# Emerging High-Impact Keywords
 Keywords with high citation impact per publication but relatively low publication volume.
 
 ```{r}
@@ -525,18 +551,20 @@ DT::datatable(
       citations_per_pub = round(cit_per_pub, 2)
     ),
   rownames = FALSE,
-  options = list(pageLength = 10,autoWidth = TRUE,lengthChange = FALSE)
+  options = list(
+    pageLength = 10,
+    autoWidth = FALSE,
+    scrollX = TRUE
+  )
 )%>%
   DT::formatCurrency(c("citations","publications"), currency="", interval=3)
 
 
 ```
-</div>
-<div class="section" id="journals">
-<h2>Journals with Highest Keyword Frequency</h2>
 
-
+# Journals with Highest Keyword Frequency
 Journals most frequently associated with high-impact keywords.
+
 ```{r}
 jr_overall <- jr %>%
   group_by(journal) %>%
@@ -550,11 +578,15 @@ jr_overall <- jr %>%
 DT::datatable(
   jr_overall,
   rownames = FALSE,
-  options = list(pageLength = 10,autoWidth = TRUE,lengthChange = FALSE)
+  options = list(
+    pageLength = 10,
+    autoWidth = FALSE,
+    scrollX = TRUE
+  )
 ) %>%
   DT::formatCurrency("total_keyword_mentions", currency="", interval=3)
 
 
 
 ```
-</div>
+
