@@ -17,20 +17,20 @@ adsorption,12
 microalgae,12
 mechanical properties,12
 polymer composites,11
-nanocomposites,11
-bioremediation,11
-cellulose nanofiber,11
 biomaterials,11
+cellulose nanofiber,11
+bioremediation,11
+nanocomposites,11
+climate change,10
 sago starch,10
-biofiller,10
 encapsulation,10
 lactic acid bacteria,10
 chitosan,10
-climate change,10
-physicochemical properties,10
 machine learning,10
 biocomposite,10
 biofilm,10
+biofiller,10
+physicochemical properties,10
 antimicrobial,9
 optimization,9
 waste valorization,9
@@ -50,8 +50,8 @@ antibacterial,8
 biochar,8
 livelihood strategies,8
 bacillus subtilis,8
-glutaric acid,8
 biofuel,8
+glutaric acid,8
 shelf life,7
 compatibility,7
 polyhydroxybutyrate,7
@@ -70,26 +70,26 @@ circular bioeconomy,6
 azelaic acid,6
 oil palm empty fruit bunch,6
 food security,6
-fatty acid,6
+inflammation,6
 succinic acid,6
 carbonization,6
 plastic waste,6
 wastewater,6
-inflammation,6
+fatty acid,6
 semi-refined carrageenan,6
-hydrophobicity,6
+waste management,6
 microfiller,6
 carboxymethyl cellulose,6
 palm kernel shell,6
 natural fibre,6
-flammability,6
+hydrophobicity,6
 dma,6
 green materials,6
-waste management,6
 polymer blend,6
+flammability,6
 biosynthesis of polymers,6
 drug delivery,6
-high-hydrostatic pressure,5
+green technology,5
 small-scale fisheries,5
 lentil proteins,5
 biological treatment,5
@@ -98,19 +98,19 @@ enterocin cc2,5
 oil palm trunk,5
 fruit peel,5
 thermal insulation,5
-nutrient removal,5
+sustainable agriculture,5
+wastewater treatment,5
+high-hydrostatic pressure,5
 digestibility,5
 food safety,5
-green technology,5
-nanoemulsion,5
 supercritical co2,5
-ultrasonication,5
-wastewater treatment,5
-sustainable agriculture,5
-cytotoxicity,5
 indoor air quality,5
+nanoemulsion,5
+nutrient removal,5
+cytotoxicity,5
+ultrasonication,5
 tropical fruit,5
-thermal,5
+lactiplantibacillus plantarum,5
 natural waste fiber,5
 marine,5
 cellulose derivatives,5
@@ -118,7 +118,7 @@ oil palm,5
 macroalgae,5
 ulva lactuca,5
 agriculture waste,5
-lactiplantibacillus plantarum,5
+thermal,5
 yield prediction,5
 bioadsorbent,5
 eco-friendly,5
@@ -128,82 +128,82 @@ thermal properties,5
 applications,5
 durian,5
 morphology,5
-melamine,4
-enzymatic hydrolysis,4
-water treatment,4
-sorbic acid,4
-palm kernel shells,4
-waste to energy,4
-soda pulping,4
-surface modification,4
-autohydrolysis,4
-diabetic nephropathy,4
-thermal stability,4
-molecular docking,4
-sustainable coastal management,4
-oil palm biomass,4
-resilience,4
-hybrid,4
-gut microbiota,4
-stress,4
-green material,4
-soxhlet extraction,4
-seaweed,4
-chra,4
-antibacterial activity,4
-resins,4
-thermosets,4
-aerogels,4
-pectinase,4
-modulus,4
-chicken manure,4
-skin care,4
-kenaf,4
-algae,4
-biopolymers and renewable polymers,4
-sugar palm fiber,4
-analysis,4
-degradation,4
 fire resistance,4
-anhydride modification,4
+modulus,4
+sugar palm fiber,4
+surface modification,4
+waste to energy,4
+enzymatic hydrolysis,4
+stress,4
+soxhlet extraction,4
+thermal stability,4
+environmental sustainability,4
+pectinase,4
+skin care,4
 coastal fisheries,4
-bioplastics,4
-health care,4
-antimicrobial resistance (amr),4
-coastal reclamation,4
-inhibitor tolerance,4
+gut microbiota,4
+coastal development,4
+molecular docking,4
+kenaf,4
+green material,4
+analysis,4
+algae,4
+thermosets,4
+sustainable livelihoods,4
+resins,4
+spent coffee ground,4
+soda pulping,4
+food preservation,4
+microencapsulation,4
+aerogels,4
+melamine,4
+water treatment,4
+palm kernel shells,4
+autohydrolysis,4
+biopolymers and renewable polymers,4
+antibacterial activity,4
+diabetic nephropathy,4
+degradation,4
+chra,4
+sorbic acid,4
+packaging,4
+sustainable coastal management,4
 bast fiber nonwoven,4
-chemical modification,4
-papaya juice,4
-fed-batch fermentation,4
-iaq,4
-texture,4
+health care,4
 livelihood assets,4
+chemical health risk assessment,4
+chemical risk,4
+chicken manure,4
+papaya juice,4
+chemical modification,4
+inhibitor tolerance,4
+anaerobic digestion,4
+coastal reclamation,4
+environmental application,4
+antimicrobial resistance (amr),4
+children,4
+pyrolysis,4
+oil palm biomass,4
+seaweed,4
 in-vitro digestibility,4
+bioceramic,4
+kinetics & thermodynamics,4
+resilience,4
 woven bamboo fibre,4
+environment,4
 woven carbon fibre,4
 freeze–thaw,4
 palm oil empty fruit bunch,4
-photocatalysis,4
 water resistant,4
-environmental application,4
 burkholderia ambifaria strain e5-3,4
-children,4
-environment,4
-packaging,4
-kinetics & thermodynamics,4
-anaerobic digestion,4
-chemical risk,4
-bioceramic,4
-chemical health risk assessment,4
-pyrolysis,4
+texture,4
+fed-batch fermentation,4
+hybrid,4
+anhydride modification,4
+iaq,4
+bioplastics,4
+photocatalysis,4
 hybrid composites,4
-environmental sustainability,4
-food preservation,4
-microencapsulation,4
-spent coffee ground,4
-coastal development,4
-sustainable livelihoods,4
 methylene blue,3
 supercritical treatment,3
 toxicity,3
@@ -264,16 +264,16 @@ parameterization,3
 particles size,3
 workplace safety and health,3
 work-related musculoskeletal disorder,3
-carbon sequestration,3
 wrf model,3
 household chemical products,3
-active packaging,3
 bias correction,3
-dewatered sludge,3
+active packaging,3
 nanofibers,3
+dewatered sludge,3
 plant-based milk,3
 emulsion,3
-oxidation,3
+carbon sequestration,3
+enzymatic,3
 bioproduct,3
 rubber wood sawdust,3
 composite materials,3
@@ -286,30 +286,30 @@ bio-composite,3
 safe clean water source,3
 microbial fuel cells,3
 mangrove marine pollution,3
-pleurotus ostreatus,3
+oxidation,3
 circularity,3
-mycelium,3
+pleurotus ostreatus,3
 adult learners,3
 teaching professionals,3
 phenolic compound,3
 climate,3
-climate variability,3
+mycelium,3
 bioeconomy,3
 aquatic organisms,3
-enzymatic,3
+climate variability,3
 artificial intelligence,3
 occupational ergonomics,3
 durian peel waste,3
 green extraction,3
 rambutan leaf extract,3
-biocompatible,3
-refrigerated beef,3
 microparticle,3
-thermal conductivity,3
+heavy metals,3
+β-glucan,3
+biodiesel feedstock,3
+adsorbent,3
+photocatalyst,3
 saccharomyces cerevisiae,3
-starch,3
-solubility,3
-lignin properties,3
+lipid productivity,3
 superheated steam,3
 structural integrity weakening,3
 sustainable,3
@@ -324,34 +324,34 @@ kombucha,3
 ceramic coating,3
 pumping well yield,3
 in-situ pumping test,3
-cosmetic applications,3
-green products,3
+patchouli,3
+extracted residue,3
 humic acid,3
-growth,3
+starch,3
 sanitizing,3
-recycling,3
 textural,3
-particulate matter,3
+optimisation,3
+bio-binder,3
+algae biomass,3
+complexation,3
+recycling,3
 palm oil mill effluent,3
 algae cultivation,3
-complexation,3
-optimisation,3
-algae biomass,3
-bio-binder,3
-patchouli,3
-biodiesel feedstock,3
+lignin properties,3
 emerging pollutants,3
-heavy metals,3
-extracted residue,3
-β-glucan,3
-lipid productivity,3
-thermoplastic elastomer,3
 natural fibers,3
-photocatalyst,3
+particulate matter,3
+solubility,3
+thermal conductivity,3
+refrigerated beef,3
+cosmetic applications,3
+biocompatible,3
+green products,3
 meat detachments,3
+thermoplastic elastomer,3
 aquifer stability and characteristics,3
-adsorbent,3
-microbial plastic degradation,3
+growth,3
+broiler chickens,3
 conjugation,3
 goat manure,3
 saccharum officinarum l,3
@@ -391,12 +391,12 @@ hydrochemical characterization,3
 agricultural water management,3
 bioprocess,3
 biocompatibility,3
-broiler chickens,3
 feed conversion ratio,3
 fermented foods,3
+microbial plastic degradation,3
 tropical oysters,3
-heterotrophic microbes,3
 meat quality,3
+heterotrophic microbes,3
 dumpsites,2
 food packaging,2
 nanotechnology,2
@@ -425,10 +425,10 @@ enrichment,2
 persian gum,2
 flavonoids,2
 sensory properties,2
-meat,2
+pyridoxal 5′-phosphate,2
 chlorella vulgaris cultivation,2
 freshwater,2
-amino acid,2
+environmental health,2
 curdlan,2
 bioactive ingredient,2
 functional compounds,2
@@ -451,11 +451,11 @@ emulsion electrospinning,2
 pharmaceutical applications,2
 citric acid,2
 electrochemical performance,2
-baseline,2
-environmental health,2
 theoretical calculation,2
-pyridoxal 5′-phosphate,2
 catalytic decarboxylation reaction,2
+amino acid,2
+baseline,2
+meat,2
 physical,2
 immunomodulation,2
 canned dodol,2
@@ -521,8 +521,8 @@ molasses,2
 free radical,2
 β-tcp scaffold,2
 nutraceutical,2
-pumpkin–carrot matrix,2
-rambutan extract,2
+mechanical,2
+extensibility,2
 air filtration,2
 tetraselmis suecica,2
 metagenomic analysis,2
@@ -549,37 +549,37 @@ lactic acid,2
 nutrient supplementation,2
 silver nanoparticles,2
 physical treatment,2
-plant phytic acid,2
-mechanical,2
-hyperglycemia,2
+adipokines,2
 dicalcium phosphate dihydrate,2
+hyperglycemia,2
+rice husk silica nanoparticles,2
 physicochemical evaluations,2
 insulation,2
+stringiness,2
 food innovation,2
 biodegradability,2
-fat substitution,2
-barrier properties,2
 bio-nanocomposites,2
-biopolymer aerogels,2
+cellulase,2
+barrier properties,2
 kopsia teoi,2
 biopolymer composites,2
 carbohydrate valorization,2
-cellulase,2
-stringiness,2
+fat substitution,2
+stretchability,2
 chemometrics,2
-imitation cheese,2
+pumpkin–carrot matrix,2
 additive manufacturing,2
 chlamydomonas reinhardtii,2
+biopolymer aerogels,2
 seaweed films,2
 oil absorption,2
 coumarin,2
 extracted lignin,2
-adulteration,2
-stretchability,2
-extensibility,2
-adipokines,2
+imitation cheese,2
+plant phytic acid,2
+rambutan extract,2
 kappa-carrageenan,2
-rice husk silica nanoparticles,2
+adulteration,2
 oxidative stress,2
 human renal tubular epithelial cells,2
 antibiotics,2
@@ -673,7 +673,7 @@ bioreactor,2
 immobilized pectinase,2
 alginate beads,2
 wettability,2
-isolation process,2
+carboxymethylation reaction,2
 antioxidant activities,2
 bonding,2
 acetylation,2
@@ -720,28 +720,28 @@ mango,2
 soy milk,2
 food policy,2
 ultra-violet curable resin,2
-leachate,2
+hybrid nanocomposites,2
 metal oxide nanoparticles,2
 succinic anhydride,2
 industrial revolution,2
 nanofluid,2
 anhydride ratio,2
 itaconic anhydride,2
-hybrid nanocomposites,2
+leachate,2
 diuron,2
 microemulsion,2
 food processing,2
 algal immobilization,2
-phytoremediation,2
 paraquat,2
+phytoremediation,2
 bacterial-cellulose,2
 flavonoid,2
 membraneless microbial fuel cell,2
 mangrove coastal management,2
 marble,2
 water quality,2
-salt-gelatinization,2
 biodiesel-derived crude glycerol,2
+salt-gelatinization,2
 patchouli lignin,2
 ternary blend,2
 sorption,2
@@ -755,8 +755,8 @@ cacl2,2
 controlled release,2
 calcium chloride,2
 biomonitoring,2
+isolation process,2
 superheated steam drying,2
-carboxymethylation reaction,2
 metal oxide,2
 banana peel,2
 waste frying oil (wfo),2
@@ -1773,7 +1773,7 @@ freshness monitoring,1
 oyster,1
 gc×gc,1
 polypyrrole,1
-black tea,1
+hazard index,1
 hazard quotient,1
 support vector machine,1
 biopolymer matrix,1
@@ -1796,18 +1796,18 @@ and numerical modelling,1
 running water types,1
 staphylococcus aureus,1
 nostocales,1
-metagranite,1
+and sustainable management,1
 oyster shell,1
 gamma,1
 animal-based composite,1
-environmental impacts,1
-biogenic caco3,1
-anthracnose,1
-life cycle assessment (lca),1
-bamboo-based materials,1
 market value,1
+biogenic caco3,1
+environmental impacts,1
+anthracnose,1
+future prospects,1
+eco-friendly materials,1
+life cycle assessment (lca),1
 antracol,1
-hazard index,1
 magnetic nanoparticle,1
 bisphenol a,1
 urban air quality,1
@@ -1820,39 +1820,39 @@ sulfated polysaccharide,1
 orthogonal array design,1
 neonicotinoid pesticides,1
 terpenes delivery system,1
-sea cucumber,1
+photovoltaic thermal,1
 forecaster model,1
-copper tannate,1
-neurotransmitter,1
-spawning behaviour,1
 tempo,1
-mangrove,1
+neurotransmitter,1
+copper tannate,1
 ginkgo biloba leaves flavonoids,1
-stichopus fusiformiossa,1
+mangrove,1
+spawning behaviour,1
 high-insulation glass,1
-bpei,1
+sea cucumber,1
+stichopus fusiformiossa,1
 tannin,1
 shrimp,1
 5-hydroxymethylfurfural,1
 terpenes,1
-buildings application,1
+antifouling,1
 permeability,1
 permeability properties,1
 tortuous path model,1
 k-fold cross-validation,1
-future prospects,1
+black tea,1
 alginate,1
-eco-friendly materials,1
-semi-transparent,1
-antifouling,1
-scopus,1
+bamboo-based materials,1
+buildings application,1
 swietenia macrophylla king,1
+scopus,1
 nigrospora species,1
 solar collectors,1
 endophytes,1
 bibliometric,1
 bioactive compounds,1
-photovoltaic thermal,1
+bpei,1
+semi-transparent,1
 ion exchange membranes,1
 hydrogeochemical models,1
 hydrological and water quality models,1
@@ -1875,7 +1875,7 @@ mathematical communication skills,1
 gamification,1
 bauxite mining,1
 halal ecosystem,1
-u–pb zircon dating,1
+thorium extraction,1
 uv index,1
 biomass processing,1
 fractal,1
@@ -1930,13 +1930,13 @@ various electrodes,1
 science curriculum,1
 microbial,1
 palm oil waste management,1
-and sustainable management,1
-environmental issues,1
-thorium extraction,1
 geochemistry,1
 late cretaceous-paleocene,1
 luk ulo complex,1
+metagranite,1
 metapsammite,1
+u–pb zircon dating,1
+environmental issues,1
 tidal zones,1
 ultrafiltration,1
 groundwater and rainwater contamination,1
@@ -1949,10 +1949,10 @@ sugar utilization,1
 biohydrogen,1
 biomethane,1
 palm oil industry,1
-fe–co–zn,1
-fe–ni–zn,1
-tmnps characterisation,1
 fly ash,1
+metal ions,1
+water pollution,1
+fe–co–zn,1
 asbr,1
 organic substrate,1
 plant latex proteases,1
@@ -1972,8 +1972,8 @@ chromatographic,1
 polyhydroxyalkanoates,1
 biomass fuel,1
 drying,1
-water pollution,1
-metal ions,1
+tmnps characterisation,1
+fe–ni–zn,1
 economic feasibility,1
 uasb reactors,1
 fermentation capability,1
