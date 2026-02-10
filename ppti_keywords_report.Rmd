@@ -271,7 +271,7 @@ core <- kw %>%
 **Prepared by:** Research Trends Committee 2025, School of Industrial Technology, Universiti Sains Malaysia.
 
 # Executive Summary
-Automated insight report from 3 internal CSV files (citations, publications, top journals).
+This report presents a structured overview of research keywords associated with publications produced by the School of Industrial Technology (PPTI), with the aim of supporting strategic research planning and publication decision-making. By examining keyword usage alongside citation influence and journal associations, the analysis identifies established thematic strengths, emerging areas of high potential, and patterns of journal alignment relevant to PPTI’s research portfolio. The findings provide an evidence-based foundation for refining research focus, guiding manuscript preparation, and strengthening the alignment between research outputs and appropriate publication outlets. This report is intended to serve as a living reference that can be updated periodically to reflect evolving research directions and scholarly impact within the school.
 
 
 ```{r}
