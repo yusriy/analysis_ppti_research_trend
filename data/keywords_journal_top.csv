@@ -248,15 +248,15 @@ Biological Conservation,Leaf litter weight,1
 Biological Conservation,Soil biodiversity,1
 Biological Conservation,Soil compaction,1
 Biological Conservation,Weight,1
-Biomass Conversion and Biorefinery,Bio-composite,3
-Biomass Conversion and Biorefinery,Biomaterials,3
-Biomass Conversion and Biorefinery,Mycelium,3
-Biomass Conversion and Biorefinery,Pleurotus ostreatus,3
-Biomass Conversion and Biorefinery,Rubber wood sawdust,3
+Biomass Conversion and Biorefinery,Bio-composite,2
+Biomass Conversion and Biorefinery,Biomaterials,2
 Biomass Conversion and Biorefinery,Blend films,2
 Biomass Conversion and Biorefinery,Carboxymethyl Cellulose,2
 Biomass Conversion and Biorefinery,Hemicellulose,2
+Biomass Conversion and Biorefinery,Mycelium,2
 Biomass Conversion and Biorefinery,Oil palm trunk,2
+Biomass Conversion and Biorefinery,Pleurotus ostreatus,2
+Biomass Conversion and Biorefinery,Rubber wood sawdust,2
 Biomass Conversion and Biorefinery,Thermal properties,2
 Biomass Processing for Sustainable Circular Economy,Biomass conversion,2
 Biomass Processing for Sustainable Circular Economy,Biochemical,1
@@ -383,13 +383,13 @@ Cellular Signalling,Receptors,1
 Cellulose,Alkali solvent,1
 Cellulose,Bioethanol,1
 Cellulose,Cellulose,1
-Cellulose,Chemical treatments,1
 Cellulose,Energy efficiency,1
 Cellulose,Hydrogel,1
 Cellulose,Kapok fibres,1
-Cellulose,Lignocellulosic fibre,1
-Cellulose,Mechanical properties,1
 Cellulose,Net energy ratio,1
+Cellulose,Niacinamide,1
+Cellulose,Pretreatment,1
+Cellulose,Saccharification and fermentation,1
 Ceramics International,Electrochemical performance,1
 Ceramics International,Power density,1
 Ceramics International,Solid oxide fuel cells,1
@@ -635,16 +635,16 @@ Environmental Geochemistry and Health,Beach sediments,1
 Environmental Geochemistry and Health,Heavy metals,1
 Environmental Geochemistry and Health,Pollution,1
 Environmental Geochemistry and Health,Tidal zones,1
+Environmental Monitoring and Assessment,AERMOD,1
 Environmental Monitoring and Assessment,Dioxins,1
+Environmental Monitoring and Assessment,Dispersion modeling,1
 Environmental Monitoring and Assessment,Dl-PCBs,1
+Environmental Monitoring and Assessment,GIS,1
 Environmental Monitoring and Assessment,Health effects,1
+Environmental Monitoring and Assessment,Landfill,1
 Environmental Monitoring and Assessment,"Mann-Kendal, Sen’s slope estimator",1
 Environmental Monitoring and Assessment,OMI/AURA,1
 Environmental Monitoring and Assessment,PNC,1
-Environmental Monitoring and Assessment,Particulate mass,1
-Environmental Monitoring and Assessment,Peatland fires,1
-Environmental Monitoring and Assessment,Trend,1
-Environmental Monitoring and Assessment,UV index,1
 Environmental Science and Pollution Research,Batch and continuous modes,2
 Environmental Science and Pollution Research,Heavy metal removal,2
 Environmental Science and Pollution Research,Leachate treatment,2
@@ -685,7 +685,11 @@ European Food Research and Technology,Anthracnose,1
 European Food Research and Technology,Antracol,1
 European Food Research and Technology,Chitosan,1
 European Food Research and Technology,Composite hydrophobic nanocoating,1
+European Food Research and Technology,Functionality,1
 European Food Research and Technology,Konjac,1
+European Food Research and Technology,Molecular forces,1
+European Food Research and Technology,Plant-based proteins,1
+European Food Research and Technology,Ultrasound,1
 Exposure and Health,Acceptable daily intake,2
 Exposure and Health,Emerging contaminants,2
 Exposure and Health,Wastewater irrigation,2
@@ -761,7 +765,7 @@ Food Chemistry X,Microbial load reduction,1
 Food Chemistry X,Molecular docking,1
 Food Chemistry X,Oxidation stability,1
 Food Chemistry X,Plant extract nanoemulsions,1
-Food Chemistry X,Protein digestibility,1
+Food Chemistry X,Salmonella,1
 Food Control,Black tea,1
 Food Control,HPLC,1
 Food Control,Hazard index,1
@@ -895,6 +899,9 @@ Frontiers in Nutrition,fermentation,1
 Frontiers in Nutrition,functional beverage,1
 Frontiers in Nutrition,gene expression,1
 Frontiers in Nutrition,gut microbiota,1
+Fungal Biology Reviews,Drought,1
+Fungal Biology Reviews,Endophytic fungi,1
+Fungal Biology Reviews,Wheat,1
 Future Foods,Chemical evaluation,1
 Future Foods,Fish fillet,1
 Future Foods,Loquat (Eriobotrya japonica),1
@@ -1033,14 +1040,14 @@ International Journal of Agriculture and Biosciences,Polyvinyl Alcohol (PVA),1
 International Journal of Agriculture and Biosciences,Tensile properties,1
 International Journal of Biological Macromolecules,Polymer composites,6
 International Journal of Biological Macromolecules,Adsorption,5
+International Journal of Biological Macromolecules,Cellulose nanofiber,5
+International Journal of Biological Macromolecules,Antibacterial activity,4
 International Journal of Biological Macromolecules,Biocomposites,4
+International Journal of Biological Macromolecules,Biofilm,4
 International Journal of Biological Macromolecules,Biopolymers,4
-International Journal of Biological Macromolecules,Cellulose nanofiber,4
 International Journal of Biological Macromolecules,Fire resistance,4
 International Journal of Biological Macromolecules,Flammability,4
-International Journal of Biological Macromolecules,Nanocellulose,4
-International Journal of Biological Macromolecules,Natural fibre,4
-International Journal of Biological Macromolecules,Thermal,4
+International Journal of Biological Macromolecules,Hydrophobicity,4
 International Journal of Ecosystems and Ecology Science,Bacillus subtilis,1
 International Journal of Ecosystems and Ecology Science,Odor pollution,1
 International Journal of Ecosystems and Ecology Science,bioreactor and ammonia reduction,1
@@ -1138,15 +1145,16 @@ International Journal of River Basin Management,drinking water,2
 International Journal of River Basin Management,pathogenic bacteria,2
 International Journal of River Basin Management,rates of attachment,2
 International Journal of River Basin Management,rates of detachment,2
+International Journal on Advanced Science Engineering and Information Technology,Support vector machine,2
+International Journal on Advanced Science Engineering and Information Technology,cost,2
+International Journal on Advanced Science Engineering and Information Technology,gamma,2
+International Journal on Advanced Science Engineering and Information Technology,principal component analysis,2
 International Journal on Advanced Science Engineering and Information Technology,K-fold cross-validation,1
-International Journal on Advanced Science Engineering and Information Technology,Support vector machine,1
 International Journal on Advanced Science Engineering and Information Technology,Tropical marine species,1
-International Journal on Advanced Science Engineering and Information Technology,cost,1
-International Journal on Advanced Science Engineering and Information Technology,gamma,1
+International Journal on Advanced Science Engineering and Information Technology,k-fold cross-validation,1
 International Journal on Advanced Science Engineering and Information Technology,morphological structure evaluation,1
 International Journal on Advanced Science Engineering and Information Technology,optimized collagen,1
 International Journal on Advanced Science Engineering and Information Technology,physicochemical properties,1
-International Journal on Advanced Science Engineering and Information Technology,principal component analysis,1
 International Microbiology,Antioxidant,1
 International Microbiology,Superoxide dismutase (SOD),1
 International Microbiology,Taguchi orthogonal array,1
@@ -1302,15 +1310,15 @@ Journal of Food Biochemistry,sodium bisulfite,1
 Journal of Food Biochemistry,sorbic acid,1
 Journal of Food Biochemistry,synergism,1
 Journal of Food Measurement and Characterization,Food preservation,4
+Journal of Food Measurement and Characterization,Antimicrobial,3
 Journal of Food Measurement and Characterization,Emulsification,3
 Journal of Food Measurement and Characterization,Essential oil encapsulation,3
 Journal of Food Measurement and Characterization,Functional food,3
 Journal of Food Measurement and Characterization,Milk fortification,3
-Journal of Food Measurement and Characterization,Antimicrobial,2
+Journal of Food Measurement and Characterization,Active packaging,2
 Journal of Food Measurement and Characterization,Bioactive ingredient,2
 Journal of Food Measurement and Characterization,Cocoa rind,2
 Journal of Food Measurement and Characterization,Encapsulation,2
-Journal of Food Measurement and Characterization,Free radical,2
 Journal of Food Process Engineering,bibliometrics,1
 Journal of Food Process Engineering,bioflavonoid,1
 Journal of Food Process Engineering,microencapsulation,1
@@ -1327,11 +1335,11 @@ Journal of Food Science,antioxidant activity,2
 Journal of Food Science,immobilized pectinase,2
 Journal of Food Science,papaya juice,2
 Journal of Food Science,pectin,2
-Journal of Food Science,10-hydroxydecanoic acid,1
 Journal of Food Science,digestibility,1
-Journal of Food Science,health functionalities,1
 Journal of Food Science,lentil proteins,1
 Journal of Food Science,protein structure,1
+Journal of Food Science,solubility,1
+Journal of Food Science,trehalose,1
 Journal of Food Science and Technology,Food Neophobia Scale,2
 Journal of Food Science and Technology,Insect Phobia Scale,2
 Journal of Food Science and Technology,Malaysian,2
@@ -1376,6 +1384,12 @@ Journal of Materials Research,Ceramic coating,1
 Journal of Materials Research,Dicalcium phosphate dihydrate,1
 Journal of Materials Research,Osteoblast cells,1
 Journal of Materials Research,β-TCP scaffold,1
+Journal of Microbiology and Biotechnology,Bifidobacterium,1
+Journal of Microbiology and Biotechnology,Children,1
+Journal of Microbiology and Biotechnology,Gut-lung axis,1
+Journal of Microbiology and Biotechnology,Lactiplantibacillus,1
+Journal of Microbiology and Biotechnology,Probiotics,1
+Journal of Microbiology and Biotechnology,Recurrent respiratory tract infections,1
 Journal of Molecular Liquids,"2,4-Dichlorophenoxyacetic acid",1
 Journal of Molecular Liquids,Adsorption,1
 Journal of Molecular Liquids,Melamine,1
@@ -1490,11 +1504,16 @@ Journal of the Taiwan Institute of Chemical Engineers,Fermentation,1
 Journal of the Taiwan Institute of Chemical Engineers,Lactic acid bacteria,1
 Journal of the Taiwan Institute of Chemical Engineers,Molasses,1
 Journal of the Taiwan Institute of Chemical Engineers,Pathogenic bacteria,1
+Jurnal Kejuruteraan,Cassava starch,1
 Jurnal Kejuruteraan,Ganoderma lucidum,1
 Jurnal Kejuruteraan,Municipal wastewater,1
+Jurnal Kejuruteraan,beeswax,1
 Jurnal Kejuruteraan,bioremediation,1
 Jurnal Kejuruteraan,emerging pollutants,1
+Jurnal Kejuruteraan,natural fibre,1
 Jurnal Kejuruteraan,pharmaceuticals,1
+Jurnal Kejuruteraan,sugarcane bagasse fibre,1
+Jurnal Kejuruteraan,thermoplastic starch,1
 Jurnal Teknologi,Microplastics,3
 Jurnal Teknologi,analysis,3
 Jurnal Teknologi,marine,3
@@ -1813,6 +1832,11 @@ Parasites and Vectors,Aedes albopictus,1
 Parasites and Vectors,Attractive toxic sugar bait (ATSB),1
 Parasites and Vectors,Banana,1
 Parasites and Vectors,Mango,1
+Peerj,Biopolymer,1
+Peerj,Hydropuntia sp,1
+Peerj,Marine food,1
+Peerj,Polysaccharides,1
+Peerj,Seaweed,1
 Pertanika Journal of Science and Technology,Autohydrolysis,3
 Pertanika Journal of Science and Technology,dissolving pulp,3
 Pertanika Journal of Science and Technology,non-wood biomass,3
@@ -1905,15 +1929,15 @@ Polymer Composites Derived from Animal Sources,bioengineering,1
 Polymer Composites Derived from Animal Sources,biomaterial,1
 Polymer Composites Derived from Animal Sources,biomedical applications,1
 Polymer Engineering and Science,bioaerogel,9
-Polymer Engineering and Science,cellulose nanofiber,7
+Polymer Engineering and Science,cellulose nanofiber,8
+Polymer Engineering and Science,sustainable packaging,7
 Polymer Engineering and Science,biofiller,6
-Polymer Engineering and Science,sustainable packaging,6
 Polymer Engineering and Science,biocomposites,5
 Polymer Engineering and Science,eco-friendly,5
+Polymer Engineering and Science,biofilm,4
 Polymer Engineering and Science,biopolymers,4
 Polymer Engineering and Science,freeze–thaw,4
 Polymer Engineering and Science,palm oil empty fruit bunch,4
-Polymer Engineering and Science,water resistant,4
 Polymer International,biopolymers,2
 Polymer International,composite aerogels,2
 Polymer International,encapsulation,2
@@ -2084,6 +2108,11 @@ Surfaces and Interfaces,Adsorption capacity,1
 Surfaces and Interfaces,Bromocresol green dye,1
 Surfaces and Interfaces,Optimization,1
 Surfaces and Interfaces,Response surface methodology,1
+Sustainability Switzerland,bioethanol,1
+Sustainability Switzerland,circular bioeconomy,1
+Sustainability Switzerland,food industry wastes,1
+Sustainability Switzerland,life cycle assessment,1
+Sustainability Switzerland,sustainability,1
 Thermal Science and Engineering Progress,Biosolids,1
 Thermal Science and Engineering Progress,Pyrolysis,1
 Thermal Science and Engineering Progress,Renewable Energy,1
@@ -2126,14 +2155,14 @@ Waste Disposal and Sustainable Energy,Hybrid,2
 Waste Disposal and Sustainable Energy,Optimisation,2
 Waste Disposal and Sustainable Energy,Transesterification,2
 Waste Disposal and Sustainable Energy,Waste frying oil (WFO),2
-Waste Management and Research,Food waste compost,1
-Waste Management and Research,circular economy,1
-Waste Management and Research,net greenhouse gas emissions,1
-Waste Management and Research,organic waste management,1
-Waste Management and Research,organic waste treatment,1
-Waste Management and Research,tourism products,1
-Waste Management and Research,waste disposal sites,1
-Waste Management and Research,waste generated,1
+Waste Management and Research,Food waste compost,2
+Waste Management and Research,circular economy,2
+Waste Management and Research,net greenhouse gas emissions,2
+Waste Management and Research,organic waste management,2
+Waste Management and Research,organic waste treatment,2
+Waste Management and Research,tourism products,2
+Waste Management and Research,waste disposal sites,2
+Waste Management and Research,waste generated,2
 Waste and Biomass Valorization,Empty fruit bunch fiber,1
 Waste and Biomass Valorization,Heat flux,1
 Waste and Biomass Valorization,Refining,1
