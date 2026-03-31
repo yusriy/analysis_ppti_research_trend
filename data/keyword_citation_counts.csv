@@ -1454,8 +1454,8 @@ spawning behaviour,1
 preservation,1
 preservative,1
 food coating,1
-electrochemical performance,1
 commodity crop,1
+electrochemical performance,1
 models,1
 polysaccharide,1
 life-cycle assessment,1
@@ -1545,18 +1545,18 @@ partial purification,0
 mmwl,0
 sugar utilization,0
 rmse,0
-bioethanol fermentation,0
+biomethane,0
 fermentation efficiency,0
 fermentation capability,0
 fermentation ability,0
 ethanol yield,0
 ethanol tolerance,0
 ethanol production,0
+microcrystalline cellulose (mccs),0
 ethanol fermentation,0
 ethanol concentration,0
 budding yeast,0
-microcrystalline cellulose (mccs),0
-biomethane,0
+bioethanol fermentation,0
 biohydrogen,0
 palm oil industry,0
 butyric acid,0
@@ -1658,7 +1658,7 @@ methyl methacrylate,0
 polyimide,0
 radiation induced graft copolymerization,0
 diatom,0
-emission,0
+porous starch,0
 rosa damascene,0
 chemometrics,0
 refined bleached deodorized palm oil,0
@@ -1669,14 +1669,14 @@ protein-bound uremic toxin,0
 white tea extract,0
 nir,0
 adulteration,0
-porous starch,0
+starch carrier,0
 ion exchange resins,0
 performance,0
 hardness removal,0
 calcium,0
 palm biodiesel,0
+emission,0
 starch modification,0
-starch carrier,0
 steam distillation,0
 natural preservative,0
 limitations,0
@@ -2247,10 +2247,10 @@ plastic waste,0
 thermal stability,0
 stacking sequence,0
 stiffness,0
-bamboo fibre,0
-characterization techniques,0
 morphology,0
 particles size,0
+bamboo fibre,0
+characterization techniques,0
 bamboo-based composites,0
 fibre,0
 materials application,0
