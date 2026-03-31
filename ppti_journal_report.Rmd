@@ -279,7 +279,7 @@ total_authors  <- n_distinct(pub_recent$Name)
 
 cutoff_text <- paste0(
   format(start_date, "%b %Y"),
-  " - ",
+  " to ",
   format(end_date, "%b %Y")
 )
 
