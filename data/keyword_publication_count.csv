@@ -34,11 +34,11 @@ biocomposites,9
 bioaerogel,9
 microplastics,9
 deep learning,9
-biocomposite,8
+antioxidant,8
 circular bioeconomy,8
 mechanical properties,8
 biomass,8
-antioxidant,8
+biocomposite,8
 waste valorization,8
 antioxidant activity,8
 essential oil,8
@@ -66,11 +66,11 @@ biosynthesis of polymers,6
 bioethanol,6
 carbonization,6
 groundwater sustainability,6
-palm kernel shell,6
+biofuel,6
 reinforcement,6
 food security,6
 pumping well yield,6
-antibacterial,6
+palm kernel shell,6
 biomass conversion,6
 flammability,6
 succinic acid,6
@@ -79,19 +79,19 @@ waste management,6
 natural fibre,6
 celastrol,6
 polymer blend,6
-biofuel,6
+antibacterial,6
 inflammation,6
 microfiller,6
 marine,5
 hybrid,5
 ultrasonication,5
-high-hydrostatic pressure,5
+thermal,5
 dma,5
 oil palm trunk,5
 principal component analysis,5
 production,5
+high-hydrostatic pressure,5
 nanoemulsion,5
-thermal,5
 indoor air quality,5
 children,5
 fatty acid,5
@@ -151,14 +151,14 @@ waste to energy,4
 sustainable agriculture,4
 environmental sustainability,4
 oil palm biomass,4
-papaya juice,4
+livelihood assets,4
 coastal development,4
 food preservation,4
 agriculture waste,4
-livelihood assets,4
+coastal reclamation,4
+papaya juice,4
 nutrient removal,4
 bioceramic,4
-coastal reclamation,4
 resilience,4
 biogas valorization,4
 biopolymers and renewable polymers,4
@@ -175,7 +175,7 @@ purification,4
 bioplastics,4
 chemical health risk assessment,4
 sustainable coastal management,4
-degradation,4
+oil palm sap,4
 nutrient,4
 lentil proteins,4
 sustainable livelihoods,4
@@ -187,9 +187,9 @@ chemical risk,4
 diabetic nephropathy,4
 in-vitro digestibility,4
 solubility,4
+degradation,4
 chra,4
 iaq,4
-oil palm sap,4
 muscle release,3
 wrf model,3
 shucking,3
@@ -247,12 +247,12 @@ metal oxide,3
 ecological risk,3
 oil palm empty fruit bunch,3
 paddy irrigation,3
+stability,3
 plant-based milk,3
 emulsion,3
-safe clean water source,3
 mangrove marine pollution,3
+safe clean water source,3
 water resource aquatic toxicology,3
-stability,3
 agricultural water management,3
 phenolic compound,3
 poison reagent,3
@@ -448,12 +448,12 @@ tapioca powder,2
 refinery oily sludge,2
 banana peel,2
 carboxymethylation reaction,2
+isolation process,2
 wettability,2
 sugar palm fibre,2
 interfacial adhesion,2
 bonding,2
 alkaline treatment,2
-isolation process,2
 food policy,2
 food processing,2
 industrial revolution,2
@@ -1617,9 +1617,9 @@ crassostrea iredalei,1
 dllme,1
 gc×gc,1
 oyster,1
-combined cycle power plant,1
+alginate,1
 microplastic removal,1
-sulfonated polysulfone,1
+surfaces,1
 boiler,1
 adaptive laboratory evolution,1
 sorbent,1
@@ -1631,15 +1631,15 @@ sugarcane bagasse,1
 coats – redfern method,1
 waste marble powder,1
 economic analysis,1
-proton exchange membrane,1
+colloidal,1
 waste heat,1
 coagulant-assisted,1
 nrl film,1
 sludge capturing process,1
 surface-active latex,1
+proton exchange membrane,1
+sulfonated polysulfone,1
 capturing,1
-colloidal,1
-surfaces,1
 ion exchange resins,1
 light transmittance,1
 biomimetic 3d scaffolds,1
@@ -1729,9 +1729,9 @@ hazard quotient,1
 coral-affecting physicochemical factors,1
 live hard coral coverage,1
 reefs,1
-limestone,1
-alginate,1
 biogenic caco3,1
+combined cycle power plant,1
+limestone,1
 updraft gasifier,1
 monsoon,1
 spatial pattern,1
