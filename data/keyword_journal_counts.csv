@@ -793,17 +793,23 @@ Environmental Geochemistry and Health,Heavy metals,1
 Environmental Geochemistry and Health,Pollution,1
 Environmental Geochemistry and Health,Tidal zones,1
 Environmental Monitoring and Assessment,AERMOD,1
+Environmental Monitoring and Assessment,AWARE model,3
+Environmental Monitoring and Assessment,Aquifer characteristics,3
 Environmental Monitoring and Assessment,Dioxins,1
 Environmental Monitoring and Assessment,Dispersion modeling,1
 Environmental Monitoring and Assessment,Dl-PCBs,1
 Environmental Monitoring and Assessment,GIS,1
+Environmental Monitoring and Assessment,Groundwater sustainability,3
 Environmental Monitoring and Assessment,Health effects,1
 Environmental Monitoring and Assessment,Landfill,1
+Environmental Monitoring and Assessment,Life cycle assessment,3
 Environmental Monitoring and Assessment,"Mann-Kendal, Sen’s slope estimator",1
 Environmental Monitoring and Assessment,OMI/AURA,1
 Environmental Monitoring and Assessment,PNC,1
+Environmental Monitoring and Assessment,Paddy irrigation,3
 Environmental Monitoring and Assessment,Particulate mass,1
 Environmental Monitoring and Assessment,Peatland fires,1
+Environmental Monitoring and Assessment,Pumping well yield,3
 Environmental Monitoring and Assessment,Trend,1
 Environmental Monitoring and Assessment,UV index,1
 Environmental Monitoring and Assessment,Waste transportation vehicles,1
@@ -1052,15 +1058,12 @@ Food Science and Nutrition,Saccharomyces cerevisiae,2
 Food Science and Nutrition,Syzygium aromaticum,1
 Food Science and Nutrition,Zataria multiflora Boiss,1
 Food Science and Nutrition,acrylamide,1
-Food Science and Nutrition,active coating,1
 Food Science and Nutrition,active film,1
 Food Science and Nutrition,alginate biopolymer,1
 Food Science and Nutrition,anthocyanins,1
-Food Science and Nutrition,antioxidant activity,1
 Food Science and Nutrition,biodegradable film,1
 Food Science and Nutrition,chicken meat,1
 Food Science and Nutrition,edible coating,1
-Food Science and Nutrition,essential oil,1
 Food Science and Nutrition,fermented rice noodles,2
 Food Science and Nutrition,fish spoilage indicator,1
 Food Science and Nutrition,gas chromatography,1
@@ -1070,7 +1073,6 @@ Food Science and Nutrition,jujube fruit,1
 Food Science and Nutrition,lipid oxidation,1
 Food Science and Nutrition,meat,1
 Food Science and Nutrition,microbial spoilage,1
-Food Science and Nutrition,microbiology,1
 Food Science and Nutrition,nano-TiO2,1
 Food Science and Nutrition,oil uptake,1
 Food Science and Nutrition,oxidation,1
@@ -1079,7 +1081,6 @@ Food Science and Nutrition,pH-responsive packaging,1
 Food Science and Nutrition,phenolic compound,1
 Food Science and Nutrition,plant bioactive compounds,1
 Food Science and Nutrition,pomegranate flower extract,1
-Food Science and Nutrition,potato,1
 Food Science and Nutrition,potato strips,1
 Food Science and Nutrition,quality attributes,2
 Food Science and Nutrition,refrigerated salmon,1
@@ -1871,13 +1872,19 @@ Journal of Food Science,trehalose,1
 Journal of Food Science and Technology,CaCl2,1
 Journal of Food Science and Technology,Food Neophobia Scale,2
 Journal of Food Science and Technology,Insect Phobia Scale,2
+Journal of Food Science and Technology,Lightness,2
 Journal of Food Science and Technology,Malaysian,2
 Journal of Food Science and Technology,MgCl2,1
+Journal of Food Science and Technology,Microbial,2
 Journal of Food Science and Technology,Migratory locust,2
 Journal of Food Science and Technology,NaI,1
+Journal of Food Science and Technology,Potassium sorbate,2
 Journal of Food Science and Technology,Rice starch,1
 Journal of Food Science and Technology,Salt-gelatinization,1
+Journal of Food Science and Technology,Sodium-free,2
+Journal of Food Science and Technology,White salted noodles,2
 Journal of Food Science and Technology,Willingness to Consume,2
+Journal of Food Science and Technology,pH,2
 Journal of Functional Foods,Bifidobacterium lactis Probio-M8,1
 Journal of Functional Foods,Biological activities,1
 Journal of Functional Foods,Children,1
@@ -2455,6 +2462,11 @@ Organic Communications,ADME properties,1
 Organic Communications,Aldol condensation reaction,1
 Organic Communications,molecular docking,1
 Organic Communications,α-amylase inhibitor,1
+Packaging Operations in the Food Industry Unit Operations and Processing Equipment in the Food Industry,Nanotechnology,2
+Packaging Operations in the Food Industry Unit Operations and Processing Equipment in the Food Industry,biocomposite films,2
+Packaging Operations in the Food Industry Unit Operations and Processing Equipment in the Food Industry,food sector,2
+Packaging Operations in the Food Industry Unit Operations and Processing Equipment in the Food Industry,nanoparticles,2
+Packaging Operations in the Food Industry Unit Operations and Processing Equipment in the Food Industry,silver,2
 Paddy and Water Environment,Aquifer stability and characteristics,3
 Paddy and Water Environment,In-situ pumping test,3
 Paddy and Water Environment,Pumping well yield,3
