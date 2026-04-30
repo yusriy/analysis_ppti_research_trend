@@ -432,13 +432,13 @@ Bioresource Technology,Swine manure,1
 Bioresource Technology,Total solids content,1
 Bioresource Technology Reports,Activated carbon,2
 Bioresource Technology Reports,Agro-food organic residues,1
-Bioresource Technology Reports,Bast fiber nonwoven,3
+Bioresource Technology Reports,Bast fiber nonwoven,2
 Bioresource Technology Reports,Biodegradable materials,1
 Bioresource Technology Reports,Biodegradable nanocomposites,3
 Bioresource Technology Reports,Biofuel,2
-Bioresource Technology Reports,Biopolymer,6
+Bioresource Technology Reports,Biopolymer,5
 Bioresource Technology Reports,Bioresources,2
-Bioresource Technology Reports,Chemical modification,3
+Bioresource Technology Reports,Chemical modification,2
 Bioresource Technology Reports,Circular bioeconomy,3
 Bioresource Technology Reports,Circular economy,1
 Bioresource Technology Reports,Hybrid fillers,1
@@ -454,11 +454,11 @@ Bioresource Technology Reports,Renewable energy,2
 Bioresource Technology Reports,Reusability,1
 Bioresource Technology Reports,Rice husk-derived silica nanoparticles,3
 Bioresource Technology Reports,Seaweed biopolymer,3
-Bioresource Technology Reports,Spent coffee grounds,6
+Bioresource Technology Reports,Spent coffee grounds,5
 Bioresource Technology Reports,Sugarcane vinasse,1
 Bioresource Technology Reports,Sustainable,2
 Bioresource Technology Reports,Sustainable materials,3
-Bioresource Technology Reports,Sustainable packaging,3
+Bioresource Technology Reports,Sustainable packaging,2
 Bioresource Technology Reports,Waste valorization,1
 Bioresources,Biomaterials,1
 Bioresources,Cellulose,1
@@ -500,6 +500,10 @@ Cab Reviews Perspectives in Agriculture Veterinary Science Nutrition and Natural
 Cab Reviews Perspectives in Agriculture Veterinary Science Nutrition and Natural Resources,integrated crop livestock,1
 Cab Reviews Perspectives in Agriculture Veterinary Science Nutrition and Natural Resources,oil palm livestock system,1
 Cab Reviews Perspectives in Agriculture Veterinary Science Nutrition and Natural Resources,social sustainability,1
+Cell Biochemistry and Function,Cancer Oncology,1
+Cell Biochemistry and Function,Rho GTPases,1
+Cell Biochemistry and Function,VOSviewer,1
+Cell Biochemistry and Function,bibliometric analysis,1
 Cellular Signalling,APRIL,1
 Cellular Signalling,BAFF,1
 Cellular Signalling,Bibliometric analysis,1
@@ -786,6 +790,12 @@ Environment Development and Sustainability,Hydrogeochemical models,1
 Environment Development and Sustainability,Hydrological and water quality models,1
 Environment Development and Sustainability,Sustainable development,1
 Environment Development and Sustainability,Water–rock interactions,1
+Environmental Engineering Research,Biogas,1
+Environmental Engineering Research,Biomass,1
+Environmental Engineering Research,Biopurification,1
+Environmental Engineering Research,Biosorbent,1
+Environmental Engineering Research,Composite biosorbents,1
+Environmental Engineering Research,Fe3+ crosslinking,1
 Environmental Geochemistry and Health,Anthropogenic activities,1
 Environmental Geochemistry and Health,Bauxite mining,1
 Environmental Geochemistry and Health,Beach sediments,1
@@ -923,12 +933,16 @@ Fitoterapia,Molecular docking,1
 Fitoterapia,α-Amylase,1
 Food Analytical Methods,Adulteration,1
 Food Analytical Methods,Antioxidant activity,1
-Food Analytical Methods,Chemometrics,1
+Food Analytical Methods,Chemometrics,2
 Food Analytical Methods,Extraction,1
 Food Analytical Methods,Fatty acid,1
 Food Analytical Methods,Fatty acids diagnostic ratio,1
 Food Analytical Methods,Gas chromatography-flame ionisation detector,1
+Food Analytical Methods,Gas chromatography-ion mobility spectrometry,1
+Food Analytical Methods,Geographical origin,1
 Food Analytical Methods,Microalgae,1
+Food Analytical Methods,Near-infrared spectroscopy,1
+Food Analytical Methods,Palm oil traceability,1
 Food Analytical Methods,Refined bleached deodorised palm oil,1
 Food Analytical Methods,Scenedesmus parvus,1
 Food Bioscience,Active packaging film,1
@@ -961,11 +975,16 @@ Food Chemistry X,Oxidation stability,1
 Food Chemistry X,Plant extract nanoemulsions,1
 Food Chemistry X,Salmonella,1
 Food Chemistry X,Shelf-life extension,1
+Food Control,Antibacterial activity,1
+Food Control,Antioxidant activity,1
 Food Control,Black tea,1
+Food Control,Enzyme-like activity,1
 Food Control,HPLC,1
 Food Control,Hazard index,1
 Food Control,Hazard quotient,1
 Food Control,Histamine,1
+Food Control,Polysaccharide stabilization,1
+Food Control,Strawberry preservation,1
 Food Control,Tyramine,1
 Food Engineering Reviews,Animal-based Proteins,1
 Food Engineering Reviews,Complex Coacervation,1
@@ -1052,24 +1071,26 @@ Food Science and Biotechnology,Solubility,1
 Food Science and Biotechnology,Succinic acid,1
 Food Science and Biotechnology,Water kefir grains,2
 Food Science and Biotechnology,Whey proteins,2
+Food Science and Nutrition,Chlamydomonas reinhardtii,1
 Food Science and Nutrition,Penganum harmala,1
-Food Science and Nutrition,Persian gum (insoluble part),1
 Food Science and Nutrition,Saccharomyces cerevisiae,2
 Food Science and Nutrition,Syzygium aromaticum,1
 Food Science and Nutrition,Zataria multiflora Boiss,1
 Food Science and Nutrition,acrylamide,1
 Food Science and Nutrition,active film,1
-Food Science and Nutrition,alginate biopolymer,1
 Food Science and Nutrition,anthocyanins,1
+Food Science and Nutrition,bioactive peptides,1
 Food Science and Nutrition,biodegradable film,1
 Food Science and Nutrition,chicken meat,1
+Food Science and Nutrition,diabetes management,1
 Food Science and Nutrition,edible coating,1
 Food Science and Nutrition,fermented rice noodles,2
 Food Science and Nutrition,fish spoilage indicator,1
+Food Science and Nutrition,functional foods,1
 Food Science and Nutrition,gas chromatography,1
 Food Science and Nutrition,glutaric acid,1
+Food Science and Nutrition,hypoglycaemic activity,1
 Food Science and Nutrition,immersion coating,1
-Food Science and Nutrition,jujube fruit,1
 Food Science and Nutrition,lipid oxidation,1
 Food Science and Nutrition,meat,1
 Food Science and Nutrition,microbial spoilage,1
@@ -1078,7 +1099,6 @@ Food Science and Nutrition,oil uptake,1
 Food Science and Nutrition,oxidation,1
 Food Science and Nutrition,oxidative stability,1
 Food Science and Nutrition,pH-responsive packaging,1
-Food Science and Nutrition,phenolic compound,1
 Food Science and Nutrition,plant bioactive compounds,1
 Food Science and Nutrition,pomegranate flower extract,1
 Food Science and Nutrition,potato strips,1
@@ -1088,11 +1108,9 @@ Food Science and Nutrition,sago starch,1
 Food Science and Nutrition,shelf life,1
 Food Science and Nutrition,sodium bisulphite,1
 Food Science and Nutrition,sorbic acid,1
-Food Science and Nutrition,spray drying,1
 Food Science and Nutrition,starch,2
 Food Science and Nutrition,synergism,1
 Food Science and Nutrition,tarragon,1
-Food Science and Nutrition,whey protein isolate,1
 Food Science and Nutrition,yeast fermentation,2
 Food Waste Valorization Emerging Trends Techno Economic and Environmental Considerations,Food waste,1
 Food Waste Valorization Emerging Trends Techno Economic and Environmental Considerations,life-cycle assessment,1
@@ -1172,6 +1190,7 @@ Frontiers in Microbiology,quorum sensing,1
 Frontiers in Microbiology,stress resistance,1
 Frontiers in Microbiology,symbiosis,2
 Frontiers in Nutrition,Bifidobacterium,1
+Frontiers in Nutrition,Bifidobacterium infantis,1
 Frontiers in Nutrition,Bifidobacterium infantis YLGB-1496,1
 Frontiers in Nutrition,Bifidobacterium longum subsp. infantis YLGB-1496,1
 Frontiers in Nutrition,Drosophila melanogaster,1
@@ -1182,17 +1201,20 @@ Frontiers in Nutrition,fermentation,1
 Frontiers in Nutrition,functional beverage,1
 Frontiers in Nutrition,gene expression,1
 Frontiers in Nutrition,gut microbiota,2
+Frontiers in Nutrition,immune homeostasis,1
 Frontiers in Nutrition,immunological effects,1
 Frontiers in Nutrition,in vitro antioxidant,1
+Frontiers in Nutrition,infant gut microbiota,1
 Frontiers in Nutrition,kombucha,1
 Frontiers in Nutrition,longevity extension,1
+Frontiers in Nutrition,mucosal immunity,1
 Frontiers in Nutrition,orthogonal test,1
 Frontiers in Nutrition,oxidative stress-related,1
-Frontiers in Nutrition,probiotic,2
+Frontiers in Nutrition,probiotic,3
 Frontiers in Nutrition,product development,1
 Frontiers in Nutrition,randomized controlled trial,2
 Frontiers in Nutrition,respiratory symptoms,1
-Frontiers in Nutrition,respiratory tract infections,1
+Frontiers in Nutrition,respiratory tract infections,2
 Frontiers in Nutrition,sensory quality,1
 Frontiers in Nutrition,short term travel,1
 Frontiers in Nutrition,sweet osmanthus,1
@@ -1236,6 +1258,12 @@ Green Energy and Technology,Pollution Control Technology,1
 Green Energy and Technology,Renewable Energy,1
 Green Energy and Technology,Sustainable Development,1
 Green Energy and Technology,Sustainable Energy Technologies,1
+Green Microbial Nanotechnology for Pollution Control New and Future Developments in Microbial Biotechnology and Bioengineering,Indoor air quality (IAQ),1
+Green Microbial Nanotechnology for Pollution Control New and Future Developments in Microbial Biotechnology and Bioengineering,air purification,1
+Green Microbial Nanotechnology for Pollution Control New and Future Developments in Microbial Biotechnology and Bioengineering,biosynthesized nanoparticles,1
+Green Microbial Nanotechnology for Pollution Control New and Future Developments in Microbial Biotechnology and Bioengineering,environmental remediation,1
+Green Microbial Nanotechnology for Pollution Control New and Future Developments in Microbial Biotechnology and Bioengineering,green microbial nanotechnology,1
+Green Microbial Nanotechnology for Pollution Control New and Future Developments in Microbial Biotechnology and Bioengineering,nano-biosensors,1
 Green Technologies and Sustainability,Biochar functionalization,1
 Green Technologies and Sustainability,Circular economic,1
 Green Technologies and Sustainability,Environmental sustainability,1
@@ -1370,6 +1398,7 @@ International Journal of Biological Macromolecules,Antibacterial activity,2
 International Journal of Biological Macromolecules,Antidiabetic,1
 International Journal of Biological Macromolecules,Aqueous two-phase system,1
 International Journal of Biological Macromolecules,Artificial neural networks (ANN),1
+International Journal of Biological Macromolecules,Bio-based composites,1
 International Journal of Biological Macromolecules,Biochemical analysis,1
 International Journal of Biological Macromolecules,Biocomposites,2
 International Journal of Biological Macromolecules,Biodegradability,2
@@ -1388,6 +1417,7 @@ International Journal of Biological Macromolecules,Blend,1
 International Journal of Biological Macromolecules,CS-based materials,1
 International Journal of Biological Macromolecules,Carboxyl groups,1
 International Journal of Biological Macromolecules,Carboxymethyl cellulose,1
+International Journal of Biological Macromolecules,Cellulose,1
 International Journal of Biological Macromolecules,Cellulose nanofiber,5
 International Journal of Biological Macromolecules,Chemical interactions,1
 International Journal of Biological Macromolecules,Chitosan,1
@@ -1402,6 +1432,7 @@ International Journal of Biological Macromolecules,Emulsion electrospinning,2
 International Journal of Biological Macromolecules,Environmental application,2
 International Journal of Biological Macromolecules,Exopolysaccharides,1
 International Journal of Biological Macromolecules,Fire resistance,4
+International Journal of Biological Macromolecules,Flame retardance,1
 International Journal of Biological Macromolecules,Flammability,4
 International Journal of Biological Macromolecules,Food safety,1
 International Journal of Biological Macromolecules,Freshness monitoring,1
@@ -1478,6 +1509,11 @@ International Journal of Ecosystems and Ecology Science,Odor pollution,1
 International Journal of Ecosystems and Ecology Science,bioreactor and ammonia reduction,1
 International Journal of Ecosystems and Ecology Science,eco-friendly bio-spray,1
 International Journal of Ecosystems and Ecology Science,hazardous chemicals,1
+International Journal of Energy Research,advancements application,1
+International Journal of Energy Research,goat hair,1
+International Journal of Energy Research,natural fiber,1
+International Journal of Energy Research,recycle natural materials,1
+International Journal of Energy Research,waste management,1
 International Journal of Environmental Health Research,CHRA,1
 International Journal of Environmental Health Research,IAQ,1
 International Journal of Environmental Health Research,chemical health risk assessment,1
@@ -1543,6 +1579,12 @@ International Journal of Hydrogen Energy,Grid resilience,1
 International Journal of Hydrogen Energy,Hydrogen energy,1
 International Journal of Hydrogen Energy,Policy and regulation,1
 International Journal of Hydrogen Energy,Smart grid integration,1
+International Journal of Informatics and Communication Technology,Artificial intelligence,1
+International Journal of Informatics and Communication Technology,Deep learning,1
+International Journal of Informatics and Communication Technology,Machine learning,1
+International Journal of Informatics and Communication Technology,Oil palm yields,1
+International Journal of Informatics and Communication Technology,Remote sensing,1
+International Journal of Informatics and Communication Technology,Web application,1
 International Journal of Molecular Sciences,Bifidobacterium longum subsp. infantis B8762,1
 International Journal of Molecular Sciences,gut health,1
 International Journal of Molecular Sciences,immunomodulation,1
@@ -1624,6 +1666,10 @@ Journal of Advanced Research in Experimental Fluid Mechanics and Heat Transfer,W
 Journal of Advanced Research in Experimental Fluid Mechanics and Heat Transfer,canopy layer,1
 Journal of Advanced Research in Experimental Fluid Mechanics and Heat Transfer,tropical climate,1
 Journal of Advanced Research in Experimental Fluid Mechanics and Heat Transfer,wind directions,1
+Journal of Agriculture and Food Research,Drosophila melanogaster,1
+Journal of Agriculture and Food Research,High-sugar diet,1
+Journal of Agriculture and Food Research,Longevity,1
+Journal of Agriculture and Food Research,White tea aqueous extract,1
 Journal of Alloys and Compounds,BiOBr,1
 Journal of Alloys and Compounds,Biochar,1
 Journal of Alloys and Compounds,Ciprofloxacin,1
@@ -1759,8 +1805,8 @@ Journal of Food Measurement and Characterization,Active packaging,2
 Journal of Food Measurement and Characterization,Antimicrobial,3
 Journal of Food Measurement and Characterization,Antioxidant,1
 Journal of Food Measurement and Characterization,Antioxidant activity,1
+Journal of Food Measurement and Characterization,Artocarpus altilis,1
 Journal of Food Measurement and Characterization,Azelaic acid,1
-Journal of Food Measurement and Characterization,Bead,1
 Journal of Food Measurement and Characterization,Bioactive ingredient,2
 Journal of Food Measurement and Characterization,Bioflavonoid,1
 Journal of Food Measurement and Characterization,CO₂ scavenger,1
@@ -1768,10 +1814,11 @@ Journal of Food Measurement and Characterization,Chicken fillets,1
 Journal of Food Measurement and Characterization,Chitosan films,1
 Journal of Food Measurement and Characterization,Co-precipitation technique,1
 Journal of Food Measurement and Characterization,Cocoa rind,2
+Journal of Food Measurement and Characterization,Composite flour muffins,1
 Journal of Food Measurement and Characterization,Edible coating,1
 Journal of Food Measurement and Characterization,Eggplant anthocyanins,1
 Journal of Food Measurement and Characterization,Emulsification,3
-Journal of Food Measurement and Characterization,Encapsulation,2
+Journal of Food Measurement and Characterization,Encapsulation,1
 Journal of Food Measurement and Characterization,Enrichment,1
 Journal of Food Measurement and Characterization,Essential oil,1
 Journal of Food Measurement and Characterization,Essential oil encapsulation,3
@@ -1793,20 +1840,18 @@ Journal of Food Measurement and Characterization,Imitation cheese,1
 Journal of Food Measurement and Characterization,Inclusion complex,1
 Journal of Food Measurement and Characterization,Intelligent packaging,1
 Journal of Food Measurement and Characterization,Jujube (Ziziphus jujuba) extract,1
-Journal of Food Measurement and Characterization,Jujube alcohol extract,1
 Journal of Food Measurement and Characterization,Kenaf,1
 Journal of Food Measurement and Characterization,Kneading technique,1
 Journal of Food Measurement and Characterization,Macroporous polymeric resin,1
 Journal of Food Measurement and Characterization,Microalgae,1
 Journal of Food Measurement and Characterization,Microcapsule,2
 Journal of Food Measurement and Characterization,Milk fortification,3
-Journal of Food Measurement and Characterization,Modified sodium alginate,1
+Journal of Food Measurement and Characterization,Mineral enrichment,1
 Journal of Food Measurement and Characterization,Nanoemulsion,1
 Journal of Food Measurement and Characterization,Natural antioxidant,1
 Journal of Food Measurement and Characterization,Natural deep eutectic solvents,2
 Journal of Food Measurement and Characterization,Nutraceutical,2
 Journal of Food Measurement and Characterization,Oat rice,1
-Journal of Food Measurement and Characterization,Octenyl succinic anhydride,1
 Journal of Food Measurement and Characterization,Oil palm leaf,2
 Journal of Food Measurement and Characterization,Oliveria decumbens,1
 Journal of Food Measurement and Characterization,Omics,1
@@ -1814,6 +1859,7 @@ Journal of Food Measurement and Characterization,Optimization,2
 Journal of Food Measurement and Characterization,PH-Sensitive indicator,1
 Journal of Food Measurement and Characterization,Papaya powder,2
 Journal of Food Measurement and Characterization,Phenolic compound,2
+Journal of Food Measurement and Characterization,Physicochemical characterisation,1
 Journal of Food Measurement and Characterization,Physicochemical properties,1
 Journal of Food Measurement and Characterization,Plastic,1
 Journal of Food Measurement and Characterization,Porous starch,2
@@ -1841,17 +1887,22 @@ Journal of Food Measurement and Characterization,Stretchability,1
 Journal of Food Measurement and Characterization,Stringiness,1
 Journal of Food Measurement and Characterization,Superheated steam drying,2
 Journal of Food Measurement and Characterization,Synergism,1
+Journal of Food Measurement and Characterization,Texture Profile Analysis (TPA),1
 Journal of Food Measurement and Characterization,Texture profile analysis (TPA),1
 Journal of Food Measurement and Characterization,Theobroma cocoa l,2
 Journal of Food Measurement and Characterization,Thermal processing,1
 Journal of Food Measurement and Characterization,Total flavonoid,1
 Journal of Food Measurement and Characterization,Ultrasonic-assisted extraction,2
 Journal of Food Measurement and Characterization,Volatile compounds,1
-Journal of Food Measurement and Characterization,Whey protein isolate,1
+Journal of Food Process Engineering,agro-waste,1
+Journal of Food Process Engineering,antioxidant,1
 Journal of Food Process Engineering,bibliometrics,1
 Journal of Food Process Engineering,bioflavonoid,1
+Journal of Food Process Engineering,fermented tea,1
+Journal of Food Process Engineering,healthy beverage,1
 Journal of Food Process Engineering,microencapsulation,1
 Journal of Food Process Engineering,optimization,1
+Journal of Food Process Engineering,polyphenol,1
 Journal of Food Process Engineering,spray drying,1
 Journal of Food Quality,antimicrobial,1
 Journal of Food Quality,azelaic acid,1
@@ -1861,14 +1912,9 @@ Journal of Food Quality,shelf life,1
 Journal of Food Quality,succinic acid,1
 Journal of Food Science,alginate beads,2
 Journal of Food Science,antioxidant activity,2
-Journal of Food Science,digestibility,1
 Journal of Food Science,immobilized pectinase,2
-Journal of Food Science,lentil proteins,1
 Journal of Food Science,papaya juice,2
 Journal of Food Science,pectin,2
-Journal of Food Science,protein structure,1
-Journal of Food Science,solubility,1
-Journal of Food Science,trehalose,1
 Journal of Food Science and Technology,CaCl2,1
 Journal of Food Science and Technology,Food Neophobia Scale,2
 Journal of Food Science and Technology,Insect Phobia Scale,2
@@ -1904,10 +1950,15 @@ Journal of Hazardous Toxic and Radioactive Waste,Chicken manure,2
 Journal of Hazardous Toxic and Radioactive Waste,Green technology,2
 Journal of Hazardous Toxic and Radioactive Waste,Membraneless microbial fuel cell,2
 Journal of Hazardous Toxic and Radioactive Waste,Renewable energy,2
+Journal of Hydrology Regional Studies,ERA5,1
+Journal of Hydrology Regional Studies,Eddy covariance,1
+Journal of Hydrology Regional Studies,Energy fluxes,1
 Journal of Hydrology Regional Studies,Fractal,1
 Journal of Hydrology Regional Studies,Groundwater,1
 Journal of Hydrology Regional Studies,Machine learning,1
 Journal of Hydrology Regional Studies,Souss-Massa mountainous basin,1
+Journal of Hydrology Regional Studies,Statistical downscaling,1
+Journal of Hydrology Regional Studies,Tropical coast,1
 Journal of Industrial and Engineering Chemistry,Artificial kidney,1
 Journal of Industrial and Engineering Chemistry,Blood purification,1
 Journal of Industrial and Engineering Chemistry,Hemodialysis,1
@@ -2295,12 +2346,17 @@ Methodsx,Mental health,1
 Methodsx,Prevalence,1
 Methodsx,Psychological distress,1
 Methodsx,Risk factors,1
+Microbial Pathogenesis,Bifidobacterium longumsubsp.infantisB8762,1
 Microbial Pathogenesis,Biofilm,1
 Microbial Pathogenesis,Chitosan,1
 Microbial Pathogenesis,Colistin,1
+Microbial Pathogenesis,Gastrointestinal infections,1
+Microbial Pathogenesis,Gut–lung axis,1
 Microbial Pathogenesis,Injectable hydrogels,1
+Microbial Pathogenesis,Metagenomics,1
 Microbial Pathogenesis,Methacrylic acid,1
 Microbial Pathogenesis,Nanoparticles,1
+Microbial Pathogenesis,Respiratory tract infections,1
 Microbiology and Biotechnology Letters,ANOVA,3
 Microbiology and Biotechnology Letters,Ammonia reduction,3
 Microbiology and Biotechnology Letters,Bacillus subtilis,3
@@ -2390,6 +2446,11 @@ Nanotechnology Reviews,mesoporous silica,1
 Nanotechnology Reviews,nanocellulose,2
 Nanotechnology Reviews,oil palm empty fruit bunch,2
 Nanotechnology Reviews,wastewater,1
+Nanotechnology for Environmental Engineering,Biological activity,1
+Nanotechnology for Environmental Engineering,Degradation kinetics,1
+Nanotechnology for Environmental Engineering,Gold nanoparticles,1
+Nanotechnology for Environmental Engineering,Ixora coccinea Curtis flower,1
+Nanotechnology for Environmental Engineering,Photocatalysis,1
 Nanotechnology in the Life Sciences,Drug Delivery System,1
 Nanotechnology in the Life Sciences,Gene delivery,1
 Nanotechnology in the Life Sciences,Nano-antimicrobials,1
@@ -2583,7 +2644,11 @@ Polimery Polymers,particles size,3
 Polimery Polymers,plastic waste,6
 Polimery Polymers,stability,2
 Polimery Polymers,thermal stability,3
+Polymer Bulletin,Amphiphobic surfaces,2
 Polymer Bulletin,Benzene,2
+Polymer Bulletin,Bio-based polymers,2
+Polymer Bulletin,Cellulose surface modification,2
+Polymer Bulletin,Chitosan-based emulsions,2
 Polymer Bulletin,Coating,1
 Polymer Bulletin,DMA,3
 Polymer Bulletin,Modulus,3
@@ -2591,6 +2656,7 @@ Polymer Bulletin,Nanocomposites,2
 Polymer Bulletin,Natural polymer,1
 Polymer Bulletin,Photocatalysis,2
 Polymer Bulletin,Photocatalyst,2
+Polymer Bulletin,Polymer coatings,2
 Polymer Bulletin,Polymer composites,3
 Polymer Bulletin,Roles,1
 Polymer Bulletin,Smart farming,1
@@ -2598,6 +2664,7 @@ Polymer Bulletin,Sugar palm fiber,3
 Polymer Bulletin,Sustainable agriculture,1
 Polymer Bulletin,Toluene,2
 Polymer Bulletin,UV light,2
+Polymer Bulletin,Wax–polymer interactions,2
 Polymer Composites,PHBV,3
 Polymer Composites,Patchouli,2
 Polymer Composites,abaca fiber,1
@@ -2803,10 +2870,15 @@ SAE International Journal of Fuels and Lubricants,Palm biodiesel,1
 SAE International Journal of Fuels and Lubricants,Performance,1
 Sains Malaysiana,ADMET profiling,1
 Sains Malaysiana,Antibacterial,1
+Sains Malaysiana,Rheology,2
 Sains Malaysiana,antidiabetic agents,1
 Sains Malaysiana,bis(arylidene)cycloalkanones,1
 Sains Malaysiana,controlled biodegradation,1
 Sains Malaysiana,molecular docking,1
+Sains Malaysiana,salt substitutes,2
+Sains Malaysiana,sensory evaluation,2
+Sains Malaysiana,sodium reduction,2
+Sains Malaysiana,sweet Thai chili sauce,2
 Sains Malaysiana,water absorption,1
 Sains Malaysiana,α-Amylase inhibitors,1
 Science of the Total Environment,Advanced oxidation process,1
@@ -2859,6 +2931,11 @@ Springer Proceedings in Materials,Food waste digestate,2
 Springer Proceedings in Materials,Hydrocarbon,2
 Springer Proceedings in Materials,Refinery oily sludge,2
 Springer Proceedings in Materials,Seed germination,2
+Springer Series on Polymer and Composite Materials,Biodegradable,1
+Springer Series on Polymer and Composite Materials,Biopolymer,1
+Springer Series on Polymer and Composite Materials,Chitin,1
+Springer Series on Polymer and Composite Materials,Degree of deacetylation,1
+Springer Series on Polymer and Composite Materials,Packaging,1
 Springer Water,Environment,1
 Springer Water,Management,1
 Springer Water,Pollution,1
@@ -2936,10 +3013,16 @@ Waste and Biomass Valorization,Heat flux,1
 Waste and Biomass Valorization,Refining,1
 Waste and Biomass Valorization,Sandwich composite,1
 Waste and Biomass Valorization,Thermal insulation,1
+Water Air and Soil Pollution,AERMOD,1
+Water Air and Soil Pollution,Air pollution modeling,1
 Water Air and Soil Pollution,Contaminated water,1
+Water Air and Soil Pollution,Dispersion,1
 Water Air and Soil Pollution,Diuron,1
+Water Air and Soil Pollution,Energy recovery,1
 Water Air and Soil Pollution,Forecaster Model,1
 Water Air and Soil Pollution,Land Use,1
+Water Air and Soil Pollution,LandGEM,1
+Water Air and Soil Pollution,Landfill gas emissions,1
 Water Air and Soil Pollution,Marine Water Quality,1
 Water Air and Soil Pollution,Melamine,1
 Water Air and Soil Pollution,Mesoporous biochar,1
