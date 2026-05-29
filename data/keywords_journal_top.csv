@@ -47,9 +47,14 @@ Advances in Decision Sciences,Humic acid,1
 Advances in Decision Sciences,Nutrient bioavailability,1
 Advances in Decision Sciences,Soil enzyme,1
 Advances in Geographic Information Science,Arsenic,2
+Advances in Geographic Information Science,Climate change effects,2
 Advances in Geographic Information Science,Environmental assessment,2
+Advances in Geographic Information Science,Environmental issues,2
 Advances in Geographic Information Science,Fluoride,2
+Advances in Geographic Information Science,Groundwater development and management,2
+Advances in Geographic Information Science,Recharging and discharging,2
 Advances in Geographic Information Science,Remediation technologie,2
+Advances in Geographic Information Science,Water scarcity,2
 Advances in Science Technology and Innovation,Banana peels,1
 Advances in Science Technology and Innovation,Green modification,1
 Advances in Science Technology and Innovation,Natural coagulant,1
@@ -219,16 +224,16 @@ Biochemistry and Biophysics Reports,Human renal tubular epithelial cells,2
 Biochemistry and Biophysics Reports,Hyperglycemia,2
 Biochemistry and Biophysics Reports,Inflammation,2
 Biochemistry and Biophysics Reports,Oxidative stress,2
+Bioenergy Research,Biomass alteration,2
+Bioenergy Research,Chemical composition,2
+Bioenergy Research,Correlation model,2
+Bioenergy Research,Crystallinity index,2
+Bioenergy Research,Glucose yield,2
+Bioenergy Research,Instrumental analysis,2
 Bioenergy Research,Anaerobic digestate,1
 Bioenergy Research,Biogas power plant,1
-Bioenergy Research,Biomass alteration,1
 Bioenergy Research,Carbon sequestration,1
-Bioenergy Research,Chemical composition,1
-Bioenergy Research,Correlation model,1
-Bioenergy Research,Crystallinity index,1
-Bioenergy Research,Glucose yield,1
 Bioenergy Research,Hydrothermal carbonization,1
-Bioenergy Research,Instrumental analysis,1
 Bioessays,Rho GTPases,1
 Bioessays,activation,1
 Bioessays,biomarker,1
@@ -236,11 +241,11 @@ Bioessays,biosensors,1
 Bioessays,expression,1
 Bioessays,prognosis,1
 Bioessays,signaling,1
-Biofuels,Bioethanol,1
-Biofuels,composition retention,1
-Biofuels,enzymatic hydrolysis,1
-Biofuels,glucose yield,1
-Biofuels,kapok fibre,1
+Biofuels,Bioethanol,2
+Biofuels,composition retention,2
+Biofuels,enzymatic hydrolysis,2
+Biofuels,glucose yield,2
+Biofuels,kapok fibre,2
 Biofuels Bioproducts and Biorefining,aerogel,4
 Biofuels Bioproducts and Biorefining,agriculture waste,4
 Biofuels Bioproducts and Biorefining,bioadsorbent,4
@@ -292,9 +297,9 @@ Biomass and Bioenergy,Kappaphycus alvarezii,3
 Biomass and Bioenergy,Seaweed biomass,3
 Biomass and Bioenergy,Silica nanoparticle,3
 Biomass and Bioenergy,Sustainable packaging,3
-Biomass and Bioenergy,Agricultural waste,1
-Biomass and Bioenergy,Anaerobic digestion,1
-Biomass and Bioenergy,Bio-succinic acid,1
+Biomass and Bioenergy,Bioethanol,2
+Biomass and Bioenergy,Chemo-mechanical pretreatment,2
+Biomass and Bioenergy,Energy efficiency,2
 Biomedical Materials Bristol,anticancer,1
 Biomedical Materials Bristol,core-shell,1
 Biomedical Materials Bristol,drug delivery,1
@@ -327,16 +332,16 @@ Bioresource Technology,Anaerobic digestion,1
 Bioresource Technology,Sub-thermophilic,1
 Bioresource Technology,Swine manure,1
 Bioresource Technology,Total solids content,1
-Bioresource Technology Reports,Biopolymer,5
-Bioresource Technology Reports,Spent coffee grounds,5
+Bioresource Technology Reports,Biopolymer,6
+Bioresource Technology Reports,Spent coffee grounds,6
+Bioresource Technology Reports,Bast fiber nonwoven,3
 Bioresource Technology Reports,Biodegradable nanocomposites,3
+Bioresource Technology Reports,Chemical modification,3
 Bioresource Technology Reports,Circular bioeconomy,3
 Bioresource Technology Reports,Interfacial interactions,3
 Bioresource Technology Reports,Lignin extraction,3
 Bioresource Technology Reports,Patchouli waste fiber,3
 Bioresource Technology Reports,Raman spectroscopy,3
-Bioresource Technology Reports,Rice husk-derived silica nanoparticles,3
-Bioresource Technology Reports,Seaweed biopolymer,3
 Bioresources,Biomaterials,1
 Bioresources,Cellulose,1
 Bioresources,Cow dung compost,1
@@ -418,6 +423,12 @@ Chembioeng Reviews,Bacteriocin,1
 Chembioeng Reviews,Limitations,1
 Chembioeng Reviews,Methods,1
 Chembioeng Reviews,Purification,1
+Chemical Papers,Activated carbon,1
+Chemical Papers,Adsorption,1
+Chemical Papers,Banana stem,1
+Chemical Papers,Methylene blue,1
+Chemical Papers,Microplastic,1
+Chemical Papers,Polyethylene terephthalate,1
 Chemical Thermodynamics and Thermal Analysis,Ethylene glycol,1
 Chemical Thermodynamics and Thermal Analysis,Magnesium oxide,1
 Chemical Thermodynamics and Thermal Analysis,Nanofluids,1
@@ -491,11 +502,11 @@ Controlling Environmental Pollution Practical Solutions,Antibiotic resistance ge
 Controlling Environmental Pollution Practical Solutions,Environmental pollutions,1
 Controlling Environmental Pollution Practical Solutions,Greenhouse gases (GHGs),1
 Controlling Environmental Pollution Practical Solutions,Microplastic,1
-Current Opinion in Electrochemistry,Deposition,1
-Current Opinion in Electrochemistry,Electrolyte engineering,1
-Current Opinion in Electrochemistry,Flow battery,1
-Current Opinion in Electrochemistry,Manganese,1
-Current Opinion in Electrochemistry,Reversibility,1
+Current Opinion in Electrochemistry,Deposition,2
+Current Opinion in Electrochemistry,Electrolyte engineering,2
+Current Opinion in Electrochemistry,Flow battery,2
+Current Opinion in Electrochemistry,Manganese,2
+Current Opinion in Electrochemistry,Reversibility,2
 Current Research in Nutrition and Food Science,Chlamydomonas Reinhardtii,1
 Current Research in Nutrition and Food Science,Natural Preservatives,1
 Current Research in Nutrition and Food Science,Protein Extraction,1
@@ -559,11 +570,11 @@ Discover Sustainability,Rare earth elements,2
 Discover Sustainability,Soxhlet extraction,2
 Discover Sustainability,Thorium extraction methods,2
 Discover Sustainability,Waste management,2
-Drug Delivery and Translational Research,Antimicrobial innovation,2
-Drug Delivery and Translational Research,Dental caries,2
-Drug Delivery and Translational Research,Enterocin CC2,2
-Drug Delivery and Translational Research,Microemulsion formulation,2
-Drug Delivery and Translational Research,Streptococcus mutans,2
+Drug Delivery and Translational Research,Antimicrobial innovation,3
+Drug Delivery and Translational Research,Dental caries,3
+Drug Delivery and Translational Research,Enterocin CC2,3
+Drug Delivery and Translational Research,Microemulsion formulation,3
+Drug Delivery and Translational Research,Streptococcus mutans,3
 E Polymers,acetyl groups,2
 E Polymers,acetylation,2
 E Polymers,degree of substitution,2
@@ -616,10 +627,10 @@ Energy Nexus,Algae cultivation,2
 Energy Nexus,Biodiesel feedstock,2
 Energy Nexus,Fatty acid,2
 Energy Nexus,Lipid productivity,2
-Energy for Sustainable Development,Bioethanol,1
-Energy for Sustainable Development,Co-fermentation time,1
-Energy for Sustainable Development,Energy efficiency,1
-Energy for Sustainable Development,Pretreatment optimization,1
+Energy for Sustainable Development,Bioethanol,2
+Energy for Sustainable Development,Co-fermentation time,2
+Energy for Sustainable Development,Energy efficiency,2
+Energy for Sustainable Development,Pretreatment optimization,2
 Engineering Letters,circular arcs,1
 Engineering Letters,differential drive,1
 Engineering Letters,mobile robot,1
@@ -652,14 +663,14 @@ Environmental Geochemistry and Health,Pollution,1
 Environmental Geochemistry and Health,Tidal zones,1
 Environmental Monitoring and Assessment,AWARE model,3
 Environmental Monitoring and Assessment,Aquifer characteristics,3
+Environmental Monitoring and Assessment,Emerging contaminants,3
 Environmental Monitoring and Assessment,Groundwater sustainability,3
 Environmental Monitoring and Assessment,Life cycle assessment,3
+Environmental Monitoring and Assessment,Monsoonal transport,3
 Environmental Monitoring and Assessment,Paddy irrigation,3
 Environmental Monitoring and Assessment,Pumping well yield,3
-Environmental Monitoring and Assessment,AERMOD,1
-Environmental Monitoring and Assessment,Dioxins,1
-Environmental Monitoring and Assessment,Dispersion modeling,1
-Environmental Monitoring and Assessment,Dl-PCBs,1
+Environmental Monitoring and Assessment,Southeast Asian catchments,3
+Environmental Monitoring and Assessment,Spectroscopy characterization,3
 Environmental Science and Pollution Research,Batch and continuous modes,2
 Environmental Science and Pollution Research,Heavy metal removal,2
 Environmental Science and Pollution Research,Leachate treatment,2
@@ -860,11 +871,11 @@ Food and Bioprocess Technology,Muscle release,3
 Food and Bioprocess Technology,Shucking,3
 Food and Bioprocess Technology,Superheated steam,3
 Food and Bioprocess Technology,Tropical oysters,3
-Food and Bioprocess Technology,5-hydroxymethylfurfural,1
-Food and Bioprocess Technology,Advanced Glycation end Products,1
-Food and Bioprocess Technology,Azelaic acid,1
-Food and Bioprocess Technology,Beef,1
-Food and Bioprocess Technology,Cell wall,1
+Food and Bioprocess Technology,Cell wall,2
+Food and Bioprocess Technology,Enzymolysis,2
+Food and Bioprocess Technology,Total soluble solids,2
+Food and Bioprocess Technology,Ultrasonication,2
+Food and Bioprocess Technology,Yeast extract,2
 Foods,Ginkgo biloba leaves flavonoids,1
 Foods,adhesion,1
 Foods,algae-derived peptides,1
@@ -938,16 +949,6 @@ Global Nest Journal,and Pearson correlation coefficient,1
 Global Nest Journal,cluster analysis,1
 Global Nest Journal,groundwater pollution,1
 Global Nest Journal,principal factor analysis,1
-Green Energy and Technology,Bio-based Materials,1
-Green Energy and Technology,Energy Application,1
-Green Energy and Technology,Environmental Application,1
-Green Energy and Technology,Environmental Technology,1
-Green Energy and Technology,Micro bio-based Materials,1
-Green Energy and Technology,Nanomaterials,1
-Green Energy and Technology,Nanostructure,1
-Green Energy and Technology,Nanotechnology,1
-Green Energy and Technology,Pollution Control Technology,1
-Green Energy and Technology,Renewable Energy,1
 Green Microbial Nanotechnology for Pollution Control New and Future Developments in Microbial Biotechnology and Bioengineering,Indoor air quality (IAQ),1
 Green Microbial Nanotechnology for Pollution Control New and Future Developments in Microbial Biotechnology and Bioengineering,air purification,1
 Green Microbial Nanotechnology for Pollution Control New and Future Developments in Microbial Biotechnology and Bioengineering,biosynthesized nanoparticles,1
@@ -976,10 +977,10 @@ Healthcare Switzerland,stress,3
 Healthcare Switzerland,teaching professionals,3
 Healthcare Switzerland,work-related musculoskeletal disorder,3
 Healthcare Switzerland,workplace safety and health,3
-Heliyon,Biodiesel-derived crude glycerol,2
-Heliyon,Enzymatic,2
-Heliyon,Monoglycerides,2
-Heliyon,Solvent-free,2
+Heliyon,Biodiesel-derived crude glycerol,3
+Heliyon,Enzymatic,3
+Heliyon,Monoglycerides,3
+Heliyon,Solvent-free,3
 Heliyon,Alkaline peroxide,1
 Heliyon,Antimicrobial agents,1
 Heliyon,Biomass,1
@@ -1108,11 +1109,11 @@ International Journal of Gastronomy and Food Science,Food innovation,1
 International Journal of Gastronomy and Food Science,Fresh white salted noodles,1
 International Journal of Gastronomy and Food Science,Physicochemical properties,1
 International Journal of Gastronomy and Food Science,Tea infusions,1
-International Journal of Green Energy,Biodiesel,2
-International Journal of Green Energy,kinetics & thermodynamics,2
-International Journal of Green Energy,optimization,2
-International Journal of Green Energy,supercritical CO2,2
-International Journal of Green Energy,transesterification,2
+International Journal of Green Energy,Biodiesel,1
+International Journal of Green Energy,kinetics & thermodynamics,1
+International Journal of Green Energy,optimization,1
+International Journal of Green Energy,supercritical CO2,1
+International Journal of Green Energy,transesterification,1
 International Journal of Gynecology and Obstetrics,HPV clearance,1
 International Journal of Gynecology and Obstetrics,gut-vaginal axis,1
 International Journal of Gynecology and Obstetrics,oral administration,1
@@ -1170,10 +1171,6 @@ International Microbiology,Superoxide dismutase (SOD),1
 International Microbiology,Taguchi orthogonal array,1
 International Microbiology,Tetraselmis chuii,1
 International Microbiology,Trace elements,1
-Iop Conference Series Earth and Environmental Science,Energy audit,1
-Iop Conference Series Earth and Environmental Science,building energy intensity (BEI),1
-Iop Conference Series Earth and Environmental Science,energy conservation measures (ECM),1
-Iop Conference Series Earth and Environmental Science,energy efficiency,1
 Iranian Polymer Journal English Edition,Corrosion,1
 Iranian Polymer Journal English Edition,Density functional theory,1
 Iranian Polymer Journal English Edition,Epoxy,1
@@ -1235,16 +1232,16 @@ Journal of Applied Biotechnology Reports,Bioactivities,2
 Journal of Applied Biotechnology Reports,Nutrient Supplementation,2
 Journal of Applied Biotechnology Reports,Secondary Metabolites,2
 Journal of Applied Biotechnology Reports,Tetraselmis suecica,2
-Journal of Applied Polymer Science,biomaterials,6
-Journal of Applied Polymer Science,biosynthesis of polymers,6
-Journal of Applied Polymer Science,biopolymers and renewable polymers,4
-Journal of Applied Polymer Science,resins,4
-Journal of Applied Polymer Science,thermosets,4
-Journal of Applied Polymer Science,anhydride ratio,2
+Journal of Applied Polymer Science,biomaterials,8
+Journal of Applied Polymer Science,biosynthesis of polymers,8
+Journal of Applied Polymer Science,biopolymers and renewable polymers,6
+Journal of Applied Polymer Science,resins,6
+Journal of Applied Polymer Science,thermosets,6
+Journal of Applied Polymer Science,anhydride ratio,3
+Journal of Applied Polymer Science,itaconic anhydride,3
+Journal of Applied Polymer Science,succinic anhydride,3
+Journal of Applied Polymer Science,ultra-violet curable resin,3
 Journal of Applied Polymer Science,biodegradable,2
-Journal of Applied Polymer Science,cellulose and other wood products,2
-Journal of Applied Polymer Science,itaconic anhydride,2
-Journal of Applied Polymer Science,succinic anhydride,2
 Journal of Biomaterials Applications,Bioceramic,1
 Journal of Biomaterials Applications,Ceramic coating,1
 Journal of Biomaterials Applications,bone remodelling,1
@@ -1319,16 +1316,16 @@ Journal of Food Biochemistry,shelf life,1
 Journal of Food Biochemistry,sodium bisulfite,1
 Journal of Food Biochemistry,sorbic acid,1
 Journal of Food Biochemistry,synergism,1
+Journal of Food Measurement and Characterization,Antimicrobial,5
+Journal of Food Measurement and Characterization,Emulsification,5
 Journal of Food Measurement and Characterization,Food preservation,4
-Journal of Food Measurement and Characterization,Antimicrobial,3
-Journal of Food Measurement and Characterization,Emulsification,3
+Journal of Food Measurement and Characterization,Antioxidant,3
 Journal of Food Measurement and Characterization,Essential oil encapsulation,3
 Journal of Food Measurement and Characterization,Functional food,3
 Journal of Food Measurement and Characterization,Milk fortification,3
 Journal of Food Measurement and Characterization,Active packaging,2
 Journal of Food Measurement and Characterization,Bioactive ingredient,2
 Journal of Food Measurement and Characterization,Cocoa rind,2
-Journal of Food Measurement and Characterization,Free radical,2
 Journal of Food Process Engineering,agro-waste,1
 Journal of Food Process Engineering,antioxidant,1
 Journal of Food Process Engineering,bibliometrics,1
@@ -1447,28 +1444,39 @@ Journal of Separation Science,kinetics,1
 Journal of Separation Science,macroporous resin,1
 Journal of Separation Science,mass spectrometry,1
 Journal of Separation Science,molecular networking,1
+Journal of Soil Science and Plant Nutrition,Alginate composite,2
+Journal of Soil Science and Plant Nutrition,Bacillus subtilis,2
+Journal of Soil Science and Plant Nutrition,Controlled-release fertilizer,2
+Journal of Soil Science and Plant Nutrition,Microbial biopolymer coating,2
+Journal of Soil Science and Plant Nutrition,Nutrient release modelling,2
+Journal of Soil Science and Plant Nutrition,Soil nutrient retention,2
 Journal of Supercritical Fluids,Kinetic study,2
 Journal of Supercritical Fluids,Oil palm fruits,2
 Journal of Supercritical Fluids,Response surface methodology,2
 Journal of Supercritical Fluids,ScCO2 extraction,2
 Journal of Supercritical Fluids,Thermodynamic modelling,2
 Journal of Supercritical Fluids,Virgin palm oil,2
+Journal of Sustainability Science and Management,sustainability,7
+Journal of Sustainability Science and Management,Spent oil,4
+Journal of Sustainability Science and Management,health,4
+Journal of Sustainability Science and Management,pollution,4
+Journal of Sustainability Science and Management,toxicity,4
 Journal of Sustainability Science and Management,Household chemical products,3
 Journal of Sustainability Science and Management,Malaysia National Poison Center,3
+Journal of Sustainability Science and Management,Stimulating learning,3
+Journal of Sustainability Science and Management,biofuel,3
 Journal of Sustainability Science and Management,poison reagent,3
-Journal of Sustainability Science and Management,poisoning,3
-Journal of Sustainability Science and Management,sustainable health,3
-Journal of Sustainability Science and Management,Occupational safety and health,2
-Journal of Sustainability Science and Management,Stable isotope signatures,2
-Journal of Sustainability Science and Management,biological hazard,2
-Journal of Sustainability Science and Management,chemical hazard,2
-Journal of Sustainability Science and Management,food items,2
 Journal of Texture Studies,cheese,1
 Journal of Texture Studies,extensibility,1
 Journal of Texture Studies,imitation cheese,1
 Journal of Texture Studies,mozzarella cheese,1
 Journal of Texture Studies,stretchability,1
 Journal of Texture Studies,stringiness,1
+Journal of Tropical Biodiversity and Biotechnology,Biofixation,2
+Journal of Tropical Biodiversity and Biotechnology,Biofuel,2
+Journal of Tropical Biodiversity and Biotechnology,Carbohydrate,2
+Journal of Tropical Biodiversity and Biotechnology,Extremophile,2
+Journal of Tropical Biodiversity and Biotechnology,Microalgae,2
 Journal of Water Process Engineering,Antibacterial,1
 Journal of Water Process Engineering,BPA,1
 Journal of Water Process Engineering,Biochar,1
@@ -1510,11 +1518,11 @@ Journal of the Science of Food and Agriculture,microencapsulation,1
 Journal of the Science of Food and Agriculture,phytocompound,1
 Journal of the Science of Food and Agriculture,refined bleached deodorized palm oil,1
 Journal of the Science of Food and Agriculture,used oil,1
-Journal of the Taiwan Institute of Chemical Engineers,Bacteriocin-like inhibitory substance,2
-Journal of the Taiwan Institute of Chemical Engineers,Inhibitory activity,2
-Journal of the Taiwan Institute of Chemical Engineers,Ionic liquid-based aqueous two-phase system,2
-Journal of the Taiwan Institute of Chemical Engineers,Oral pathogen,2
-Journal of the Taiwan Institute of Chemical Engineers,Purification,2
+Journal of the Taiwan Institute of Chemical Engineers,Bacteriocin-like inhibitory substance,3
+Journal of the Taiwan Institute of Chemical Engineers,Inhibitory activity,3
+Journal of the Taiwan Institute of Chemical Engineers,Ionic liquid-based aqueous two-phase system,3
+Journal of the Taiwan Institute of Chemical Engineers,Oral pathogen,3
+Journal of the Taiwan Institute of Chemical Engineers,Purification,3
 Journal of the Taiwan Institute of Chemical Engineers,Antimicrobial,1
 Journal of the Taiwan Institute of Chemical Engineers,Fermentation,1
 Journal of the Taiwan Institute of Chemical Engineers,Lactic acid bacteria,1
@@ -1548,15 +1556,6 @@ Lecture Notes in Civil Engineering,Contamination,1
 Lecture Notes in Civil Engineering,Deflection,1
 Lecture Notes in Civil Engineering,ERI,1
 Lecture Notes in Civil Engineering,Experimental modal analysis (EMA),1
-Lecture Notes in Energy,Eco-cities Design and Planning,1
-Lecture Notes in Energy,Energy-efficient Systems,1
-Lecture Notes in Energy,Low Carbon Buildings,1
-Lecture Notes in Energy,Renewable Energy,1
-Lecture Notes in Energy,Sustainable Energy Technologies,1
-Lecture Notes in Energy,Sustainable HVAC,1
-Lecture Notes in Energy,Urban Geography and Urbanism,1
-Lecture Notes in Energy,energy-efficient lighting systems,1
-Lecture Notes in Energy,thermal energy-efficient systems,1
 Lwt,Azelaic acid,1
 Lwt,CaCl2,1
 Lwt,Film,1
@@ -1610,8 +1609,8 @@ Malaysian Journal of Microbiology,Brassica juncea,1
 Malaysian Journal of Microbiology,Nigrospora species,1
 Malaysian Journal of Microbiology,SSF,1
 Malaysian Journal of Microbiology,Swietenia macrophylla King,1
+Malaysian Journal of Microbiology,Trichoderma asperellum USM SD4,1
 Malaysian Journal of Microbiology,agro-wastes,1
-Malaysian Journal of Microbiology,bio-valorization,1
 Malaysian Journal of Science,Plant-based coagulant,1
 Malaysian Journal of Science,banana wastes,1
 Malaysian Journal of Science,natural coagulant,1
@@ -1649,6 +1648,13 @@ Materials Letters,Nano-rhizosphere,1
 Materials Letters,Pyrogenic minerals,1
 Materials Letters,Silica,1
 Materials Letters,XHR FESEM,1
+Materials Research Express,bio-based modifier,1
+Materials Research Express,bio-bonding enhancer,1
+Materials Research Express,bio-solvent,1
+Materials Research Express,off-grade rubber,1
+Materials Research Express,renewable materials,1
+Materials Research Express,slow pyrolysis,1
+Materials Research Express,sustainable pavement materials,1
 Materials Today Sustainability,Autoclave fibre cement composite,2
 Materials Today Sustainability,Oil pam empty fruit bunch pulp,2
 Materials Today Sustainability,Radiata pine pulp,2
@@ -1762,8 +1768,12 @@ Neural Computing and Applications,Neural network,1
 Neural Computing and Applications,Prediction model,1
 Neural Computing and Applications,Source apportionment,1
 Neural Computing and Applications,Urban air quality,1
+Next Nanotechnology,Azadirachta indica,1
+Next Nanotechnology,Characters,1
 Next Nanotechnology,Inelastic neutron scattering,1
+Next Nanotechnology,Iron oxide nanoparticles,1
 Next Nanotechnology,MWCNT,1
+Next Nanotechnology,Magnetic,1
 Next Nanotechnology,Non-covalent functionalization,1
 Next Nanotechnology,P3HT,1
 Next Nanotechnology,Sensor,1
@@ -1901,6 +1911,9 @@ Polimery Polymers,particles size,3
 Polimery Polymers,thermal stability,3
 Polimery Polymers,functionalization,2
 Polimery Polymers,isolation process,2
+Polymer,Injectable hydrogel,1
+Polymer,Naltrexone,1
+Polymer,Sustained release,1
 Polymer Bulletin,DMA,3
 Polymer Bulletin,Modulus,3
 Polymer Bulletin,Polymer composites,3
@@ -1933,9 +1946,9 @@ Polymer Composites Derived from Animal Sources,biomaterial,1
 Polymer Composites Derived from Animal Sources,biomedical applications,1
 Polymer Engineering and Science,cellulose nanofiber,7
 Polymer Engineering and Science,sustainable packaging,7
+Polymer Engineering and Science,biocomposites,6
 Polymer Engineering and Science,biofiller,6
 Polymer Engineering and Science,bioaerogel,5
-Polymer Engineering and Science,biocomposites,5
 Polymer Engineering and Science,biofilm,4
 Polymer Engineering and Science,raw seaweed,4
 Polymer Engineering and Science,semi-refined carrageenan,4
@@ -1947,21 +1960,26 @@ Polymer International,encapsulation,2
 Polymer International,nutrient delivery,2
 Polymer International,slow-release fertilizers,2
 Polymer International,sustainable agriculture,2
+Polymers,MXene,1
+Polymers,cellulose nanofibrils,1
+Polymers,electromagnetic interference shielding,1
+Polymers,hybrid films,1
+Polymers,mechanical properties,1
 Preparative Biochemistry and Biotechnology,Fermentation,1
 Preparative Biochemistry and Biotechnology,fruit drink,1
 Preparative Biochemistry and Biotechnology,lactic acid bacteria,1
 Preparative Biochemistry and Biotechnology,prebiotics,1
 Preparative Biochemistry and Biotechnology,probiotics,1
+Probiotics and Antimicrobial Proteins,Bacteriocin purification,2
+Probiotics and Antimicrobial Proteins,Enterocin CC2,2
+Probiotics and Antimicrobial Proteins,Oral health therapeutics,2
+Probiotics and Antimicrobial Proteins,PEG-based aqueous two-phase system,2
+Probiotics and Antimicrobial Proteins,Probiotic-derived antimicrobial,2
+Probiotics and Antimicrobial Proteins,Streptococcus mutans,2
 Probiotics and Antimicrobial Proteins,Anti-acne agent,1
 Probiotics and Antimicrobial Proteins,Bacillusspp,1
-Probiotics and Antimicrobial Proteins,Bacteriocin purification,1
 Probiotics and Antimicrobial Proteins,Bacteriocins,1
 Probiotics and Antimicrobial Proteins,Cell-free supernatant,1
-Probiotics and Antimicrobial Proteins,Cutibacterium acnes,1
-Probiotics and Antimicrobial Proteins,Enterocin CC2,1
-Probiotics and Antimicrobial Proteins,Lactiplantibacillus plantarum K014,1
-Probiotics and Antimicrobial Proteins,Oral health therapeutics,1
-Probiotics and Antimicrobial Proteins,PEG-based aqueous two-phase system,1
 Proceedings of Engineering and Technology Innovation,anomaly detection,1
 Proceedings of Engineering and Technology Innovation,edible bird’s nest (EBN),1
 Proceedings of Engineering and Technology Innovation,impurity segmentation,1
@@ -2072,6 +2090,11 @@ Separation Science and Technology Philadelphia,flocculation index,1
 Separation Science and Technology Philadelphia,flocs,1
 Separation Science and Technology Philadelphia,landfill leachate,1
 Separation Science and Technology Philadelphia,separation,1
+Separation and Purification Technology,Amaranthus spp.,1
+Separation and Purification Technology,Aquaculture wastewater,1
+Separation and Purification Technology,Biofertilizer,1
+Separation and Purification Technology,Chitosan,1
+Separation and Purification Technology,"Response surface methodology, solid recovery",1
 Soil and Sediment Contamination,Beris Lalang,2
 Soil and Sediment Contamination,Solid waste,2
 Soil and Sediment Contamination,dumpsites,2
@@ -2219,8 +2242,8 @@ World Journal of Microbiology and Biotechnology,Fed-batch fermentation,3
 World Journal of Microbiology and Biotechnology,Inhibitor tolerance,3
 World Journal of Microbiology and Biotechnology,Lignocellulosic biomass,3
 World Journal of Microbiology and Biotechnology,Polyhydroxybutyrate,3
-World Journal of Microbiology and Biotechnology,Antibiofilm,1
-World Journal of Microbiology and Biotechnology,Efflux pump inhibitors,1
-World Journal of Microbiology and Biotechnology,Multidrug-resistant (MDR) bacteria,1
-World Journal of Microbiology and Biotechnology,Staphylococcus aureus,1
-World Journal of Microbiology and Biotechnology,Terpenes,1
+World Journal of Microbiology and Biotechnology,Antibiofilm,2
+World Journal of Microbiology and Biotechnology,Efflux pump inhibitors,2
+World Journal of Microbiology and Biotechnology,Multidrug-resistant (MDR) bacteria,2
+World Journal of Microbiology and Biotechnology,Staphylococcus aureus,2
+World Journal of Microbiology and Biotechnology,Terpenes,2
