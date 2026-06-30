@@ -8,12 +8,9 @@ ACS Food Science and Technology,adsorption,2
 ACS Food Science and Technology,controlled release,2
 ACS Food Science and Technology,magnesium starch nanomaterial,2
 ACS Food Science and Technology,vitamin D3,2
-ACS Food Science and Technology,food industry,1
 ACS Food Science and Technology,fresh wheat noodles,1
-ACS Food Science and Technology,homogenization,1
-ACS Food Science and Technology,nanoemulsion,1
-ACS Food Science and Technology,nanotechnology,1
 ACS Food Science and Technology,potassium sorbate,1
+ACS Food Science and Technology,sodium reduction,1
 ACS Pharmacology and Translational Science,accelerated solvent extraction (ASE),1
 ACS Pharmacology and Translational Science,extraction optimization,1
 ACS Pharmacology and Translational Science,green extraction,1
@@ -66,10 +63,16 @@ Aging and Durability of Frp Composites and Nanocomposites,Green products,1
 Aging and Durability of Frp Composites and Nanocomposites,Mechanical properties,1
 Aging and Durability of Frp Composites and Nanocomposites,Physical properties,1
 Aging and Durability of Frp Composites and Nanocomposites,Production,1
+Air Quality Atmosphere and Health,AHU,1
+Air Quality Atmosphere and Health,Air handling unit,1
+Air Quality Atmosphere and Health,Chemical incident,1
 Air Quality Atmosphere and Health,Haze event,1
 Air Quality Atmosphere and Health,Health risk assessment,1
 Air Quality Atmosphere and Health,Indoor air quality,1
+Air Quality Atmosphere and Health,Indoor environment,1
+Air Quality Atmosphere and Health,Mechanical ventilation,1
 Air Quality Atmosphere and Health,Particulate matters,1
+Air Quality Atmosphere and Health,Pattern recognition,1
 Analytical Science Advances,hybrid modelling techniques,1
 Analytical Science Advances,particulate matter,1
 Analytical Science Advances,predictive analytics,1
@@ -256,11 +259,11 @@ Biofuels Bioproducts and Biorefining,agriculture waste,4
 Biofuels Bioproducts and Biorefining,bioadsorbent,4
 Biofuels Bioproducts and Biorefining,cellulose,4
 Biofuels Bioproducts and Biorefining,durian,4
-Biofuels Bioproducts and Biorefining,RSM,2
-Biofuels Bioproducts and Biorefining,biomass feedstock,2
 Biofuels Bioproducts and Biorefining,bioproduct,2
 Biofuels Bioproducts and Biorefining,lignocellulose,2
 Biofuels Bioproducts and Biorefining,natural waste fiber,2
+Biofuels Bioproducts and Biorefining,physical treatment,2
+Biofuels Bioproducts and Biorefining,thermal insulation,2
 Biological Agriculture and Horticulture,Bacillus subtilis,3
 Biological Agriculture and Horticulture,Bio-coated fertiliser,3
 Biological Agriculture and Horticulture,Saccharum officinarum L,3
@@ -315,6 +318,11 @@ Biomedical Physics and Engineering Express,absorbable,1
 Biomedical Physics and Engineering Express,guided bone regeneration (GBR),1
 Biomedical Physics and Engineering Express,guided tissue regeneration (GTR),1
 Biomedical Physics and Engineering Express,non-absorbable,1
+Biomimetics,biocomposite,2
+Biomimetics,building applications,2
+Biomimetics,natural waste fiber,2
+Biomimetics,sustainable,2
+Biomimetics,thermal insulation,2
 Biorefinery of Industrial Effluents for A Sustainable Circular Economy,Waste,1
 Biorefinery of Industrial Effluents for A Sustainable Circular Economy,biological waste treatment,1
 Biorefinery of Industrial Effluents for A Sustainable Circular Economy,biomass,1
@@ -337,16 +345,16 @@ Bioresource Technology,Anaerobic digestion,1
 Bioresource Technology,Sub-thermophilic,1
 Bioresource Technology,Swine manure,1
 Bioresource Technology,Total solids content,1
-Bioresource Technology Reports,Biopolymer,6
-Bioresource Technology Reports,Spent coffee grounds,6
-Bioresource Technology Reports,Bast fiber nonwoven,3
+Bioresource Technology Reports,Biopolymer,4
+Bioresource Technology Reports,Spent coffee grounds,4
 Bioresource Technology Reports,Biodegradable nanocomposites,3
-Bioresource Technology Reports,Chemical modification,3
-Bioresource Technology Reports,Circular bioeconomy,3
 Bioresource Technology Reports,Interfacial interactions,3
-Bioresource Technology Reports,Lignin extraction,3
-Bioresource Technology Reports,Patchouli waste fiber,3
 Bioresource Technology Reports,Raman spectroscopy,3
+Bioresource Technology Reports,Rice husk-derived silica nanoparticles,3
+Bioresource Technology Reports,Seaweed biopolymer,3
+Bioresource Technology Reports,Sustainable materials,3
+Bioresource Technology Reports,Activated carbon,2
+Bioresource Technology Reports,Bast fiber nonwoven,2
 Bioresources,Biomaterials,1
 Bioresources,Cellulose,1
 Bioresources,Cow dung compost,1
@@ -439,11 +447,6 @@ Chemical Thermodynamics and Thermal Analysis,Magnesium oxide,1
 Chemical Thermodynamics and Thermal Analysis,Nanofluids,1
 Chemical Thermodynamics and Thermal Analysis,Stability,1
 Chemical Thermodynamics and Thermal Analysis,Thermal conductivity,1
-Chemistry and Biodiversity,Calophyllum,1
-Chemistry and Biodiversity,anti-bacillus,1
-Chemistry and Biodiversity,chromanone,1
-Chemistry and Biodiversity,coumarin,1
-Chemistry and Biodiversity,cytotoxicity •,1
 Chemistryselect,Antihyperglycemia,1
 Chemistryselect,Docking,1
 Chemistryselect,Drug-likeness,1
@@ -459,12 +462,12 @@ Chemosphere,Fe–Ni–Zn,1
 Chemosphere,Natural catalysis,1
 Chemosphere,Palm Oil Mill Effluent,1
 Chemosphere,Palm kernel shell,1
-Clean Technologies and Environmental Policy,Biopolymers,4
-Clean Technologies and Environmental Policy,Cellulose,4
-Clean Technologies and Environmental Policy,Cellulose derivatives,4
-Clean Technologies and Environmental Policy,Fruit peel,4
-Clean Technologies and Environmental Policy,Sustainable materials,4
-Clean Technologies and Environmental Policy,Tropical fruit,4
+Clean Technologies and Environmental Policy,Biopolymers,3
+Clean Technologies and Environmental Policy,Cellulose,3
+Clean Technologies and Environmental Policy,Cellulose derivatives,3
+Clean Technologies and Environmental Policy,Fruit peel,3
+Clean Technologies and Environmental Policy,Sustainable materials,3
+Clean Technologies and Environmental Policy,Tropical fruit,3
 Clean Technologies and Environmental Policy,Calcium chloride,2
 Clean Technologies and Environmental Policy,Cockle shell,2
 Clean Technologies and Environmental Policy,Dehumidification,2
@@ -478,6 +481,16 @@ Cleaner Waste Systems,Circular economy,2
 Cleaner Waste Systems,Industrial waste management,2
 Cleaner Waste Systems,Knowledge-Attitude-Practice (KAP) model,2
 Cleaner Waste Systems,Sustainable development,2
+Climate Responsive Plant Biology Environmental Crosstalk Sustainability and Future Technologies,Ceratophyllum demersum,1
+Climate Responsive Plant Biology Environmental Crosstalk Sustainability and Future Technologies,Climate action,1
+Climate Responsive Plant Biology Environmental Crosstalk Sustainability and Future Technologies,Ecosystem function and services,1
+Climate Responsive Plant Biology Environmental Crosstalk Sustainability and Future Technologies,Global crop production,1
+Climate Responsive Plant Biology Environmental Crosstalk Sustainability and Future Technologies,Inorganic water pollutants,1
+Climate Responsive Plant Biology Environmental Crosstalk Sustainability and Future Technologies,Phytoremediation,1
+Climate Responsive Plant Biology Environmental Crosstalk Sustainability and Future Technologies,Provisioning ecosystem service,1
+Climate Responsive Plant Biology Environmental Crosstalk Sustainability and Future Technologies,Submerged macrophytes,1
+Climate Responsive Plant Biology Environmental Crosstalk Sustainability and Future Technologies,Surface water,1
+Climate Responsive Plant Biology Environmental Crosstalk Sustainability and Future Technologies,Sustainable agricultural practices,1
 Colloid and Polymer Science,Coagulant-assisted,1
 Colloid and Polymer Science,NRL film,1
 Colloid and Polymer Science,Sludge capturing process,1
@@ -726,14 +739,14 @@ Exposure and Health,Emerging contaminants,2
 Exposure and Health,Wastewater irrigation,2
 Exposure and Health,Water and food security,2
 Exposure and Health,Water pollution,2
-Express Polymer Letters,biopolymer,7
-Express Polymer Letters,sustainable materials,5
-Express Polymer Letters,compatibility,4
+Express Polymer Letters,biopolymer,6
+Express Polymer Letters,sustainable materials,4
 Express Polymer Letters,bio-binder,3
-Express Polymer Letters,bioaerogel,3
 Express Polymer Letters,biocomposite,3
+Express Polymer Letters,compatibility,3
 Express Polymer Letters,recycling,3
 Express Polymer Letters,3D X-ray imaging,2
+Express Polymer Letters,bioaerogel,2
 Express Polymer Letters,biofiller,2
 Express Polymer Letters,cellulose nanofibers,2
 Fermentation,functional food industries,1
@@ -915,11 +928,11 @@ Frontiers in Microbiology,kombucha,2
 Frontiers in Microbiology,metabolome,2
 Frontiers in Microbiology,microbial identification,2
 Frontiers in Microbiology,symbiosis,2
+Frontiers in Microbiology,Gi-MAPS,1
+Frontiers in Microbiology,HMO-utilizing Bifidobacterium,1
 Frontiers in Microbiology,Lactobacillus,1
 Frontiers in Microbiology,PhACs,1
-Frontiers in Microbiology,biofilm,1
-Frontiers in Microbiology,bioremediation,1
-Frontiers in Microbiology,drug pollution,1
+Frontiers in Microbiology,artificial intelligence,1
 Frontiers in Nutrition,probiotic,3
 Frontiers in Nutrition,gut microbiota,2
 Frontiers in Nutrition,randomized controlled trial,2
@@ -954,6 +967,16 @@ Global Nest Journal,and Pearson correlation coefficient,1
 Global Nest Journal,cluster analysis,1
 Global Nest Journal,groundwater pollution,1
 Global Nest Journal,principal factor analysis,1
+Green Energy and Technology,Biofuel,8
+Green Energy and Technology,Biodiesel,6
+Green Energy and Technology,Biomass feedstock,6
+Green Energy and Technology,Circular economy,5
+Green Energy and Technology,Microorganisms,5
+Green Energy and Technology,Bio-aviation fuel,3
+Green Energy and Technology,Bioenergy,3
+Green Energy and Technology,Bioethanol,3
+Green Energy and Technology,Conversion technologies,3
+Green Energy and Technology,First-generation,3
 Green Microbial Nanotechnology for Pollution Control New and Future Developments in Microbial Biotechnology and Bioengineering,Indoor air quality (IAQ),1
 Green Microbial Nanotechnology for Pollution Control New and Future Developments in Microbial Biotechnology and Bioengineering,air purification,1
 Green Microbial Nanotechnology for Pollution Control New and Future Developments in Microbial Biotechnology and Bioengineering,biosynthesized nanoparticles,1
@@ -1025,6 +1048,12 @@ Inorganic Chemistry Communications,Cytotoxicity,1
 Inorganic Chemistry Communications,Essential oil,1
 Inorganic Chemistry Communications,Kaffir lime,1
 Inorganic Chemistry Communications,Silver nanoparticles,1
+Integrated Environmental Assessment and Management,decision-making in offshore engineering,2
+Integrated Environmental Assessment and Management,decommissioning,2
+Integrated Environmental Assessment and Management,environmental impact,2
+Integrated Environmental Assessment and Management,greenhouse gas emissions,2
+Integrated Environmental Assessment and Management,mercury,2
+Integrated Environmental Assessment and Management,naturally occurring radioactive materials (NORM),2
 International Food Research Journal,canned dodol,2
 International Food Research Journal,curdlan,2
 International Food Research Journal,physical,2
@@ -1362,6 +1391,12 @@ Journal of Food Science and Technology,Potassium sorbate,2
 Journal of Food Science and Technology,Sodium-free,2
 Journal of Food Science and Technology,White salted noodles,2
 Journal of Food Science and Technology,Willingness to Consume,2
+Journal of Food Science and Technology Iran,K-value,1
+Journal of Food Science and Technology Iran,correlation,1
+Journal of Food Science and Technology Iran,edible coating,1
+Journal of Food Science and Technology Iran,loquat seed polysaccharide,1
+Journal of Food Science and Technology Iran,rainbow trout,1
+Journal of Food Science and Technology Iran,spoilage,1
 Journal of Functional Foods,Bifidobacterium lactis Probio-M8,1
 Journal of Functional Foods,Biological activities,1
 Journal of Functional Foods,Children,1
@@ -1423,6 +1458,11 @@ Journal of Photochemistry and Photobiology A Chemistry,Germanium Oxide,1
 Journal of Photochemistry and Photobiology A Chemistry,Phenol,1
 Journal of Photochemistry and Photobiology A Chemistry,Photocatalyst,1
 Journal of Photochemistry and Photobiology A Chemistry,Zinc Oxide,1
+Journal of Physical Science,agar,1
+Journal of Physical Science,degradation,1
+Journal of Physical Science,hydrophobicity,1
+Journal of Physical Science,melt-compressed,1
+Journal of Physical Science,thermal processed,1
 Journal of Plant Nutrition,Breeding waste compost,1
 Journal of Plant Nutrition,growth,1
 Journal of Plant Nutrition,heavy metals,1
@@ -1439,6 +1479,12 @@ Journal of Porous Materials,Nanocomposite,1
 Journal of Porous Materials,Protein-bound uremic toxin,1
 Journal of Porous Materials,Silica nanoparticle,1
 Journal of Porous Materials,Surface hydrophilicity,1
+Journal of Renewable Materials,Plant-based starch,2
+Journal of Renewable Materials,biocomposite,2
+Journal of Renewable Materials,bomb calorimetry,2
+Journal of Renewable Materials,calorific value,2
+Journal of Renewable Materials,natural binder,2
+Journal of Renewable Materials,sustainability,2
 Journal of Separation Science,flavonoid,2
 Journal of Separation Science,activated carbon,1
 Journal of Separation Science,extraction,1
@@ -1477,11 +1523,11 @@ Journal of Texture Studies,imitation cheese,1
 Journal of Texture Studies,mozzarella cheese,1
 Journal of Texture Studies,stretchability,1
 Journal of Texture Studies,stringiness,1
-Journal of Tropical Biodiversity and Biotechnology,Biofixation,2
-Journal of Tropical Biodiversity and Biotechnology,Biofuel,2
-Journal of Tropical Biodiversity and Biotechnology,Carbohydrate,2
-Journal of Tropical Biodiversity and Biotechnology,Extremophile,2
-Journal of Tropical Biodiversity and Biotechnology,Microalgae,2
+Journal of Tropical Biodiversity and Biotechnology,Biofixation,3
+Journal of Tropical Biodiversity and Biotechnology,Biofuel,3
+Journal of Tropical Biodiversity and Biotechnology,Carbohydrate,3
+Journal of Tropical Biodiversity and Biotechnology,Extremophile,3
+Journal of Tropical Biodiversity and Biotechnology,Microalgae,3
 Journal of Water Process Engineering,Antibacterial,1
 Journal of Water Process Engineering,BPA,1
 Journal of Water Process Engineering,Biochar,1
@@ -1673,6 +1719,10 @@ Mathematics Education Journal,Mathematical Communication Skills,1
 Mathematics Education Journal,Problem-Based Learning,1
 Mathematics Education Journal,SDGs (No-Poverty),1
 Mathematics Education Journal,Sedekah,1
+Medical Oncology,Anthracycline,1
+Medical Oncology,PAK,1
+Medical Oncology,"Small RhoGTPases, Breast cancer",1
+Medical Oncology,Taxane,1
 Metabolites,functional constipation,1
 Metabolites,gut microbiota,1
 Metabolites,metabolomics,1
@@ -1728,11 +1778,11 @@ Multidisciplinary Applications of Marine Resources A Step Towards Green and Sust
 Multidisciplinary Applications of Marine Resources A Step Towards Green and Sustainable Future,Climate change,2
 Multidisciplinary Applications of Marine Resources A Step Towards Green and Sustainable Future,Mangrove coastal management,2
 Multidisciplinary Applications of Marine Resources A Step Towards Green and Sustainable Future,Water quality,2
-Multidisciplinary Applications of Marine Resources A Step Towards Green and Sustainable Future,Algae,1
 Multidisciplinary Applications of Marine Resources A Step Towards Green and Sustainable Future,Biochar,1
-Multidisciplinary Applications of Marine Resources A Step Towards Green and Sustainable Future,Biodiesel,1
-Multidisciplinary Applications of Marine Resources A Step Towards Green and Sustainable Future,Bioplastic,1
 Multidisciplinary Applications of Marine Resources A Step Towards Green and Sustainable Future,Bioremediation,1
+Multidisciplinary Applications of Marine Resources A Step Towards Green and Sustainable Future,Industrial effluent,1
+Multidisciplinary Applications of Marine Resources A Step Towards Green and Sustainable Future,Marine algae,1
+Multidisciplinary Applications of Marine Resources A Step Towards Green and Sustainable Future,Pollutants,1
 Nano Structures and Nano Objects,Bioaerogel,1
 Nano Structures and Nano Objects,Carboxymethyl cellulose,1
 Nano Structures and Nano Objects,Durian peel waste,1
@@ -1755,20 +1805,21 @@ Nanotechnology in the Life Sciences,Gene delivery,1
 Nanotechnology in the Life Sciences,Nano-antimicrobials,1
 Nanotechnology in the Life Sciences,Nanofertilizers,1
 Nanotechnology in the Life Sciences,Nanofungicides,1
+Natural Hazards,Extreme rainfall,2
+Natural Hazards,Dam-break erosion,1
+Natural Hazards,Debris damming,1
 Natural Hazards,Erosional dynamics,1
-Natural Hazards,Extreme rainfall,1
+Natural Hazards,Geomorphic amplification,1
+Natural Hazards,Lateral erosion,1
 Natural Hazards,Monsoon,1
+Natural Hazards,SL index,1
 Natural Hazards,Spatial pattern,1
-Natural Hazards,Western ghats,1
+Natural Hazards,Tropical landslides,1
 Natural Product Research,Calophyllum andersonii,1
-Natural Product Research,Calophyllum lanigerum,1
 Natural Product Research,Calophyllum recurvatum,1
-Natural Product Research,chromanone acids,1
-Natural Product Research,coumarin,1
 Natural Product Research,coumarins,1
 Natural Product Research,cytotoxicity,1
 Natural Product Research,phytochemicals,1
-Natural Product Research,xanthones,1
 Neural Computing and Applications,Neural network,1
 Neural Computing and Applications,Prediction model,1
 Neural Computing and Applications,Source apportionment,1
@@ -1950,10 +2001,10 @@ Polymer Composites Derived from Animal Sources,bioengineering,1
 Polymer Composites Derived from Animal Sources,biomaterial,1
 Polymer Composites Derived from Animal Sources,biomedical applications,1
 Polymer Engineering and Science,cellulose nanofiber,7
-Polymer Engineering and Science,sustainable packaging,7
-Polymer Engineering and Science,biocomposites,6
-Polymer Engineering and Science,biofiller,6
-Polymer Engineering and Science,bioaerogel,5
+Polymer Engineering and Science,sustainable packaging,6
+Polymer Engineering and Science,biocomposites,5
+Polymer Engineering and Science,biofiller,5
+Polymer Engineering and Science,bioaerogel,4
 Polymer Engineering and Science,biofilm,4
 Polymer Engineering and Science,raw seaweed,4
 Polymer Engineering and Science,semi-refined carrageenan,4
@@ -2001,6 +2052,11 @@ Process Safety and Environmental Protection,Biomethane production,1
 Process Safety and Environmental Protection,Compositional analysis,1
 Process Safety and Environmental Protection,Process systems engineering assessment,1
 Process Safety and Environmental Protection,Techno-economic challenges,1
+Processes,bioethanol,1
+Processes,degradation-aware energy analysis,1
+Processes,energy optimization,1
+Processes,machine learning,1
+Processes,specific energy consumption,1
 Progress in Rubber Plastics and Recycling Technology,Natural rubber latex band,1
 Progress in Rubber Plastics and Recycling Technology,film-based technology,1
 Progress in Rubber Plastics and Recycling Technology,microplastic removal,1
@@ -2086,15 +2142,10 @@ Scientific Reports,Various electrodes,1
 Scientific Reports,Wind profile distribution,1
 Scientific Reports,Wind tunnel experiment,1
 Separation Science and Technology Philadelphia,Intensified microbubbles,1
-Separation Science and Technology Philadelphia,Lipid extraction,1
-Separation Science and Technology Philadelphia,beef tallow,1
-Separation Science and Technology Philadelphia,biodiesel,1
-Separation Science and Technology Philadelphia,bioenergy,1
 Separation Science and Technology Philadelphia,electrocoagulation,1
 Separation Science and Technology Philadelphia,flocculation index,1
 Separation Science and Technology Philadelphia,flocs,1
 Separation Science and Technology Philadelphia,landfill leachate,1
-Separation Science and Technology Philadelphia,separation,1
 Separation and Purification Technology,Amaranthus spp.,1
 Separation and Purification Technology,Aquaculture wastewater,1
 Separation and Purification Technology,Biofertilizer,1
@@ -2122,9 +2173,14 @@ Springer Proceedings in Materials,Biogas application,1
 Springer Proceedings in Materials,Biogas purification,1
 Springer Series on Polymer and Composite Materials,Biodegradable,1
 Springer Series on Polymer and Composite Materials,Biopolymer,1
+Springer Series on Polymer and Composite Materials,Cellulose,1
 Springer Series on Polymer and Composite Materials,Chitin,1
+Springer Series on Polymer and Composite Materials,Coating,1
 Springer Series on Polymer and Composite Materials,Degree of deacetylation,1
+Springer Series on Polymer and Composite Materials,Edible film,1
+Springer Series on Polymer and Composite Materials,Lignin,1
 Springer Series on Polymer and Composite Materials,Packaging,1
+Springer Series on Polymer and Composite Materials,Polylactic acid (PLA),1
 Springer Water,Environment,1
 Springer Water,Management,1
 Springer Water,Pollution,1
@@ -2136,6 +2192,16 @@ Starch Staerke,enzymatic hydrolysis,1
 Starch Staerke,fat substitution,1
 Starch Staerke,pectinase,1
 Starch Staerke,pumpkin–carrot matrix,1
+Surface Innovations,ABS,1
+Surface Innovations,SAN,1
+Surface Innovations,characterization techniques,1
+Surface Innovations,coatings,1
+Surface Innovations,"infrared (R, FTIR)",1
+Surface Innovations,microscopy,1
+Surface Innovations,optical transparency,1
+Surface Innovations,resins and plastics,1
+Surface Innovations,scanning electron microscopy,1
+Surface Innovations,surface roughness,1
 Surfaces and Interfaces,Acacia mangium wood,1
 Surfaces and Interfaces,Activated carbon,1
 Surfaces and Interfaces,Adsorption capacity,1
