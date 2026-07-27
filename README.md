@@ -11,4 +11,7 @@ The publication strategy report combines publication activity, journal reach,
 citation visibility, open-access participation, and established, developing,
 and exploratory journal and keyword signals.
 
+[PPTI Research Brief production and archive](podcast/README.md) provides the
+short-form narrated companion generated from the same validated report artifact.
+
 [Browse archived monthly editions](archive/README.md).

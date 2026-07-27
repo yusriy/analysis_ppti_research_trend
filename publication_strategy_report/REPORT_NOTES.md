@@ -12,6 +12,19 @@
 - Automation: `scripts/build_publication_strategy_report.sh`, called by the same
   monthly runner as the two existing reports.
 
+## Audio companion
+
+After the analytical artifact and portable report are built, the monthly runner
+calls `scripts/build_podcast.sh`. The podcast generator reads the artifact as its
+sole evidence source, selects a changing or rotating journal and keyword signal,
+and produces a short PPTI Research Brief. The current MP3, synchronized captions,
+vertical social video, transcript, cover, social copy, and metadata are stored in
+`podcast/latest/`; the preceding edition is archived under `podcast/archive/YYYY-MM/`.
+
+The ElevenLabs API key and voice ID are read from the Git-ignored
+`.secrets/elevenlabs.env` file. The API key is never written to an output file.
+Repeated builds reuse matching narration rather than spending credits again.
+
 ## Monthly narrative workflow
 
 The builder stores a compact comparison baseline in `monthly_snapshots.json`. Each
