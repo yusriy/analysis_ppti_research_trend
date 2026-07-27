@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import base64
 import json
 import re
 import sqlite3
@@ -27,6 +28,19 @@ SELECT *
 FROM scopus_publications
 WHERE date(Date) BETWEEN date('{START_DATE:%Y-%m-%d}') AND date('{END_DATE:%Y-%m-%d}')
 """.strip()
+
+
+def image_data_uri(path: Path) -> str:
+    """Return a portable data URI while tolerating legacy image extensions."""
+    payload = path.read_bytes()
+    if payload.startswith(b"\xff\xd8\xff"):
+        media_type = "image/jpeg"
+    elif payload.startswith(b"\x89PNG\r\n\x1a\n"):
+        media_type = "image/png"
+    else:
+        raise ValueError(f"Unsupported report logo format: {path}")
+    encoded = base64.b64encode(payload).decode("ascii")
+    return f"data:{media_type};base64,{encoded}"
 
 
 def compact_number(value: int) -> str:
@@ -862,6 +876,8 @@ def build_artifact() -> dict:
     publication_date = datetime.now().astimezone().strftime("%-d %B %Y")
     publication_year = datetime.now().astimezone().year
     report_title = "PPTI Research Publication Trends and Strategic Positioning"
+    usm_logo_uri = image_data_uri(REPO_DIR / "assets" / "usm_logo.png")
+    ppti_logo_uri = image_data_uri(REPO_DIR / "assets" / "ppti_logo.png")
     reporting_window_short = (
         f"{START_DATE:%B %Y}–{END_DATE:%B %Y}"
     )
@@ -946,20 +962,133 @@ def build_artifact() -> dict:
         "of research activity and journal experience."
     )
 
+    masthead_html = f"""
+<style>
+  * {{ box-sizing: border-box; }}
+  html, body {{ margin: 0; padding: 0; background: transparent; }}
+  body {{
+    color: #172033;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+  }}
+  .official-masthead {{
+    display: grid;
+    grid-template-columns: minmax(76px, 112px) minmax(0, 1fr) minmax(76px, 112px);
+    align-items: center;
+    gap: 22px;
+    min-height: 232px;
+    padding: 20px 26px 18px;
+    border: 1px solid #cbd5e1;
+    border-top: 6px solid #173f73;
+    border-radius: 12px;
+    background:
+      linear-gradient(135deg, rgba(23, 63, 115, 0.065), transparent 44%),
+      linear-gradient(315deg, rgba(191, 145, 24, 0.08), transparent 42%),
+      #ffffff;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+  }}
+  .official-masthead__logo {{
+    display: block;
+    width: 100%;
+    max-width: 108px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+  }}
+  .official-masthead__text {{ min-width: 0; text-align: center; }}
+  .official-masthead__kicker {{
+    margin: 0 0 7px;
+    color: #173f73;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }}
+  .official-masthead h1 {{
+    max-width: 820px;
+    margin: 0 auto;
+    color: #14213d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(25px, 3.2vw, 39px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.018em;
+  }}
+  .official-masthead__subtitle {{
+    margin: 8px 0 0;
+    color: #42526b;
+    font-size: 13px;
+    font-weight: 650;
+  }}
+  .official-masthead__authors {{
+    margin: 11px auto 0;
+    max-width: 860px;
+    color: #27364d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    line-height: 1.35;
+  }}
+  .official-masthead__affiliation {{
+    margin: 7px 0 0;
+    color: #526278;
+    font-size: 11px;
+    line-height: 1.35;
+  }}
+  .official-masthead__date {{
+    margin: 6px 0 0;
+    color: #173f73;
+    font-size: 11px;
+    font-weight: 700;
+  }}
+  @media (max-width: 680px) {{
+    .official-masthead {{
+      grid-template-columns: 58px minmax(0, 1fr) 58px;
+      gap: 10px;
+      min-height: 228px;
+      padding: 16px 12px;
+    }}
+    .official-masthead h1 {{ font-size: clamp(21px, 6vw, 29px); }}
+    .official-masthead__kicker {{ font-size: 9px; letter-spacing: 0.09em; }}
+    .official-masthead__subtitle,
+    .official-masthead__authors {{ font-size: 10px; }}
+    .official-masthead__affiliation,
+    .official-masthead__date {{ font-size: 9px; }}
+  }}
+</style>
+<section class="official-masthead" aria-labelledby="report-title">
+  <img
+    class="official-masthead__logo"
+    src="{usm_logo_uri}"
+    alt="Universiti Sains Malaysia logo"
+  />
+  <header class="official-masthead__text">
+    <p class="official-masthead__kicker">Research Trends Committee 2025</p>
+    <h1 id="report-title">{report_title}</h1>
+    <p class="official-masthead__subtitle">
+      A bibliometric report covering {reporting_window_short}
+    </p>
+    <p class="official-masthead__authors">
+      Yusri Yusup · Wan Zafira Wan Zakaria · Lee Chee Keong · Norli Ismail ·
+      Abdorezza Mohammad Nafchi · Mohd Nurazzi Norizan
+    </p>
+    <p class="official-masthead__affiliation">
+      School of Industrial Technology · Universiti Sains Malaysia
+    </p>
+    <p class="official-masthead__date">Published {publication_date}</p>
+  </header>
+  <img
+    class="official-masthead__logo"
+    src="{ppti_logo_uri}"
+    alt="School of Industrial Technology (PPTI) logo"
+  />
+</section>
+""".strip()
+
     blocks = [
         {
             "id": "title",
-            "type": "markdown",
-            "body": (
-                f"# {report_title}\n\n"
-                f"### A bibliometric report covering {reporting_window_short}\n\n"
-                "**Yusri Yusup · Wan Zafira Wan Zakaria · Lee Chee Keong · "
-                "Norli Ismail · Abdorezza Mohammad Nafchi · Mohd Nurazzi Norizan**\n\n"
-                "Research Trends Committee 2025  \n"
-                "School of Industrial Technology  \n"
-                "Universiti Sains Malaysia\n\n"
-                f"Published {publication_date}"
-            ),
+            "type": "html",
+            "body": masthead_html,
         },
         {
             "id": "abstract",
