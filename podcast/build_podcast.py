@@ -39,6 +39,20 @@ MIN_WORDS = 115
 MAX_WORDS = 210
 MAX_DURATION_SECONDS = 120.0
 TARGET_WORDS_PER_MINUTE = 145.0
+COVER_PALETTE = {
+    1: ("Mist blue", "#e8f0f6"),
+    2: ("Soft sage", "#e9f0e8"),
+    3: ("Muted blush", "#f3e9e9"),
+    4: ("Pale lavender", "#eeeaf4"),
+    5: ("Warm sand", "#f3eee3"),
+    6: ("Institutional white", "#f9fbff"),
+    7: ("Powder blue", "#e6eef4"),
+    8: ("Muted mint", "#e6f0ed"),
+    9: ("Soft parchment", "#f2ede3"),
+    10: ("Dusty rose", "#f1e7e9"),
+    11: ("Soft lilac", "#ece9f2"),
+    12: ("Silver blue", "#e8edf2"),
+}
 
 
 def load_env_file(path: Path) -> None:
@@ -314,6 +328,24 @@ def fit_image(image: Image.Image, box: tuple[int, int]) -> Image.Image:
     return converted
 
 
+def cover_theme(period_end: str) -> dict[str, str]:
+    month = date.fromisoformat(period_end).month
+    name, background = COVER_PALETTE[month]
+    return {"name": name, "background": background}
+
+
+def blend_hex(base: str, overlay: str, amount: float) -> str:
+    base_rgb = tuple(int(base[index : index + 2], 16) for index in (1, 3, 5))
+    overlay_rgb = tuple(
+        int(overlay[index : index + 2], 16) for index in (1, 3, 5)
+    )
+    blended = tuple(
+        round(base_value * (1 - amount) + overlay_value * amount)
+        for base_value, overlay_value in zip(base_rgb, overlay_rgb)
+    )
+    return "#" + "".join(f"{value:02x}" for value in blended)
+
+
 def qr_code_image(value: str, size: int) -> Image.Image:
     matrix = cv2.QRCodeEncoder_create().encode(value)
     matrix = cv2.copyMakeBorder(
@@ -367,6 +399,10 @@ def centered_wrapped_text(
 
 def build_cover(episode: dict[str, Any], destination: Path) -> None:
     width, height = 1080, 1920
+    theme = cover_theme(episode["period_end"])
+    background = theme["background"]
+    signal_panel = blend_hex(background, "#9ab3cc", 0.24)
+    signal_outline = blend_hex(background, "#6e8faf", 0.35)
     image = Image.new("RGB", (width, height), "#102f57")
     draw = ImageDraw.Draw(image)
     for y in range(height):
@@ -381,7 +417,7 @@ def build_cover(episode: dict[str, Any], destination: Path) -> None:
     draw.rounded_rectangle(
         (70, 80, 1010, 1840),
         radius=42,
-        fill="#f9fbff",
+        fill=background,
         outline="#c59a31",
         width=6,
     )
@@ -447,8 +483,8 @@ def build_cover(episode: dict[str, Any], destination: Path) -> None:
     draw.rounded_rectangle(
         (135, y, 945, y + 330),
         radius=30,
-        fill="#eaf1f8",
-        outline="#cbd7e6",
+        fill=signal_panel,
+        outline=signal_outline,
         width=3,
     )
     draw.text(
@@ -1003,6 +1039,7 @@ def main() -> None:
         "script_sha256": script_hash,
         "cover_sha256": cover_hash,
         "institutional_reports_url": RESEARCH_REPORTS_URL,
+        "cover_theme": cover_theme(episode["period_end"]),
         "selected_journal": episode["selected_journal"],
         "selected_keyword": episode["selected_keyword"],
         "latest_month": episode["latest_month"],

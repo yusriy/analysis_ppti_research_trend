@@ -1,7 +1,7 @@
 {
   "episode_title": "PPTI Research Brief — June 2026",
   "period_end": "2026-06-30",
-  "generated_at": "2026-07-28T00:31:24+08:00",
+  "generated_at": "2026-07-28T00:48:37+08:00",
   "source_report_generated_at": "2026-07-27T23:36:15+08:00",
   "source_report_url": "https://yusriy.github.io/analysis_ppti_research_trend/ppti_publication_strategy_report.html",
   "status": "audio_ready",
@@ -9,8 +9,12 @@
   "estimated_duration_seconds": 63.7,
   "duration_seconds": 69.984943,
   "script_sha256": "b3f5df78bb1c2ffa0c46535bb2c33f9c44f3941f5c7f098f8b81ffc9287e51a9",
-  "cover_sha256": "293140383e419653984c02dac9329162fa27790acadc32fccf479c23e5836a89",
+  "cover_sha256": "e65af9998aba2e455fd090430166cd7d18a58b36858c6a7875445cb6daf0fa3e",
   "institutional_reports_url": "https://indtech.usm.my/index.php/research/reports",
+  "cover_theme": {
+    "name": "Institutional white",
+    "background": "#f9fbff"
+  },
   "selected_journal": {
     "name": "Clean Technologies and Environmental Policy",
     "tier": "Developing (2–4)",

@@ -16,6 +16,11 @@ available, it also creates:
 The current files are stored in `latest/`. Before a new reporting period is
 generated, the previous edition is copied to `archive/YYYY-MM/`.
 
+Cover backgrounds rotate by reporting month through a restrained palette of
+institutional white, muted blues, sage, sand, blush, mint, and lavender. June
+uses the original white background. Typography, navy-and-gold framing, logos,
+captions, and the reports QR code remain consistent across editions.
+
 ## Latest edition
 
 - [Listen to the MP3](latest/ppti_research_brief.mp3)
