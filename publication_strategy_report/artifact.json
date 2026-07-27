@@ -1,0 +1,3156 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "PPTI Research Publication Trends and Strategic Positioning",
+    "description": "A bibliometric report on recent PPTI publication activity, journal distribution, citation visibility, open-access status, and research themes.",
+    "generatedAt": "2026-07-27T23:23:55+08:00",
+    "cards": [
+      {
+        "id": "distinct_publications",
+        "description": "Unique Scopus articles in the reporting window.",
+        "dataset": "summary",
+        "sourceId": "scopus_publication_snapshot",
+        "metrics": [
+          {
+            "label": "Distinct publications",
+            "field": "distinct_publications",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "contributors",
+        "description": "PPTI researchers linked to at least one in-window article.",
+        "dataset": "summary",
+        "sourceId": "scopus_publication_snapshot",
+        "metrics": [
+          {
+            "label": "Active contributors",
+            "field": "contributors",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "journal_reach",
+        "description": "Distinct journals represented by recent articles.",
+        "dataset": "summary",
+        "sourceId": "scopus_publication_snapshot",
+        "metrics": [
+          {
+            "label": "Journal reach",
+            "field": "journals",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "citation_visibility",
+        "description": "Current cumulative citations across distinct articles.",
+        "dataset": "summary",
+        "sourceId": "scopus_publication_snapshot",
+        "metrics": [
+          {
+            "label": "Current citations",
+            "field": "citations",
+            "format": "compact"
+          }
+        ]
+      },
+      {
+        "id": "open_access_share",
+        "description": "Share of distinct articles marked open access by Scopus.",
+        "dataset": "summary",
+        "sourceId": "scopus_publication_snapshot",
+        "metrics": [
+          {
+            "label": "Open-access share",
+            "field": "open_access_share",
+            "format": "percent"
+          }
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "id": "monthly_activity_chart",
+        "title": "Monthly publication activity",
+        "subtitle": "Distinct Scopus articles, July 2024–June 2026; open access is a subset of total output.",
+        "showDescription": true,
+        "intent": "trend",
+        "question": "How consistently has PPTI published across the reporting window?",
+        "type": "line",
+        "dataset": "monthly_activity",
+        "sourceId": "scopus_publication_snapshot",
+        "encodings": {
+          "x": {
+            "field": "month",
+            "type": "temporal",
+            "label": "Month"
+          },
+          "y": {
+            "field": "publications",
+            "type": "quantitative",
+            "label": "Distinct publications",
+            "format": "number"
+          },
+          "color": {
+            "field": "series",
+            "type": "nominal",
+            "label": "Series"
+          },
+          "tooltip": [
+            {
+              "field": "month",
+              "type": "temporal",
+              "label": "Month"
+            },
+            {
+              "field": "publications",
+              "type": "quantitative",
+              "label": "Publications",
+              "format": "number"
+            }
+          ]
+        },
+        "yAxisTitle": "Distinct publications",
+        "valueFormat": "number",
+        "palette": {
+          "kind": "categorical"
+        },
+        "legend": {
+          "position": "bottom",
+          "interactive": true,
+          "sort": "spec"
+        },
+        "labels": {
+          "values": "endpoints"
+        },
+        "layout": "full"
+      },
+      {
+        "id": "top_journals_chart",
+        "title": "Most frequently used journals",
+        "subtitle": "Top 12 journals by distinct PPTI publications, July 2024–June 2026.",
+        "showDescription": true,
+        "intent": "comparison",
+        "question": "Which journals have the strongest repeat-publication evidence?",
+        "type": "horizontalBar",
+        "dataset": "top_journals",
+        "sourceId": "scopus_publication_snapshot",
+        "encodings": {
+          "x": {
+            "field": "journal",
+            "type": "nominal",
+            "label": "Journal"
+          },
+          "y": {
+            "field": "publications",
+            "type": "quantitative",
+            "label": "Distinct publications",
+            "format": "number"
+          },
+          "tooltip": [
+            {
+              "field": "citations",
+              "type": "quantitative",
+              "label": "Citations"
+            },
+            {
+              "field": "oa_share",
+              "type": "quantitative",
+              "label": "Open-access share",
+              "format": "percent"
+            },
+            {
+              "field": "top_themes",
+              "type": "text",
+              "label": "Top themes"
+            }
+          ]
+        },
+        "yAxisTitle": "Distinct publications",
+        "valueFormat": "number",
+        "palette": {
+          "kind": "identity"
+        },
+        "labels": {
+          "values": "all"
+        },
+        "settings": {
+          "sort": "descending",
+          "showValues": true,
+          "categoryLabelPolicy": "wrap"
+        },
+        "layout": "full"
+      },
+      {
+        "id": "journal_map_chart",
+        "title": "Journal publication and citation map",
+        "subtitle": "Journals with at least two distinct PPTI articles; citations are current cumulative counts.",
+        "showDescription": true,
+        "intent": "relationship",
+        "question": "Which journals combine repeat publication activity with citation visibility?",
+        "type": "scatter",
+        "dataset": "journal_map",
+        "sourceId": "scopus_publication_snapshot",
+        "encodings": {
+          "x": {
+            "field": "publications",
+            "type": "quantitative",
+            "label": "Distinct publications",
+            "format": "number"
+          },
+          "y": {
+            "field": "citations",
+            "type": "quantitative",
+            "label": "Current citations",
+            "format": "number"
+          },
+          "color": {
+            "field": "access_profile",
+            "type": "nominal",
+            "label": "Access profile"
+          },
+          "label": {
+            "field": "journal",
+            "type": "text",
+            "label": "Journal"
+          },
+          "tooltip": [
+            {
+              "field": "journal",
+              "type": "text",
+              "label": "Journal"
+            },
+            {
+              "field": "oa_share",
+              "type": "quantitative",
+              "label": "Open-access share",
+              "format": "percent"
+            },
+            {
+              "field": "top_themes",
+              "type": "text",
+              "label": "Top themes"
+            }
+          ]
+        },
+        "xAxisTitle": "Distinct publications",
+        "yAxisTitle": "Current citations",
+        "valueFormat": "number",
+        "palette": {
+          "kind": "categorical"
+        },
+        "legend": {
+          "position": "bottom",
+          "interactive": true,
+          "sort": "labelAsc"
+        },
+        "layout": "full"
+      },
+      {
+        "id": "top_keywords_chart",
+        "title": "Most frequent author keywords",
+        "subtitle": "Top 15 normalized keywords by distinct publications, July 2024–June 2026.",
+        "showDescription": true,
+        "intent": "comparison",
+        "question": "Which research themes have the strongest repeated publication footprint?",
+        "type": "horizontalBar",
+        "dataset": "top_keywords",
+        "sourceId": "scopus_publication_snapshot",
+        "encodings": {
+          "x": {
+            "field": "keyword",
+            "type": "nominal",
+            "label": "Keyword"
+          },
+          "y": {
+            "field": "publications",
+            "type": "quantitative",
+            "label": "Distinct publications",
+            "format": "number"
+          },
+          "tooltip": [
+            {
+              "field": "citation_weight",
+              "type": "quantitative",
+              "label": "Citation-weighted mentions"
+            },
+            {
+              "field": "journal_reach",
+              "type": "quantitative",
+              "label": "Journal reach"
+            },
+            {
+              "field": "top_journals",
+              "type": "text",
+              "label": "Top journals"
+            }
+          ]
+        },
+        "yAxisTitle": "Distinct publications",
+        "valueFormat": "number",
+        "palette": {
+          "kind": "identity"
+        },
+        "labels": {
+          "values": "all"
+        },
+        "settings": {
+          "sort": "descending",
+          "showValues": true,
+          "categoryLabelPolicy": "wrap"
+        },
+        "layout": "full"
+      }
+    ],
+    "tables": [
+      {
+        "id": "journal_tiers_table",
+        "title": "Journal portfolio tiers",
+        "subtitle": "All 315 journals grouped by distinct publication count, July 2024–June 2026.",
+        "dataset": "journal_tiers",
+        "sourceId": "scopus_publication_snapshot",
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "tier",
+            "label": "Journal tier",
+            "type": "text"
+          },
+          {
+            "field": "journals",
+            "label": "Journals",
+            "format": "number"
+          },
+          {
+            "field": "publications",
+            "label": "Publications",
+            "format": "number"
+          },
+          {
+            "field": "portfolio_share",
+            "label": "Portfolio share",
+            "format": "percent"
+          }
+        ]
+      },
+      {
+        "id": "journal_signals_table",
+        "title": "Developing and exploratory journal signals",
+        "subtitle": "Forty developing outlets and twenty citation-visible exploratory outlets; movement is relative to the preceding monthly edition.",
+        "dataset": "journal_signals",
+        "sourceId": "scopus_publication_snapshot",
+        "defaultSort": {
+          "field": "publications",
+          "direction": "desc"
+        },
+        "density": "dense",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "journal",
+            "label": "Journal",
+            "type": "text"
+          },
+          {
+            "field": "tier",
+            "label": "Tier",
+            "type": "text"
+          },
+          {
+            "field": "publications",
+            "label": "Publications",
+            "format": "number"
+          },
+          {
+            "field": "citations",
+            "label": "Citations",
+            "format": "number"
+          },
+          {
+            "field": "median_citations",
+            "label": "Median citations/article",
+            "format": "number"
+          },
+          {
+            "field": "oa_share",
+            "label": "Open-access share",
+            "format": "percent"
+          },
+          {
+            "field": "movement",
+            "label": "Monthly movement",
+            "type": "text"
+          },
+          {
+            "field": "top_themes",
+            "label": "Frequent themes",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "journal_shortlist_table",
+        "title": "Journal evidence shortlist",
+        "subtitle": "Top 30 journals ranked by distinct PPTI publications in the reporting window.",
+        "dataset": "journal_shortlist",
+        "sourceId": "scopus_publication_snapshot",
+        "defaultSort": {
+          "field": "publications",
+          "direction": "desc"
+        },
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "journal",
+            "label": "Journal",
+            "type": "text"
+          },
+          {
+            "field": "publications",
+            "label": "Publications",
+            "format": "number"
+          },
+          {
+            "field": "citations",
+            "label": "Citations",
+            "format": "number"
+          },
+          {
+            "field": "median_citations",
+            "label": "Median citations/article",
+            "format": "number"
+          },
+          {
+            "field": "oa_share",
+            "label": "Open-access share",
+            "format": "percent"
+          },
+          {
+            "field": "top_themes",
+            "label": "Frequent themes",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "keyword_tiers_table",
+        "title": "Keyword portfolio tiers",
+        "subtitle": "All normalized author keywords grouped by distinct publication count, July 2024–June 2026.",
+        "dataset": "keyword_tiers",
+        "sourceId": "scopus_publication_snapshot",
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "tier",
+            "label": "Keyword tier",
+            "type": "text"
+          },
+          {
+            "field": "keywords",
+            "label": "Keywords",
+            "format": "number"
+          },
+          {
+            "field": "publication_keyword_associations",
+            "label": "Publication–keyword associations",
+            "format": "number"
+          },
+          {
+            "field": "portfolio_share",
+            "label": "Association share",
+            "format": "percent"
+          }
+        ]
+      },
+      {
+        "id": "keyword_signals_table",
+        "title": "Developing and exploratory keyword signals",
+        "subtitle": "Forty developing themes and twenty citation-visible exploratory themes; movement is relative to the preceding monthly edition.",
+        "dataset": "keyword_signals",
+        "sourceId": "scopus_publication_snapshot",
+        "defaultSort": {
+          "field": "publications",
+          "direction": "desc"
+        },
+        "density": "dense",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "keyword",
+            "label": "Keyword",
+            "type": "text"
+          },
+          {
+            "field": "tier",
+            "label": "Tier",
+            "type": "text"
+          },
+          {
+            "field": "publications",
+            "label": "Publications",
+            "format": "number"
+          },
+          {
+            "field": "citation_weight",
+            "label": "Citation-weighted mentions",
+            "format": "number"
+          },
+          {
+            "field": "citations_per_publication",
+            "label": "Citations/publication",
+            "format": "number"
+          },
+          {
+            "field": "journal_reach",
+            "label": "Journal reach",
+            "format": "number"
+          },
+          {
+            "field": "movement",
+            "label": "Monthly movement",
+            "type": "text"
+          },
+          {
+            "field": "top_journals",
+            "label": "Most associated journals",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "emerging_keywords_table",
+        "title": "Emerging keyword signals",
+        "subtitle": "Keywords appearing in 3–7 distinct publications with at least 10 citation-weighted mentions.",
+        "dataset": "emerging_keywords",
+        "sourceId": "scopus_publication_snapshot",
+        "defaultSort": {
+          "field": "citations_per_publication",
+          "direction": "desc"
+        },
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "keyword",
+            "label": "Keyword",
+            "type": "text"
+          },
+          {
+            "field": "publications",
+            "label": "Publications",
+            "format": "number"
+          },
+          {
+            "field": "citation_weight",
+            "label": "Citation-weighted mentions",
+            "format": "number"
+          },
+          {
+            "field": "citations_per_publication",
+            "label": "Citations/publication",
+            "format": "number"
+          },
+          {
+            "field": "journal_reach",
+            "label": "Journal reach",
+            "format": "number"
+          },
+          {
+            "field": "top_journals",
+            "label": "Most associated journals",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "scopus_publication_snapshot",
+        "label": "Scopus publication snapshot",
+        "path": "data/ppti_journal_publications.csv"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# PPTI Research Publication Trends and Strategic Positioning\n\n### A bibliometric report covering July 2024–June 2026\n\n**Yusri Yusup · Wan Zafira Wan Zakaria · Lee Chee Keong · Norli Ismail · Abdorezza Mohammad Nafchi · Mohd Nurazzi Norizan**\n\nResearch Trends Committee 2025  \nSchool of Industrial Technology  \nUniversiti Sains Malaysia\n\nPublished 27 July 2026"
+      },
+      {
+        "id": "abstract",
+        "type": "markdown",
+        "sourceId": "scopus_publication_snapshot",
+        "body": "## Abstract\n\nThis report examines 563 distinct Scopus-indexed publications associated with 63 PPTI researchers during the 24-month period from 1 July 2024 to 30 June 2026. The publications appeared in 315 journals and had received 2,464 citations at the time of data collection. The analysis considers publication activity, journal concentration, citation visibility, open-access status, and recurring author keywords to describe the institution's recent research profile. The results show a broad journal portfolio, with the ten most frequently used titles accounting for 20% of publications. International Journal of Biological Macromolecules was the most frequently used journal, with 22 articles, while Fermentation was the most prevalent normalized author keyword, appearing in 14 publications. Open-access articles represented 43% of the portfolio. Journals below the established tier accounted for 77% of publications, while developing and exploratory keywords accounted for 90% of publication–keyword associations. This edition establishes the first monthly baseline produced under the complete-pagination and article-deduplication methodology; subsequent editions will report changes against this baseline. Together, these findings provide an evidence base for understanding PPTI's publication patterns and for aligning future manuscripts with demonstrated areas of research activity and journal experience."
+      },
+      {
+        "id": "portfolio_metrics",
+        "type": "metric-strip",
+        "cardIds": [
+          "distinct_publications",
+          "contributors",
+          "journal_reach",
+          "citation_visibility",
+          "open_access_share"
+        ]
+      },
+      {
+        "id": "definitions",
+        "type": "markdown",
+        "sourceId": "scopus_publication_snapshot",
+        "body": "## 1. Scope and method\n\nThe report is based on Scopus publication records associated with PPTI researchers and dated between 1 July 2024 to 30 June 2026. The unit of analysis is a distinct Scopus-indexed publication rather than an author–publication record; consequently, a publication co-authored by more than one PPTI researcher is counted once in the portfolio totals. Citation values represent the cumulative Scopus counts available when the dataset was collected, and thematic analysis is based on normalized author keywords. Monthly commentary is generated by comparing the current metrics and rankings with the preceding saved edition under the same methodology. Journal and keyword frequencies therefore describe both the present portfolio and any material movement since the previous report."
+      },
+      {
+        "id": "activity_story",
+        "type": "markdown",
+        "sourceId": "scopus_publication_snapshot",
+        "body": "## 2. Publication activity\n\nOutput increased from 10 publications in May 2026 to 27 in June 2026. The latest month was 13% above the preceding six-month average of 23.8 publications. Across the full reporting period, monthly output reached its highest level in January 2025, when 103 distinct publications were recorded. The open-access series is a subset of total output and shows the portion of monthly publications available through an open-access route."
+      },
+      {
+        "id": "monthly_activity",
+        "type": "chart",
+        "chartId": "monthly_activity_chart",
+        "layout": "full"
+      },
+      {
+        "id": "journal_story",
+        "type": "markdown",
+        "sourceId": "scopus_publication_snapshot",
+        "body": "## 3. Journal distribution\n\nInternational Journal of Biological Macromolecules provides the initial monthly benchmark for journal, with 22 distinct publications. The institution's output was distributed across 315 journals, and the ten most frequently used titles accounted for 20% of the portfolio. The distribution demonstrates both repeated experience with a core group of outlets and substantial disciplinary breadth. Journal frequency is interpreted here as evidence of prior institutional presence and thematic alignment rather than as a measure of journal quality or future acceptance."
+      },
+      {
+        "id": "top_journals",
+        "type": "chart",
+        "chartId": "top_journals_chart",
+        "layout": "full"
+      },
+      {
+        "id": "journal_tier_story",
+        "type": "markdown",
+        "sourceId": "scopus_publication_snapshot",
+        "body": "### 3.1 Most publication activity sits beyond the established journal group\n\nThe developing and exploratory tiers contain 302 journals and account for 435 publications, or 77% of the portfolio. The tier view therefore complements the leading-journal ranking by distinguishing repeated institutional experience from new and specialist outlet use. This edition establishes the first tier-level baseline for journals; later editions will identify new entrants and movement between exploratory, developing, and established tiers."
+      },
+      {
+        "id": "journal_tiers",
+        "type": "table",
+        "tableId": "journal_tiers_table",
+        "layout": "full"
+      },
+      {
+        "id": "journal_signals_story",
+        "type": "markdown",
+        "sourceId": "scopus_publication_snapshot",
+        "body": "### 3.2 Developing and exploratory journal signals\n\nThe signal table examines the middle and lower publication tiers directly. It includes the forty strongest developing outlets by publication and citation evidence together with the twenty exploratory outlets showing the greatest current citation visibility. Movement records whether an outlet is new, stable, or changing relative to the preceding monthly edition. Citation evidence is interpreted within each tier so that a single highly cited article does not place an exploratory outlet on the same footing as a repeatedly used journal."
+      },
+      {
+        "id": "journal_signals",
+        "type": "table",
+        "tableId": "journal_signals_table",
+        "layout": "full"
+      },
+      {
+        "id": "journal_map_story",
+        "type": "markdown",
+        "sourceId": "scopus_publication_snapshot",
+        "body": "### 3.3 Publication frequency and citation visibility\n\nThe journal map relates the number of distinct publications in each outlet to their cumulative citation totals. Journals positioned toward the upper right combine repeated PPTI publication activity with comparatively strong citation visibility. In contrast, a journal with high citation counts but few publications may reflect the influence of a small number of articles. The two measures are therefore presented as complementary dimensions of the portfolio: frequency indicates the extent of recent use, whereas citations indicate the visibility accumulated by the articles published in that outlet."
+      },
+      {
+        "id": "journal_map",
+        "type": "chart",
+        "chartId": "journal_map_chart",
+        "layout": "full"
+      },
+      {
+        "id": "shortlist_story",
+        "type": "markdown",
+        "body": "### 3.4 Journal-level evidence\n\nThe journal-level table provides the underlying values used to compare frequently selected outlets. It reports publication volume, cumulative and median citation counts, open-access share, and the three most frequent normalized author keywords associated with each journal. Read together, these fields describe the scale, visibility, access profile, and thematic character of PPTI's recent presence in each outlet."
+      },
+      {
+        "id": "journal_shortlist",
+        "type": "table",
+        "tableId": "journal_shortlist_table",
+        "layout": "full"
+      },
+      {
+        "id": "theme_story",
+        "type": "markdown",
+        "sourceId": "scopus_publication_snapshot",
+        "body": "## 4. Research themes\n\nFermentation provides the initial monthly benchmark for research theme, with 14 distinct publications. The wider ranking identifies subjects that recur across the portfolio and consequently provides a consolidated view of PPTI's established research profile. The frequency of a keyword reflects repeated use across publications, while its journal reach indicates the breadth of outlets through which the theme has been disseminated."
+      },
+      {
+        "id": "top_keywords",
+        "type": "chart",
+        "chartId": "top_keywords_chart",
+        "layout": "full"
+      },
+      {
+        "id": "keyword_tier_story",
+        "type": "markdown",
+        "sourceId": "scopus_publication_snapshot",
+        "body": "### 4.1 The keyword portfolio is even more strongly long-tailed\n\nThe developing and exploratory tiers contain 2016 normalized keywords and account for 2425 publication–keyword associations, or 90% of all associations. This tiering prevents established themes from obscuring narrower or newly appearing subjects while preserving the distinction between repeated and single-publication evidence. This edition establishes the first tier-level baseline for keywords; later editions will identify new entrants and movement between exploratory, developing, and established tiers."
+      },
+      {
+        "id": "keyword_tiers",
+        "type": "table",
+        "tableId": "keyword_tiers_table",
+        "layout": "full"
+      },
+      {
+        "id": "keyword_signals_story",
+        "type": "markdown",
+        "sourceId": "scopus_publication_snapshot",
+        "body": "### 4.2 Developing and exploratory keyword signals\n\nThe keyword signal table reviews the forty developing themes with the strongest publication and citation evidence and the twenty exploratory themes with the greatest citation-weighted visibility. Journal reach and associated outlets provide context for whether a theme is spreading across the portfolio or remains concentrated in a single publication. This edition establishes the initial benchmark for monitoring changes in thematic prominence."
+      },
+      {
+        "id": "keyword_signals",
+        "type": "table",
+        "tableId": "keyword_signals_table",
+        "layout": "full"
+      },
+      {
+        "id": "emerging_story",
+        "type": "markdown",
+        "sourceId": "scopus_publication_snapshot",
+        "body": "### 4.3 Citation-visible emerging themes\n\nEmerging thematic signals are defined in this report as normalized keywords associated with three to seven distinct publications and at least ten citation-weighted mentions. These themes have a smaller publication base than the established topics shown above but have already achieved measurable citation visibility. This edition establishes the initial benchmark for monitoring changes in thematic prominence. The table records their publication frequency, citation-weighted mentions, citations per publication, journal reach, and most closely associated journals."
+      },
+      {
+        "id": "emerging_keywords",
+        "type": "table",
+        "tableId": "emerging_keywords_table",
+        "layout": "full"
+      },
+      {
+        "id": "conclusion",
+        "type": "markdown",
+        "sourceId": "scopus_publication_snapshot",
+        "body": "## 5. Conclusion\n\nPPTI's recent Scopus-indexed output is characterized by sustained publication activity, a broad journal base, and identifiable concentrations of research expertise. Across 563 distinct publications, the portfolio combines repeated use of established outlets with dissemination across 315 journals, while 43% of articles were available through open access. The tier analysis shows that 77% of publications occurred in developing or exploratory journals and that 90% of publication–keyword associations sat outside the established keyword tier. This edition establishes the first monthly baseline produced under the complete-pagination and article-deduplication methodology; subsequent editions will report changes against this baseline. The journal and keyword results together document the institution's recent publication position and provide a reproducible baseline against which subsequent reporting periods can be compared."
+      },
+      {
+        "id": "citation",
+        "type": "markdown",
+        "body": "## Suggested citation\n\nYusup, Y., Wan Zakaria, W. Z., Lee, C. K., Ismail, N., Mohammad Nafchi, A., & Norizan, M. N. (2026). *PPTI Research Publication Trends and Strategic Positioning: A bibliometric report covering July 2024–June 2026*. Research Trends Committee 2025, School of Industrial Technology, Universiti Sains Malaysia."
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-07-27T23:23:55+08:00",
+    "status": "ready",
+    "datasets": {
+      "summary": [
+        {
+          "distinct_publications": 563,
+          "contributors": 63,
+          "journals": 315,
+          "citations": 2464,
+          "open_access_share": 0.4263
+        }
+      ],
+      "monthly_activity": [
+        {
+          "month": "2024-07-01",
+          "series": "All publications",
+          "publications": 21
+        },
+        {
+          "month": "2024-07-01",
+          "series": "Open access",
+          "publications": 9
+        },
+        {
+          "month": "2024-08-01",
+          "series": "All publications",
+          "publications": 21
+        },
+        {
+          "month": "2024-08-01",
+          "series": "Open access",
+          "publications": 8
+        },
+        {
+          "month": "2024-09-01",
+          "series": "All publications",
+          "publications": 9
+        },
+        {
+          "month": "2024-09-01",
+          "series": "Open access",
+          "publications": 1
+        },
+        {
+          "month": "2024-10-01",
+          "series": "All publications",
+          "publications": 15
+        },
+        {
+          "month": "2024-10-01",
+          "series": "Open access",
+          "publications": 5
+        },
+        {
+          "month": "2024-11-01",
+          "series": "All publications",
+          "publications": 28
+        },
+        {
+          "month": "2024-11-01",
+          "series": "Open access",
+          "publications": 8
+        },
+        {
+          "month": "2024-12-01",
+          "series": "All publications",
+          "publications": 25
+        },
+        {
+          "month": "2024-12-01",
+          "series": "Open access",
+          "publications": 12
+        },
+        {
+          "month": "2025-01-01",
+          "series": "All publications",
+          "publications": 103
+        },
+        {
+          "month": "2025-01-01",
+          "series": "Open access",
+          "publications": 44
+        },
+        {
+          "month": "2025-02-01",
+          "series": "All publications",
+          "publications": 12
+        },
+        {
+          "month": "2025-02-01",
+          "series": "Open access",
+          "publications": 6
+        },
+        {
+          "month": "2025-03-01",
+          "series": "All publications",
+          "publications": 14
+        },
+        {
+          "month": "2025-03-01",
+          "series": "Open access",
+          "publications": 6
+        },
+        {
+          "month": "2025-04-01",
+          "series": "All publications",
+          "publications": 16
+        },
+        {
+          "month": "2025-04-01",
+          "series": "Open access",
+          "publications": 7
+        },
+        {
+          "month": "2025-05-01",
+          "series": "All publications",
+          "publications": 20
+        },
+        {
+          "month": "2025-05-01",
+          "series": "Open access",
+          "publications": 10
+        },
+        {
+          "month": "2025-06-01",
+          "series": "All publications",
+          "publications": 21
+        },
+        {
+          "month": "2025-06-01",
+          "series": "Open access",
+          "publications": 12
+        },
+        {
+          "month": "2025-07-01",
+          "series": "All publications",
+          "publications": 12
+        },
+        {
+          "month": "2025-07-01",
+          "series": "Open access",
+          "publications": 6
+        },
+        {
+          "month": "2025-08-01",
+          "series": "All publications",
+          "publications": 14
+        },
+        {
+          "month": "2025-08-01",
+          "series": "Open access",
+          "publications": 7
+        },
+        {
+          "month": "2025-09-01",
+          "series": "All publications",
+          "publications": 18
+        },
+        {
+          "month": "2025-09-01",
+          "series": "Open access",
+          "publications": 10
+        },
+        {
+          "month": "2025-10-01",
+          "series": "All publications",
+          "publications": 24
+        },
+        {
+          "month": "2025-10-01",
+          "series": "Open access",
+          "publications": 11
+        },
+        {
+          "month": "2025-11-01",
+          "series": "All publications",
+          "publications": 20
+        },
+        {
+          "month": "2025-11-01",
+          "series": "Open access",
+          "publications": 7
+        },
+        {
+          "month": "2025-12-01",
+          "series": "All publications",
+          "publications": 33
+        },
+        {
+          "month": "2025-12-01",
+          "series": "Open access",
+          "publications": 17
+        },
+        {
+          "month": "2026-01-01",
+          "series": "All publications",
+          "publications": 60
+        },
+        {
+          "month": "2026-01-01",
+          "series": "Open access",
+          "publications": 20
+        },
+        {
+          "month": "2026-02-01",
+          "series": "All publications",
+          "publications": 12
+        },
+        {
+          "month": "2026-02-01",
+          "series": "Open access",
+          "publications": 7
+        },
+        {
+          "month": "2026-03-01",
+          "series": "All publications",
+          "publications": 19
+        },
+        {
+          "month": "2026-03-01",
+          "series": "Open access",
+          "publications": 10
+        },
+        {
+          "month": "2026-04-01",
+          "series": "All publications",
+          "publications": 9
+        },
+        {
+          "month": "2026-04-01",
+          "series": "Open access",
+          "publications": 6
+        },
+        {
+          "month": "2026-05-01",
+          "series": "All publications",
+          "publications": 10
+        },
+        {
+          "month": "2026-05-01",
+          "series": "Open access",
+          "publications": 4
+        },
+        {
+          "month": "2026-06-01",
+          "series": "All publications",
+          "publications": 27
+        },
+        {
+          "month": "2026-06-01",
+          "series": "Open access",
+          "publications": 7
+        }
+      ],
+      "top_journals": [
+        {
+          "journal": "International Journal of Biological Macromolecules",
+          "publications": 22,
+          "citations": 207,
+          "oa_share": 0.0,
+          "open_access_publications": 0,
+          "top_themes": "Antibacterial Activity, Biopolymer, Biopolymers"
+        },
+        {
+          "journal": "Journal of Food Measurement and Characterization",
+          "publications": 20,
+          "citations": 141,
+          "oa_share": 0.25,
+          "open_access_publications": 5,
+          "top_themes": "Antimicrobial, Active Packaging, Antioxidant"
+        },
+        {
+          "journal": "Green Energy and Technology",
+          "publications": 11,
+          "citations": 6,
+          "oa_share": 0.0,
+          "open_access_publications": 0,
+          "top_themes": "Biofuel, Biodiesel, Biomass Feedstock"
+        },
+        {
+          "journal": "Polymer Engineering and Science",
+          "publications": 10,
+          "citations": 82,
+          "oa_share": 0.5,
+          "open_access_publications": 5,
+          "top_themes": "Bioaerogel, Biocomposites, Biofiller"
+        },
+        {
+          "journal": "Solid Waste Management Challenges and Recent Solutions",
+          "publications": 10,
+          "citations": 3,
+          "oa_share": 0.0,
+          "open_access_publications": 0,
+          "top_themes": null
+        },
+        {
+          "journal": "Bamboo Based Polymer Composites Fundamentals Properties Applications and Performance",
+          "publications": 9,
+          "citations": 9,
+          "oa_share": 0.0,
+          "open_access_publications": 0,
+          "top_themes": "Composite Materials, Sustainability, Woven Bamboo Fibre"
+        },
+        {
+          "journal": "Biomass and Bioenergy",
+          "publications": 8,
+          "citations": 38,
+          "oa_share": 0.125,
+          "open_access_publications": 1,
+          "top_themes": "Agricultural Waste, Anaerobic Digestion, Barrier Performance"
+        },
+        {
+          "journal": "Food Science and Nutrition",
+          "publications": 7,
+          "citations": 102,
+          "oa_share": 1.0,
+          "open_access_publications": 7,
+          "top_themes": "Acrylamide, Active Film, Anthocyanins"
+        },
+        {
+          "journal": "Biofuels Bioproducts and Biorefining",
+          "publications": 7,
+          "citations": 47,
+          "oa_share": 0.4286,
+          "open_access_publications": 3,
+          "top_themes": "Bioproduct, Activated Carbon, Activation Time"
+        },
+        {
+          "journal": "Express Polymer Letters",
+          "publications": 7,
+          "citations": 25,
+          "oa_share": 1.0,
+          "open_access_publications": 7,
+          "top_themes": "Biopolymer, Bioaerogel, Compatibility"
+        },
+        {
+          "journal": "Frontiers in Nutrition",
+          "publications": 7,
+          "citations": 13,
+          "oa_share": 1.0,
+          "open_access_publications": 7,
+          "top_themes": "Probiotic, Gut Microbiota, Randomized Controlled Trial"
+        },
+        {
+          "journal": "Bioresource Technology Reports",
+          "publications": 5,
+          "citations": 10,
+          "oa_share": 0.0,
+          "open_access_publications": 0,
+          "top_themes": "Activated Carbon, Agro-Food Organic Residues, Biodegradable Materials"
+        }
+      ],
+      "journal_tiers": [
+        {
+          "tier": "Established (5+)",
+          "journals": 13,
+          "publications": 128,
+          "portfolio_share": 0.2274
+        },
+        {
+          "tier": "Developing (2–4)",
+          "journals": 87,
+          "publications": 220,
+          "portfolio_share": 0.3908
+        },
+        {
+          "tier": "Exploratory (1)",
+          "journals": 215,
+          "publications": 215,
+          "portfolio_share": 0.3819
+        }
+      ],
+      "journal_signals": [
+        {
+          "journal": "Clean Technologies and Environmental Policy",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citations": 24,
+          "median_citations": 6.0,
+          "oa_share": 0.25,
+          "movement": "Baseline",
+          "top_themes": "Biopolymers, Calcium, Calcium Chloride"
+        },
+        {
+          "journal": "Journal of Environmental Chemical Engineering",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citations": 14,
+          "median_citations": 4.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Barrier Properties, Bio-Nanocomposites, Bio-Oil"
+        },
+        {
+          "journal": "Polymer Bulletin",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citations": 13,
+          "median_citations": 3.0,
+          "oa_share": 0.25,
+          "movement": "Baseline",
+          "top_themes": "Adsorption, Amphiphobic Surfaces, Beads"
+        },
+        {
+          "journal": "Foods",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citations": 11,
+          "median_citations": 3.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Adhesion, Algae-Derived Peptides, Applications"
+        },
+        {
+          "journal": "Journal of Applied Polymer Science",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citations": 9,
+          "median_citations": 1.0,
+          "oa_share": 0.25,
+          "movement": "Baseline",
+          "top_themes": "Biomaterials, Biopolymers And Renewable Polymers, Biosynthesis Of Polymers"
+        },
+        {
+          "journal": "Food Research",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citations": 4,
+          "median_citations": 1.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Antioxidant Activities, Papaya Juice, Annatto Powder"
+        },
+        {
+          "journal": "Environmental Monitoring and Assessment",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citations": 1,
+          "median_citations": 0.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Aermod, Aquifer Characteristics, Aware Model"
+        },
+        {
+          "journal": "ACS Omega",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citations": 0,
+          "median_citations": 0.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": null
+        },
+        {
+          "journal": "Journal of Sustainability Science and Management",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citations": 0,
+          "median_citations": 0.0,
+          "oa_share": 0.75,
+          "movement": "Baseline",
+          "top_themes": "Sustainability, Biofuel, Biological Hazard"
+        },
+        {
+          "journal": "Malaysian Applied Biology",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citations": 0,
+          "median_citations": 0.0,
+          "oa_share": 0.75,
+          "movement": "Baseline",
+          "top_themes": "Atm Protein, Cell Viability, Danio Rerio"
+        },
+        {
+          "journal": "Malaysian Journal of Microbiology",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citations": 0,
+          "median_citations": 0.0,
+          "oa_share": 0.25,
+          "movement": "Baseline",
+          "top_themes": "Agro-Wastes, Aspergillus Niger Hfm 8, Bio-Valorization"
+        },
+        {
+          "journal": "Polymer Composites",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 76,
+          "median_citations": 26.0,
+          "oa_share": 0.6667,
+          "movement": "Baseline",
+          "top_themes": "Biocomposite, Mechanical Properties, Abaca Fiber"
+        },
+        {
+          "journal": "Journal of Separation Science",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 45,
+          "median_citations": 5.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Flavonoid, Activated Carbon, Extraction"
+        },
+        {
+          "journal": "Food Bioscience",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 29,
+          "median_citations": 8.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Active Packaging Film, Antibacterial, Aspergillus Flavus"
+        },
+        {
+          "journal": "Lwt",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 29,
+          "median_citations": 6.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Azelaic Acid, Cacl2, Cooking Qualities"
+        },
+        {
+          "journal": "Applied Food Research",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 27,
+          "median_citations": 8.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Antioxidant, Basil Seed Beverage, Essential Oil"
+        },
+        {
+          "journal": "Food and Bioprocess Technology",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 24,
+          "median_citations": 5.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Azelaic Acid, Beef, Cell Wall"
+        },
+        {
+          "journal": "Journal of Food Science",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 24,
+          "median_citations": 4.0,
+          "oa_share": 0.6667,
+          "movement": "Baseline",
+          "top_themes": "10-Hydroxydecanoic Acid, Alginate Beads, Antioxidant Activity"
+        },
+        {
+          "journal": "Food Science and Biotechnology",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 20,
+          "median_citations": 6.0,
+          "oa_share": 0.6667,
+          "movement": "Baseline",
+          "top_themes": "Fermentation, Antimicrobial, Azelaic Acid"
+        },
+        {
+          "journal": "Scientific Reports",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 8,
+          "median_citations": 3.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Canopy Layer, Energy Consumption, Environmental Footprint"
+        },
+        {
+          "journal": "Food Analytical Methods",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 7,
+          "median_citations": 3.0,
+          "oa_share": 0.6667,
+          "movement": "Baseline",
+          "top_themes": "Chemometrics, Adulteration, Antioxidant Activity"
+        },
+        {
+          "journal": "Food Quality and Safety",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 6,
+          "median_citations": 2.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Antimicrobial, Azelaic Acid (Aza), Digestibility"
+        },
+        {
+          "journal": "Bulletin of Atmospheric Science and Technology",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 5,
+          "median_citations": 1.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Cloud Optical Thickness, Emission Rate, Health Hazards"
+        },
+        {
+          "journal": "Polimery Polymers",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 5,
+          "median_citations": 1.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Carbonization, Plastic Waste, Char"
+        },
+        {
+          "journal": "ACS Symposium Series",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 4,
+          "median_citations": 1.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": null
+        },
+        {
+          "journal": "Beneficial Microbes",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 4,
+          "median_citations": 1.0,
+          "oa_share": 0.3333,
+          "movement": "Baseline",
+          "top_themes": "Lactiplantibacillus Plantarum, Gut-Brain-Axis, Human Papillomavirus"
+        },
+        {
+          "journal": "Pertanika Journal of Tropical Agricultural Science",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 4,
+          "median_citations": 1.0,
+          "oa_share": 0.6667,
+          "movement": "Baseline",
+          "top_themes": "Microbiological Quality, Drying, Feed"
+        },
+        {
+          "journal": "International Journal on Advanced Science Engineering and Information Technology",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 3,
+          "median_citations": 1.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Cost, Gamma, K-Fold Cross-Validation"
+        },
+        {
+          "journal": "Jurnal Teknologi",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 3,
+          "median_citations": 0.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Analysis, Bibliometric, Climate Change"
+        },
+        {
+          "journal": "Paper Asia",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 3,
+          "median_citations": 1.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Activated Carbon, Banana Peel, Bioplastics"
+        },
+        {
+          "journal": "Iop Conference Series Earth and Environmental Science",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 2,
+          "median_citations": 0.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Building Energy Intensity (Bei), Energy Audit, Energy Conservation Measures (Ecm)"
+        },
+        {
+          "journal": "Journal of Food Science and Technology",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 1,
+          "median_citations": 0.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Cacl2, Food Neophobia Scale, Insect Phobia Scale"
+        },
+        {
+          "journal": "Malaysian Journal of Chemistry",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 1,
+          "median_citations": 0.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Adhesion, Carbon Black, Conductive Ink"
+        },
+        {
+          "journal": "Springer Proceedings in Materials",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 1,
+          "median_citations": 0.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Bioremediation, Food Waste Digestate, Hydrocarbon"
+        },
+        {
+          "journal": "Sains Malaysiana",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citations": 0,
+          "median_citations": 0.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Admet Profiling, Antibacterial, Antidiabetic Agents"
+        },
+        {
+          "journal": "Energy Conversion and Management X",
+          "tier": "Developing (2–4)",
+          "publications": 2,
+          "citations": 49,
+          "median_citations": 24.5,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Biofuel, Biological Treatment, Industrial And Innovation"
+        },
+        {
+          "journal": "Ecological Informatics",
+          "tier": "Developing (2–4)",
+          "publications": 2,
+          "citations": 45,
+          "median_citations": 22.5,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Deep Learning, Agriculture, Bias Correction"
+        },
+        {
+          "journal": "Renewable Energy",
+          "tier": "Developing (2–4)",
+          "publications": 2,
+          "citations": 32,
+          "median_citations": 16.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Anaerobic Digestion (Ad), Azolla Filiculoides, Biodiesel"
+        },
+        {
+          "journal": "Food Chemistry",
+          "tier": "Developing (2–4)",
+          "publications": 2,
+          "citations": 30,
+          "median_citations": 15.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Casein Proteins, Crassostrea Belcheri, Crassostrea Iredalei"
+        },
+        {
+          "journal": "Biomass Conversion and Biorefinery",
+          "tier": "Developing (2–4)",
+          "publications": 2,
+          "citations": 27,
+          "median_citations": 13.5,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Bio-Composite, Biomaterials, Blend Films"
+        },
+        {
+          "journal": "Rsc Advances",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 97,
+          "median_citations": 97.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": null
+        },
+        {
+          "journal": "Water Science and Engineering",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 73,
+          "median_citations": 73.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Capturing, Colloidal, Interactions"
+        },
+        {
+          "journal": "Fermentation",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 33,
+          "median_citations": 33.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Functional Food Industries, Lactic Acid Bacteria, Metabolite"
+        },
+        {
+          "journal": "Food Engineering Reviews",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 33,
+          "median_citations": 33.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Animal-Based Proteins, Complex Coacervation, Complexation"
+        },
+        {
+          "journal": "Metabolites",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 21,
+          "median_citations": 21.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Functional Constipation, Gut Microbiota, Metabolomics"
+        },
+        {
+          "journal": "Emerging Science Journal",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 19,
+          "median_citations": 19.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Adsorption, Heavy Metal, Humic Acid"
+        },
+        {
+          "journal": "Euro Mediterranean Journal for Environmental Integration",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 19,
+          "median_citations": 19.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Hazards, Human Health, Mechanisms"
+        },
+        {
+          "journal": "Fibers and Polymers",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 19,
+          "median_citations": 19.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Applications, Biocomposites, Natural Fibers"
+        },
+        {
+          "journal": "Journal of Ethnopharmacology",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 19,
+          "median_citations": 19.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Celastrol, Diabetes, Low-Grade Chronic Inflammation"
+        },
+        {
+          "journal": "Journal of Industrial and Engineering Chemistry",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 18,
+          "median_citations": 18.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Artificial Kidney, Blood Purification, Hemodialysis"
+        },
+        {
+          "journal": "Cleaner Engineering and Technology",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 17,
+          "median_citations": 17.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "And Sustainable Management, Energy Consumption, Environmental Issues"
+        },
+        {
+          "journal": "Journal of Functional Foods",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 16,
+          "median_citations": 16.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Biological Activities, Extraction Methods, Prospective Applications"
+        },
+        {
+          "journal": "Environmental Toxicology and Pharmacology",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 13,
+          "median_citations": 13.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Bioaccumulation, Emerging Pollutants, Environmental Pollutants"
+        },
+        {
+          "journal": "Green Technologies and Sustainability",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 13,
+          "median_citations": 13.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Biochar Functionalization, Circular Economic, Environmental Sustainability"
+        },
+        {
+          "journal": "Journal of Natural Fibers",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 13,
+          "median_citations": 13.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Alkaline Treatment, Bonding, Interfacial Adhesion"
+        },
+        {
+          "journal": "Jurnal Kejuruteraan",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 12,
+          "median_citations": 12.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "Bioremediation, Emerging Pollutants, Ganoderma Lucidum"
+        },
+        {
+          "journal": "Materials Chemistry and Physics",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 12,
+          "median_citations": 12.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Adsorption, Corrosion Inhibitor, Electrochemical"
+        },
+        {
+          "journal": "Process Safety and Environmental Protection",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 12,
+          "median_citations": 12.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Biohydrogen Production, Biomass Gasification, Biomethane Production"
+        },
+        {
+          "journal": "Biomedical Materials Bristol",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 10,
+          "median_citations": 10.0,
+          "oa_share": 0.0,
+          "movement": "Baseline",
+          "top_themes": "Anticancer, Core-Shell, Drug Delivery"
+        },
+        {
+          "journal": "Cleaner Waste Systems",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citations": 10,
+          "median_citations": 10.0,
+          "oa_share": 1.0,
+          "movement": "Baseline",
+          "top_themes": "China, Circular Economy, Industrial Waste Management"
+        }
+      ],
+      "journal_map": [
+        {
+          "journal": "International Journal of Biological Macromolecules",
+          "publications": 22,
+          "citations": 207,
+          "oa_share": 0.0,
+          "access_profile": "Mostly closed",
+          "top_themes": "Antibacterial Activity, Biopolymer, Biopolymers"
+        },
+        {
+          "journal": "Journal of Food Measurement and Characterization",
+          "publications": 20,
+          "citations": 141,
+          "oa_share": 0.25,
+          "access_profile": "Mostly closed",
+          "top_themes": "Antimicrobial, Active Packaging, Antioxidant"
+        },
+        {
+          "journal": "Green Energy and Technology",
+          "publications": 11,
+          "citations": 6,
+          "oa_share": 0.0,
+          "access_profile": "Mostly closed",
+          "top_themes": "Biofuel, Biodiesel, Biomass Feedstock"
+        },
+        {
+          "journal": "Polymer Engineering and Science",
+          "publications": 10,
+          "citations": 82,
+          "oa_share": 0.5,
+          "access_profile": "Mixed access",
+          "top_themes": "Bioaerogel, Biocomposites, Biofiller"
+        },
+        {
+          "journal": "Solid Waste Management Challenges and Recent Solutions",
+          "publications": 10,
+          "citations": 3,
+          "oa_share": 0.0,
+          "access_profile": "Mostly closed",
+          "top_themes": null
+        },
+        {
+          "journal": "Bamboo Based Polymer Composites Fundamentals Properties Applications and Performance",
+          "publications": 9,
+          "citations": 9,
+          "oa_share": 0.0,
+          "access_profile": "Mostly closed",
+          "top_themes": "Composite Materials, Sustainability, Woven Bamboo Fibre"
+        },
+        {
+          "journal": "Biomass and Bioenergy",
+          "publications": 8,
+          "citations": 38,
+          "oa_share": 0.125,
+          "access_profile": "Mostly closed",
+          "top_themes": "Agricultural Waste, Anaerobic Digestion, Barrier Performance"
+        },
+        {
+          "journal": "Food Science and Nutrition",
+          "publications": 7,
+          "citations": 102,
+          "oa_share": 1.0,
+          "access_profile": "Open-access led",
+          "top_themes": "Acrylamide, Active Film, Anthocyanins"
+        },
+        {
+          "journal": "Biofuels Bioproducts and Biorefining",
+          "publications": 7,
+          "citations": 47,
+          "oa_share": 0.4286,
+          "access_profile": "Mixed access",
+          "top_themes": "Bioproduct, Activated Carbon, Activation Time"
+        },
+        {
+          "journal": "Express Polymer Letters",
+          "publications": 7,
+          "citations": 25,
+          "oa_share": 1.0,
+          "access_profile": "Open-access led",
+          "top_themes": "Biopolymer, Bioaerogel, Compatibility"
+        },
+        {
+          "journal": "Frontiers in Nutrition",
+          "publications": 7,
+          "citations": 13,
+          "oa_share": 1.0,
+          "access_profile": "Open-access led",
+          "top_themes": "Probiotic, Gut Microbiota, Randomized Controlled Trial"
+        },
+        {
+          "journal": "Bioresource Technology Reports",
+          "publications": 5,
+          "citations": 10,
+          "oa_share": 0.0,
+          "access_profile": "Mostly closed",
+          "top_themes": "Activated Carbon, Agro-Food Organic Residues, Biodegradable Materials"
+        },
+        {
+          "journal": "Biomass Processing for Sustainable Circular Economy",
+          "publications": 5,
+          "citations": 2,
+          "oa_share": 0.0,
+          "access_profile": "Mostly closed",
+          "top_themes": "Biomass Conversion, Biomass Processing, Bioprocess"
+        },
+        {
+          "journal": "Clean Technologies and Environmental Policy",
+          "publications": 4,
+          "citations": 24,
+          "oa_share": 0.25,
+          "access_profile": "Mostly closed",
+          "top_themes": "Biopolymers, Calcium, Calcium Chloride"
+        },
+        {
+          "journal": "Journal of Environmental Chemical Engineering",
+          "publications": 4,
+          "citations": 14,
+          "oa_share": 0.0,
+          "access_profile": "Mostly closed",
+          "top_themes": "Barrier Properties, Bio-Nanocomposites, Bio-Oil"
+        },
+        {
+          "journal": "Polymer Bulletin",
+          "publications": 4,
+          "citations": 13,
+          "oa_share": 0.25,
+          "access_profile": "Mostly closed",
+          "top_themes": "Adsorption, Amphiphobic Surfaces, Beads"
+        },
+        {
+          "journal": "Foods",
+          "publications": 4,
+          "citations": 11,
+          "oa_share": 1.0,
+          "access_profile": "Open-access led",
+          "top_themes": "Adhesion, Algae-Derived Peptides, Applications"
+        },
+        {
+          "journal": "Journal of Applied Polymer Science",
+          "publications": 4,
+          "citations": 9,
+          "oa_share": 0.25,
+          "access_profile": "Mostly closed",
+          "top_themes": "Biomaterials, Biopolymers And Renewable Polymers, Biosynthesis Of Polymers"
+        },
+        {
+          "journal": "Food Research",
+          "publications": 4,
+          "citations": 4,
+          "oa_share": 1.0,
+          "access_profile": "Open-access led",
+          "top_themes": "Antioxidant Activities, Papaya Juice, Annatto Powder"
+        },
+        {
+          "journal": "Environmental Monitoring and Assessment",
+          "publications": 4,
+          "citations": 1,
+          "oa_share": 0.0,
+          "access_profile": "Mostly closed",
+          "top_themes": "Aermod, Aquifer Characteristics, Aware Model"
+        },
+        {
+          "journal": "ACS Omega",
+          "publications": 4,
+          "citations": 0,
+          "oa_share": 1.0,
+          "access_profile": "Open-access led",
+          "top_themes": null
+        },
+        {
+          "journal": "Journal of Sustainability Science and Management",
+          "publications": 4,
+          "citations": 0,
+          "oa_share": 0.75,
+          "access_profile": "Open-access led",
+          "top_themes": "Sustainability, Biofuel, Biological Hazard"
+        },
+        {
+          "journal": "Malaysian Applied Biology",
+          "publications": 4,
+          "citations": 0,
+          "oa_share": 0.75,
+          "access_profile": "Open-access led",
+          "top_themes": "Atm Protein, Cell Viability, Danio Rerio"
+        },
+        {
+          "journal": "Malaysian Journal of Microbiology",
+          "publications": 4,
+          "citations": 0,
+          "oa_share": 0.25,
+          "access_profile": "Mostly closed",
+          "top_themes": "Agro-Wastes, Aspergillus Niger Hfm 8, Bio-Valorization"
+        },
+        {
+          "journal": "Polymer Composites",
+          "publications": 3,
+          "citations": 76,
+          "oa_share": 0.6667,
+          "access_profile": "Open-access led",
+          "top_themes": "Biocomposite, Mechanical Properties, Abaca Fiber"
+        },
+        {
+          "journal": "Journal of Separation Science",
+          "publications": 3,
+          "citations": 45,
+          "oa_share": 0.0,
+          "access_profile": "Mostly closed",
+          "top_themes": "Flavonoid, Activated Carbon, Extraction"
+        },
+        {
+          "journal": "Food Bioscience",
+          "publications": 3,
+          "citations": 29,
+          "oa_share": 0.0,
+          "access_profile": "Mostly closed",
+          "top_themes": "Active Packaging Film, Antibacterial, Aspergillus Flavus"
+        },
+        {
+          "journal": "Lwt",
+          "publications": 3,
+          "citations": 29,
+          "oa_share": 1.0,
+          "access_profile": "Open-access led",
+          "top_themes": "Azelaic Acid, Cacl2, Cooking Qualities"
+        },
+        {
+          "journal": "Applied Food Research",
+          "publications": 3,
+          "citations": 27,
+          "oa_share": 1.0,
+          "access_profile": "Open-access led",
+          "top_themes": "Antioxidant, Basil Seed Beverage, Essential Oil"
+        },
+        {
+          "journal": "Food and Bioprocess Technology",
+          "publications": 3,
+          "citations": 24,
+          "oa_share": 0.0,
+          "access_profile": "Mostly closed",
+          "top_themes": "Azelaic Acid, Beef, Cell Wall"
+        },
+        {
+          "journal": "Journal of Food Science",
+          "publications": 3,
+          "citations": 24,
+          "oa_share": 0.6667,
+          "access_profile": "Open-access led",
+          "top_themes": "10-Hydroxydecanoic Acid, Alginate Beads, Antioxidant Activity"
+        },
+        {
+          "journal": "Food Science and Biotechnology",
+          "publications": 3,
+          "citations": 20,
+          "oa_share": 0.6667,
+          "access_profile": "Open-access led",
+          "top_themes": "Fermentation, Antimicrobial, Azelaic Acid"
+        },
+        {
+          "journal": "Scientific Reports",
+          "publications": 3,
+          "citations": 8,
+          "oa_share": 1.0,
+          "access_profile": "Open-access led",
+          "top_themes": "Canopy Layer, Energy Consumption, Environmental Footprint"
+        },
+        {
+          "journal": "Food Analytical Methods",
+          "publications": 3,
+          "citations": 7,
+          "oa_share": 0.6667,
+          "access_profile": "Open-access led",
+          "top_themes": "Chemometrics, Adulteration, Antioxidant Activity"
+        },
+        {
+          "journal": "Food Quality and Safety",
+          "publications": 3,
+          "citations": 6,
+          "oa_share": 1.0,
+          "access_profile": "Open-access led",
+          "top_themes": "Antimicrobial, Azelaic Acid (Aza), Digestibility"
+        }
+      ],
+      "journal_shortlist": [
+        {
+          "journal": "International Journal of Biological Macromolecules",
+          "publications": 22,
+          "citations": 207,
+          "median_citations": 5.0,
+          "oa_share": 0.0,
+          "top_themes": "Antibacterial Activity, Biopolymer, Biopolymers"
+        },
+        {
+          "journal": "Journal of Food Measurement and Characterization",
+          "publications": 20,
+          "citations": 141,
+          "median_citations": 2.5,
+          "oa_share": 0.25,
+          "top_themes": "Antimicrobial, Active Packaging, Antioxidant"
+        },
+        {
+          "journal": "Green Energy and Technology",
+          "publications": 11,
+          "citations": 6,
+          "median_citations": 0.0,
+          "oa_share": 0.0,
+          "top_themes": "Biofuel, Biodiesel, Biomass Feedstock"
+        },
+        {
+          "journal": "Polymer Engineering and Science",
+          "publications": 10,
+          "citations": 82,
+          "median_citations": 8.5,
+          "oa_share": 0.5,
+          "top_themes": "Bioaerogel, Biocomposites, Biofiller"
+        },
+        {
+          "journal": "Solid Waste Management Challenges and Recent Solutions",
+          "publications": 10,
+          "citations": 3,
+          "median_citations": 0.0,
+          "oa_share": 0.0,
+          "top_themes": null
+        },
+        {
+          "journal": "Bamboo Based Polymer Composites Fundamentals Properties Applications and Performance",
+          "publications": 9,
+          "citations": 9,
+          "median_citations": 0.0,
+          "oa_share": 0.0,
+          "top_themes": "Composite Materials, Sustainability, Woven Bamboo Fibre"
+        },
+        {
+          "journal": "Biomass and Bioenergy",
+          "publications": 8,
+          "citations": 38,
+          "median_citations": 3.5,
+          "oa_share": 0.125,
+          "top_themes": "Agricultural Waste, Anaerobic Digestion, Barrier Performance"
+        },
+        {
+          "journal": "Food Science and Nutrition",
+          "publications": 7,
+          "citations": 102,
+          "median_citations": 12.0,
+          "oa_share": 1.0,
+          "top_themes": "Acrylamide, Active Film, Anthocyanins"
+        },
+        {
+          "journal": "Biofuels Bioproducts and Biorefining",
+          "publications": 7,
+          "citations": 47,
+          "median_citations": 6.0,
+          "oa_share": 0.4286,
+          "top_themes": "Bioproduct, Activated Carbon, Activation Time"
+        },
+        {
+          "journal": "Express Polymer Letters",
+          "publications": 7,
+          "citations": 25,
+          "median_citations": 3.0,
+          "oa_share": 1.0,
+          "top_themes": "Biopolymer, Bioaerogel, Compatibility"
+        },
+        {
+          "journal": "Frontiers in Nutrition",
+          "publications": 7,
+          "citations": 13,
+          "median_citations": 1.0,
+          "oa_share": 1.0,
+          "top_themes": "Probiotic, Gut Microbiota, Randomized Controlled Trial"
+        },
+        {
+          "journal": "Bioresource Technology Reports",
+          "publications": 5,
+          "citations": 10,
+          "median_citations": 0.0,
+          "oa_share": 0.0,
+          "top_themes": "Activated Carbon, Agro-Food Organic Residues, Biodegradable Materials"
+        },
+        {
+          "journal": "Biomass Processing for Sustainable Circular Economy",
+          "publications": 5,
+          "citations": 2,
+          "median_citations": 0.0,
+          "oa_share": 0.0,
+          "top_themes": "Biomass Conversion, Biomass Processing, Bioprocess"
+        },
+        {
+          "journal": "Clean Technologies and Environmental Policy",
+          "publications": 4,
+          "citations": 24,
+          "median_citations": 6.0,
+          "oa_share": 0.25,
+          "top_themes": "Biopolymers, Calcium, Calcium Chloride"
+        },
+        {
+          "journal": "Journal of Environmental Chemical Engineering",
+          "publications": 4,
+          "citations": 14,
+          "median_citations": 4.0,
+          "oa_share": 0.0,
+          "top_themes": "Barrier Properties, Bio-Nanocomposites, Bio-Oil"
+        },
+        {
+          "journal": "Polymer Bulletin",
+          "publications": 4,
+          "citations": 13,
+          "median_citations": 3.0,
+          "oa_share": 0.25,
+          "top_themes": "Adsorption, Amphiphobic Surfaces, Beads"
+        },
+        {
+          "journal": "Foods",
+          "publications": 4,
+          "citations": 11,
+          "median_citations": 3.0,
+          "oa_share": 1.0,
+          "top_themes": "Adhesion, Algae-Derived Peptides, Applications"
+        },
+        {
+          "journal": "Journal of Applied Polymer Science",
+          "publications": 4,
+          "citations": 9,
+          "median_citations": 1.0,
+          "oa_share": 0.25,
+          "top_themes": "Biomaterials, Biopolymers And Renewable Polymers, Biosynthesis Of Polymers"
+        },
+        {
+          "journal": "Food Research",
+          "publications": 4,
+          "citations": 4,
+          "median_citations": 1.0,
+          "oa_share": 1.0,
+          "top_themes": "Antioxidant Activities, Papaya Juice, Annatto Powder"
+        },
+        {
+          "journal": "Environmental Monitoring and Assessment",
+          "publications": 4,
+          "citations": 1,
+          "median_citations": 0.0,
+          "oa_share": 0.0,
+          "top_themes": "Aermod, Aquifer Characteristics, Aware Model"
+        },
+        {
+          "journal": "ACS Omega",
+          "publications": 4,
+          "citations": 0,
+          "median_citations": 0.0,
+          "oa_share": 1.0,
+          "top_themes": null
+        },
+        {
+          "journal": "Journal of Sustainability Science and Management",
+          "publications": 4,
+          "citations": 0,
+          "median_citations": 0.0,
+          "oa_share": 0.75,
+          "top_themes": "Sustainability, Biofuel, Biological Hazard"
+        },
+        {
+          "journal": "Malaysian Applied Biology",
+          "publications": 4,
+          "citations": 0,
+          "median_citations": 0.0,
+          "oa_share": 0.75,
+          "top_themes": "Atm Protein, Cell Viability, Danio Rerio"
+        },
+        {
+          "journal": "Malaysian Journal of Microbiology",
+          "publications": 4,
+          "citations": 0,
+          "median_citations": 0.0,
+          "oa_share": 0.25,
+          "top_themes": "Agro-Wastes, Aspergillus Niger Hfm 8, Bio-Valorization"
+        },
+        {
+          "journal": "Polymer Composites",
+          "publications": 3,
+          "citations": 76,
+          "median_citations": 26.0,
+          "oa_share": 0.6667,
+          "top_themes": "Biocomposite, Mechanical Properties, Abaca Fiber"
+        },
+        {
+          "journal": "Journal of Separation Science",
+          "publications": 3,
+          "citations": 45,
+          "median_citations": 5.0,
+          "oa_share": 0.0,
+          "top_themes": "Flavonoid, Activated Carbon, Extraction"
+        },
+        {
+          "journal": "Food Bioscience",
+          "publications": 3,
+          "citations": 29,
+          "median_citations": 8.0,
+          "oa_share": 0.0,
+          "top_themes": "Active Packaging Film, Antibacterial, Aspergillus Flavus"
+        },
+        {
+          "journal": "Lwt",
+          "publications": 3,
+          "citations": 29,
+          "median_citations": 6.0,
+          "oa_share": 1.0,
+          "top_themes": "Azelaic Acid, Cacl2, Cooking Qualities"
+        },
+        {
+          "journal": "Applied Food Research",
+          "publications": 3,
+          "citations": 27,
+          "median_citations": 8.0,
+          "oa_share": 1.0,
+          "top_themes": "Antioxidant, Basil Seed Beverage, Essential Oil"
+        },
+        {
+          "journal": "Food and Bioprocess Technology",
+          "publications": 3,
+          "citations": 24,
+          "median_citations": 5.0,
+          "oa_share": 0.0,
+          "top_themes": "Azelaic Acid, Beef, Cell Wall"
+        }
+      ],
+      "top_keywords": [
+        {
+          "keyword": "Fermentation",
+          "publications": 14,
+          "citation_weight": 59,
+          "citations_per_publication": 4.2,
+          "journal_reach": 13,
+          "top_journals": "Food Science and Biotechnology (2); Biomass and Bioenergy (1); Bioremediation Journal (1)"
+        },
+        {
+          "keyword": "Biopolymer",
+          "publications": 13,
+          "citation_weight": 84,
+          "citations_per_publication": 6.5,
+          "journal_reach": 10,
+          "top_journals": "Express Polymer Letters (3); International Journal of Biological Macromolecules (2); Bioresource Technology Reports (1)"
+        },
+        {
+          "keyword": "Sustainability",
+          "publications": 12,
+          "citation_weight": 27,
+          "citations_per_publication": 2.2,
+          "journal_reach": 10,
+          "top_journals": "Bamboo Based Polymer Composites Fundamentals Properties Applications and Performance (2); Journal of Sustainability Science and Management (2); Aquaculture Reports (1)"
+        },
+        {
+          "keyword": "Circular Economy",
+          "publications": 10,
+          "citation_weight": 17,
+          "citations_per_publication": 1.7,
+          "journal_reach": 8,
+          "top_journals": "Biomass Processing for Sustainable Circular Economy (2); Green Energy and Technology (2); Biomass Valorization A Sustainable Approach Towards Carbon Neutrality and Circular Economy (1)"
+        },
+        {
+          "keyword": "Probiotics",
+          "publications": 9,
+          "citation_weight": 58,
+          "citations_per_publication": 6.4,
+          "journal_reach": 8,
+          "top_journals": "Veterinary World (2); Fermentation (1); International Journal of Gynecology and Obstetrics (1)"
+        },
+        {
+          "keyword": "Antimicrobial",
+          "publications": 9,
+          "citation_weight": 47,
+          "citations_per_publication": 5.2,
+          "journal_reach": 6,
+          "top_journals": "Journal of Food Measurement and Characterization (4); Food Quality and Safety (1); Food Science and Biotechnology (1)"
+        },
+        {
+          "keyword": "Renewable Energy",
+          "publications": 9,
+          "citation_weight": 34,
+          "citations_per_publication": 3.8,
+          "journal_reach": 8,
+          "top_journals": "Green Energy and Technology (2); Biofuels Bioproducts and Biorefining (1); Biomass Processing for Sustainable Circular Economy (1)"
+        },
+        {
+          "keyword": "Machine Learning",
+          "publications": 8,
+          "citation_weight": 64,
+          "citations_per_publication": 8.0,
+          "journal_reach": 8,
+          "top_journals": "Advances in Building Energy Research (1); Biomass and Bioenergy (1); Ecological Informatics (1)"
+        },
+        {
+          "keyword": "Microalgae",
+          "publications": 8,
+          "citation_weight": 51,
+          "citations_per_publication": 6.4,
+          "journal_reach": 8,
+          "top_journals": "Environmental Technology and Innovation (1); Food Analytical Methods (1); Green Energy and Technology (1)"
+        },
+        {
+          "keyword": "Biofuel",
+          "publications": 8,
+          "citation_weight": 38,
+          "citations_per_publication": 4.8,
+          "journal_reach": 6,
+          "top_journals": "Green Energy and Technology (3); Biofuels Bioproducts and Biorefining (1); Bioresource Technology Reports (1)"
+        },
+        {
+          "keyword": "Cellulose",
+          "publications": 8,
+          "citation_weight": 28,
+          "citations_per_publication": 3.5,
+          "journal_reach": 8,
+          "top_journals": "Biofuels Bioproducts and Biorefining (1); Bioresources (1); Cellulose (1)"
+        },
+        {
+          "keyword": "Antioxidant",
+          "publications": 8,
+          "citation_weight": 14,
+          "citations_per_publication": 1.8,
+          "journal_reach": 7,
+          "top_journals": "Journal of Food Measurement and Characterization (2); Applied Food Research (1); Biocatalysis and Agricultural Biotechnology (1)"
+        },
+        {
+          "keyword": "Glutaric Acid",
+          "publications": 8,
+          "citation_weight": 12,
+          "citations_per_publication": 1.5,
+          "journal_reach": 8,
+          "top_journals": "Food Science and Biotechnology (1); Food Science and Nutrition (1); Food and Bioprocess Technology (1)"
+        },
+        {
+          "keyword": "Lactic Acid Bacteria",
+          "publications": 7,
+          "citation_weight": 72,
+          "citations_per_publication": 10.3,
+          "journal_reach": 7,
+          "top_journals": "Fermentation (1); Food Bioscience (1); Foods (1)"
+        },
+        {
+          "keyword": "Biodiesel",
+          "publications": 7,
+          "citation_weight": 35,
+          "citations_per_publication": 5.0,
+          "journal_reach": 6,
+          "top_journals": "Green Energy and Technology (2); Biocatalysis and Agricultural Biotechnology (1); Discover Sustainability (1)"
+        }
+      ],
+      "keyword_tiers": [
+        {
+          "tier": "Established (5+)",
+          "keywords": 39,
+          "publication_keyword_associations": 282,
+          "portfolio_share": 0.1042
+        },
+        {
+          "tier": "Developing (2–4)",
+          "keywords": 284,
+          "publication_keyword_associations": 693,
+          "portfolio_share": 0.256
+        },
+        {
+          "tier": "Exploratory (1)",
+          "keywords": 1732,
+          "publication_keyword_associations": 1732,
+          "portfolio_share": 0.6398
+        }
+      ],
+      "keyword_signals": [
+        {
+          "keyword": "Deep Learning",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 48,
+          "citations_per_publication": 12.0,
+          "journal_reach": 3,
+          "movement": "Baseline",
+          "top_journals": "Ecological Informatics (2); International Journal of Informatics and Communication Technology (1); Weather and Forecasting (1)"
+        },
+        {
+          "keyword": "Nanoemulsion",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 46,
+          "citations_per_publication": 11.5,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Applied Food Biotechnology (1); Journal of Cluster Science (1); Journal of Food Measurement and Characterization (1)"
+        },
+        {
+          "keyword": "Lentil Proteins",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 45,
+          "citations_per_publication": 11.2,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Food Chemistry (1); Food Science and Biotechnology (1); International Journal of Food Sciences and Nutrition (1)"
+        },
+        {
+          "keyword": "Extraction",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 44,
+          "citations_per_publication": 11.0,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Food Analytical Methods (1); Journal of Separation Science (1); Journal of the Science of Food and Agriculture (1)"
+        },
+        {
+          "keyword": "Purification",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 41,
+          "citations_per_publication": 10.2,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Chembioeng Reviews (1); Journal of Separation Science (1); Journal of the Taiwan Institute of Chemical Engineers (1)"
+        },
+        {
+          "keyword": "Sodium Alginate",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 32,
+          "citations_per_publication": 8.0,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Applied Food Research (1); Express Polymer Letters (1); Journal of Food Measurement and Characterization (1)"
+        },
+        {
+          "keyword": "Palm Kernel Shell",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 29,
+          "citations_per_publication": 7.2,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Biofuels Bioproducts and Biorefining (1); Bioresource Technology Reports (1); Chemosphere (1)"
+        },
+        {
+          "keyword": "Thermal Insulation",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 29,
+          "citations_per_publication": 7.2,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Biofuels Bioproducts and Biorefining (1); Biomimetics (1); Polymer Engineering and Science (1)"
+        },
+        {
+          "keyword": "Biomaterials",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 28,
+          "citations_per_publication": 7.0,
+          "journal_reach": 3,
+          "movement": "Baseline",
+          "top_journals": "Journal of Applied Polymer Science (2); Biomass Conversion and Biorefinery (1); Bioresources (1)"
+        },
+        {
+          "keyword": "Pyrolysis",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 27,
+          "citations_per_publication": 6.8,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Green Technologies and Sustainability (1); Journal of Analytical and Applied Pyrolysis (1); Journal of Separation Science (1)"
+        },
+        {
+          "keyword": "Antibacterial",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 24,
+          "citations_per_publication": 6.0,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Food Bioscience (1); Inorganic Chemistry Communications (1); Polymer Engineering and Science (1)"
+        },
+        {
+          "keyword": "Sustainable Development",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 24,
+          "citations_per_publication": 6.0,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Cleaner Waste Systems (1); Environment Development and Sustainability (1); Green Energy and Technology (1)"
+        },
+        {
+          "keyword": "Gut Microbiota",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 22,
+          "citations_per_publication": 5.5,
+          "journal_reach": 3,
+          "movement": "Baseline",
+          "top_journals": "Frontiers in Nutrition (2); Metabolites (1); Molecular Nutrition and Food Research (1)"
+        },
+        {
+          "keyword": "Encapsulation",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 17,
+          "citations_per_publication": 4.2,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "ASM Science Journal (1); Food Hydrocolloids for Health (1); Journal of Food Measurement and Characterization (1)"
+        },
+        {
+          "keyword": "Circular Bioeconomy",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 15,
+          "citations_per_publication": 3.8,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Biomass and Bioenergy (1); Bioresource Technology Reports (1); International Journal of Agricultural Resources Governance and Ecology (1)"
+        },
+        {
+          "keyword": "Solubility",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 13,
+          "citations_per_publication": 3.2,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Food Quality and Safety (1); Food Science and Biotechnology (1); International Journal of Food Sciences and Nutrition (1)"
+        },
+        {
+          "keyword": "Food Security",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 10,
+          "citations_per_publication": 2.5,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Aquaculture Reports (1); Archives of Agronomy and Soil Science (1); Cab Reviews Perspectives in Agriculture Veterinary Science Nutrition and Natural Resources (1)"
+        },
+        {
+          "keyword": "Artificial Intelligence",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 9,
+          "citations_per_publication": 2.2,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Advances in Building Energy Research (1); Food Reviews International (1); Frontiers in Microbiology (1)"
+        },
+        {
+          "keyword": "Fatty Acid",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 9,
+          "citations_per_publication": 2.2,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Energy Nexus (1); Food Analytical Methods (1); Food Chemistry (1)"
+        },
+        {
+          "keyword": "Succinic Acid",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 8,
+          "citations_per_publication": 2.0,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Food Science and Biotechnology (1); Food and Bioprocess Technology (1); International Journal of Food Science and Technology (1)"
+        },
+        {
+          "keyword": "Climate Change",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 7,
+          "citations_per_publication": 1.8,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Jurnal Teknologi (1); Malaysian Journal of Medical Sciences (1); Marine Environmental Research (1)"
+        },
+        {
+          "keyword": "Packaging",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 7,
+          "citations_per_publication": 1.8,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Journal of Applied Polymer Science (1); Paper Asia (1); Physical Sciences Reviews (1)"
+        },
+        {
+          "keyword": "Waste Valorization",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 7,
+          "citations_per_publication": 1.8,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Bioresource Technology Reports (1); Discover Sustainability (1); Polymer Engineering and Science (1)"
+        },
+        {
+          "keyword": "Bioceramic",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 6,
+          "citations_per_publication": 1.5,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Ifmbe Proceedings (1); Journal of Biomaterials Applications (1); Journal of Materials Research (1)"
+        },
+        {
+          "keyword": "Biomass",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 6,
+          "citations_per_publication": 1.5,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Biomass Processing for Sustainable Circular Economy (1); Journal of Environmental Chemical Engineering (1); Materials Letters (1)"
+        },
+        {
+          "keyword": "Heavy Metals",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 6,
+          "citations_per_publication": 1.5,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Environmental Geochemistry and Health (1); Journal of Plant Nutrition (1); Malaysian Journal of Medicine and Health Sciences (1)"
+        },
+        {
+          "keyword": "Lactiplantibacillus Plantarum",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 5,
+          "citations_per_publication": 1.2,
+          "journal_reach": 3,
+          "movement": "Baseline",
+          "top_journals": "Beneficial Microbes (2); Molecular Nutrition and Food Research (1); Nutrients (1)"
+        },
+        {
+          "keyword": "Sorbic Acid",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 4,
+          "citations_per_publication": 1.0,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Food Science and Nutrition (1); Journal of Food Biochemistry (1); Journal of Food Measurement and Characterization (1)"
+        },
+        {
+          "keyword": "Biomass Conversion",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 3,
+          "citations_per_publication": 0.8,
+          "journal_reach": 2,
+          "movement": "Baseline",
+          "top_journals": "Biomass Processing for Sustainable Circular Economy (3); Journal of Hazardous Toxic and Radioactive Waste (1)"
+        },
+        {
+          "keyword": "Children",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 3,
+          "citations_per_publication": 0.8,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Frontiers in Nutrition (1); Journal of Microbiology and Biotechnology (1); Malaysian Journal of Medical Sciences (1)"
+        },
+        {
+          "keyword": "Sustainable",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 3,
+          "citations_per_publication": 0.8,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Biomimetics (1); Bioresource Technology Reports (1); Green Energy and Technology (1)"
+        },
+        {
+          "keyword": "Bacillus Subtilis",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 2,
+          "citations_per_publication": 0.5,
+          "journal_reach": 4,
+          "movement": "Baseline",
+          "top_journals": "Biological Agriculture and Horticulture (1); International Journal of Ecosystems and Ecology Science (1); Journal of Soil Science and Plant Nutrition (1)"
+        },
+        {
+          "keyword": "Principal Component Analysis",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 2,
+          "citations_per_publication": 0.5,
+          "journal_reach": 3,
+          "movement": "Baseline",
+          "top_journals": "International Journal on Advanced Science Engineering and Information Technology (2); Beyond Halal Exploring Dietary Preferences Novel Ingredients and Techniques (1); Jurnal Teknologi (1)"
+        },
+        {
+          "keyword": "Bioprocess",
+          "tier": "Developing (2–4)",
+          "publications": 4,
+          "citation_weight": 1,
+          "citations_per_publication": 0.2,
+          "journal_reach": 3,
+          "movement": "Baseline",
+          "top_journals": "Biomass Processing for Sustainable Circular Economy (2); Green Energy and Technology (1); Journal of Environmental Chemical Engineering (1)"
+        },
+        {
+          "keyword": "Edible Coating",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citation_weight": 57,
+          "citations_per_publication": 19.0,
+          "journal_reach": 3,
+          "movement": "Baseline",
+          "top_journals": "Food Science and Nutrition (1); Journal of Food Measurement and Characterization (1); Journal of Food Science and Technology Iran (1)"
+        },
+        {
+          "keyword": "Kenaf",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citation_weight": 44,
+          "citations_per_publication": 14.7,
+          "journal_reach": 3,
+          "movement": "Baseline",
+          "top_journals": "Biocatalysis and Agricultural Biotechnology (1); Journal of Food Measurement and Characterization (1); Polymer Composites (1)"
+        },
+        {
+          "keyword": "Biocomposites",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citation_weight": 40,
+          "citations_per_publication": 13.3,
+          "journal_reach": 2,
+          "movement": "Baseline",
+          "top_journals": "Polymer Engineering and Science (2); Fibers and Polymers (1)"
+        },
+        {
+          "keyword": "Conjugation",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citation_weight": 40,
+          "citations_per_publication": 13.3,
+          "journal_reach": 3,
+          "movement": "Baseline",
+          "top_journals": "Composites in Energy Harvesting Conversion and Storage Biocomposites Nanocomposites and Bionanocomposites (1); Food Engineering Reviews (1); Physical Sciences Reviews (1)"
+        },
+        {
+          "keyword": "Microfiller",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citation_weight": 39,
+          "citations_per_publication": 13.0,
+          "journal_reach": 3,
+          "movement": "Baseline",
+          "top_journals": "Biofuels Bioproducts and Biorefining (1); Industrial Crops and Products (1); Polymer Composites (1)"
+        },
+        {
+          "keyword": "Spent Coffee Grounds",
+          "tier": "Developing (2–4)",
+          "publications": 3,
+          "citation_weight": 34,
+          "citations_per_publication": 11.3,
+          "journal_reach": 3,
+          "movement": "Baseline",
+          "top_journals": "Bioresource Technology Reports (1); Polymer Composites (1); Polymer Engineering and Science (1)"
+        },
+        {
+          "keyword": "Lignin Properties",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 78,
+          "citations_per_publication": 78.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "International Journal of Biological Macromolecules (1)"
+        },
+        {
+          "keyword": "Lignin Utilization",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 78,
+          "citations_per_publication": 78.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "International Journal of Biological Macromolecules (1)"
+        },
+        {
+          "keyword": "Technical Lignin",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 78,
+          "citations_per_publication": 78.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "International Journal of Biological Macromolecules (1)"
+        },
+        {
+          "keyword": "Capturing",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 73,
+          "citations_per_publication": 73.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Water Science and Engineering (1)"
+        },
+        {
+          "keyword": "Colloidal",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 73,
+          "citations_per_publication": 73.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Water Science and Engineering (1)"
+        },
+        {
+          "keyword": "Surfaces",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 73,
+          "citations_per_publication": 73.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Water Science and Engineering (1)"
+        },
+        {
+          "keyword": "Glass",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 43,
+          "citations_per_publication": 43.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Polymer Composites (1)"
+        },
+        {
+          "keyword": "Polymer Matrix Composites",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 43,
+          "citations_per_publication": 43.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Polymer Composites (1)"
+        },
+        {
+          "keyword": "Chicken Fillets",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 39,
+          "citations_per_publication": 39.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Journal of Food Measurement and Characterization (1)"
+        },
+        {
+          "keyword": "Chitosan Films",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 39,
+          "citations_per_publication": 39.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Journal of Food Measurement and Characterization (1)"
+        },
+        {
+          "keyword": "Eggplant Anthocyanins",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 39,
+          "citations_per_publication": 39.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Journal of Food Measurement and Characterization (1)"
+        },
+        {
+          "keyword": "Oliveria Decumbens",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 39,
+          "citations_per_publication": 39.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Journal of Food Measurement and Characterization (1)"
+        },
+        {
+          "keyword": "Macroporous Resin",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 38,
+          "citations_per_publication": 38.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Journal of Separation Science (1)"
+        },
+        {
+          "keyword": "Acrylamide",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 35,
+          "citations_per_publication": 35.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Food Science and Nutrition (1)"
+        },
+        {
+          "keyword": "Oil Uptake",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 35,
+          "citations_per_publication": 35.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Food Science and Nutrition (1)"
+        },
+        {
+          "keyword": "Potato Strips",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 35,
+          "citations_per_publication": 35.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Food Science and Nutrition (1)"
+        },
+        {
+          "keyword": "Tarragon",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 35,
+          "citations_per_publication": 35.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Food Science and Nutrition (1)"
+        },
+        {
+          "keyword": "Zataria Multiflora Boiss",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 35,
+          "citations_per_publication": 35.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Food Science and Nutrition (1)"
+        },
+        {
+          "keyword": "Animal-Based Proteins",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 33,
+          "citations_per_publication": 33.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Food Engineering Reviews (1)"
+        },
+        {
+          "keyword": "Complex Coacervation",
+          "tier": "Exploratory (1)",
+          "publications": 1,
+          "citation_weight": 33,
+          "citations_per_publication": 33.0,
+          "journal_reach": 1,
+          "movement": "Baseline",
+          "top_journals": "Food Engineering Reviews (1)"
+        }
+      ],
+      "emerging_keywords": [
+        {
+          "keyword": "Edible Coating",
+          "publications": 3,
+          "citation_weight": 57,
+          "citations_per_publication": 19.0,
+          "journal_reach": 3,
+          "top_journals": "Food Science and Nutrition (1); Journal of Food Measurement and Characterization (1); Journal of Food Science and Technology Iran (1)"
+        },
+        {
+          "keyword": "Microplastics",
+          "publications": 5,
+          "citation_weight": 79,
+          "citations_per_publication": 15.8,
+          "journal_reach": 5,
+          "top_journals": "Aquatic Conservation Marine and Freshwater Ecosystems (1); Environmental Toxicology and Chemistry (1); Jurnal Teknologi (1)"
+        },
+        {
+          "keyword": "Kenaf",
+          "publications": 3,
+          "citation_weight": 44,
+          "citations_per_publication": 14.7,
+          "journal_reach": 3,
+          "top_journals": "Biocatalysis and Agricultural Biotechnology (1); Journal of Food Measurement and Characterization (1); Polymer Composites (1)"
+        },
+        {
+          "keyword": "Biocomposites",
+          "publications": 3,
+          "citation_weight": 40,
+          "citations_per_publication": 13.3,
+          "journal_reach": 2,
+          "top_journals": "Polymer Engineering and Science (2); Fibers and Polymers (1)"
+        },
+        {
+          "keyword": "Conjugation",
+          "publications": 3,
+          "citation_weight": 40,
+          "citations_per_publication": 13.3,
+          "journal_reach": 3,
+          "top_journals": "Composites in Energy Harvesting Conversion and Storage Biocomposites Nanocomposites and Bionanocomposites (1); Food Engineering Reviews (1); Physical Sciences Reviews (1)"
+        },
+        {
+          "keyword": "Microfiller",
+          "publications": 3,
+          "citation_weight": 39,
+          "citations_per_publication": 13.0,
+          "journal_reach": 3,
+          "top_journals": "Biofuels Bioproducts and Biorefining (1); Industrial Crops and Products (1); Polymer Composites (1)"
+        },
+        {
+          "keyword": "Deep Learning",
+          "publications": 4,
+          "citation_weight": 48,
+          "citations_per_publication": 12.0,
+          "journal_reach": 3,
+          "top_journals": "Ecological Informatics (2); International Journal of Informatics and Communication Technology (1); Weather and Forecasting (1)"
+        },
+        {
+          "keyword": "Sustainable Packaging",
+          "publications": 5,
+          "citation_weight": 58,
+          "citations_per_publication": 11.6,
+          "journal_reach": 4,
+          "top_journals": "Polymer Engineering and Science (2); Biomass and Bioenergy (1); Journal of Environmental Chemical Engineering (1)"
+        },
+        {
+          "keyword": "Nanoemulsion",
+          "publications": 4,
+          "citation_weight": 46,
+          "citations_per_publication": 11.5,
+          "journal_reach": 4,
+          "top_journals": "Applied Food Biotechnology (1); Journal of Cluster Science (1); Journal of Food Measurement and Characterization (1)"
+        },
+        {
+          "keyword": "Spent Coffee Grounds",
+          "publications": 3,
+          "citation_weight": 34,
+          "citations_per_publication": 11.3,
+          "journal_reach": 3,
+          "top_journals": "Bioresource Technology Reports (1); Polymer Composites (1); Polymer Engineering and Science (1)"
+        },
+        {
+          "keyword": "Lentil Proteins",
+          "publications": 4,
+          "citation_weight": 45,
+          "citations_per_publication": 11.2,
+          "journal_reach": 4,
+          "top_journals": "Food Chemistry (1); Food Science and Biotechnology (1); International Journal of Food Sciences and Nutrition (1)"
+        },
+        {
+          "keyword": "Extraction",
+          "publications": 4,
+          "citation_weight": 44,
+          "citations_per_publication": 11.0,
+          "journal_reach": 4,
+          "top_journals": "Food Analytical Methods (1); Journal of Separation Science (1); Journal of the Science of Food and Agriculture (1)"
+        },
+        {
+          "keyword": "Essential Oil",
+          "publications": 5,
+          "citation_weight": 52,
+          "citations_per_publication": 10.4,
+          "journal_reach": 5,
+          "top_journals": "Applied Food Biotechnology (1); Applied Food Research (1); Bioactive Carbohydrates and Dietary Fibre (1)"
+        },
+        {
+          "keyword": "Mechanical Properties",
+          "publications": 6,
+          "citation_weight": 62,
+          "citations_per_publication": 10.3,
+          "journal_reach": 5,
+          "top_journals": "Polymer Composites (2); Bamboo Based Polymer Composites Fundamentals Properties Applications and Performance (1); Biomass and Bioenergy (1)"
+        },
+        {
+          "keyword": "Lactic Acid Bacteria",
+          "publications": 7,
+          "citation_weight": 72,
+          "citations_per_publication": 10.3,
+          "journal_reach": 7,
+          "top_journals": "Fermentation (1); Food Bioscience (1); Foods (1)"
+        }
+      ],
+      "monthly_comparison": [
+        {
+          "current_period_end": "2026-06-30",
+          "previous_period_end": null,
+          "comparison_available": false,
+          "material_change": false,
+          "publication_delta": null,
+          "citation_delta": null,
+          "open_access_change_pp": null
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "scopus_publication_snapshot",
+      "label": "Scopus publication snapshot",
+      "path": "data/ppti_journal_publications.csv",
+      "query": {
+        "engine": "SQLite",
+        "language": "sql",
+        "sql": "SELECT *\nFROM scopus_publications\nWHERE date(Date) BETWEEN date('2024-07-01') AND date('2026-06-30')",
+        "description": "Loads Scopus-derived publication records within the last 24 completed months. The report builder deduplicates articles by Scopus link and compares the current edition with the preceding monthly snapshot when available.",
+        "executed_at": "2026-07-27T23:23:55+08:00",
+        "tables_used": [
+          "scopus_publications"
+        ],
+        "filters": [
+          "Publication date from 1 July 2024 to 30 June 2026",
+          "One institutional publication per distinct Scopus article link after extraction",
+          "Blank and sentinel author keywords excluded from keyword summaries",
+          "Monthly comparison methodology: scopus-complete-pagination-deduplicated-v1"
+        ],
+        "metric_definitions": [
+          "Distinct publications: unique Scopus article links in the reporting window.",
+          "Contributors: unique PPTI researcher names attached to in-window records.",
+          "Citation count: sum of current Scopus citations across distinct publications.",
+          "Open-access share: distinct publications marked Open Access = Yes divided by distinct publications.",
+          "Keyword publications: distinct publications carrying the normalized author keyword."
+        ]
+      }
+    }
+  ],
+  "package_info": {
+    "artifact": "monthly production report",
+    "narrativeWorkflow": "month-aware comparison enabled",
+    "comparisonBaseline": "initial baseline"
+  }
+}
