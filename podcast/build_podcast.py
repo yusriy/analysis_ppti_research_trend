@@ -20,6 +20,7 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
+import cv2
 from PIL import Image, ImageDraw, ImageFont
 
 
@@ -33,6 +34,7 @@ REPORT_URL = (
     "https://yusriy.github.io/analysis_ppti_research_trend/"
     "ppti_publication_strategy_report.html"
 )
+RESEARCH_REPORTS_URL = "https://indtech.usm.my/index.php/research/reports"
 MIN_WORDS = 115
 MAX_WORDS = 210
 MAX_DURATION_SECONDS = 120.0
@@ -312,6 +314,23 @@ def fit_image(image: Image.Image, box: tuple[int, int]) -> Image.Image:
     return converted
 
 
+def qr_code_image(value: str, size: int) -> Image.Image:
+    matrix = cv2.QRCodeEncoder_create().encode(value)
+    matrix = cv2.copyMakeBorder(
+        matrix,
+        4,
+        4,
+        4,
+        4,
+        cv2.BORDER_CONSTANT,
+        value=255,
+    )
+    return Image.fromarray(matrix).convert("RGB").resize(
+        (size, size),
+        Image.Resampling.NEAREST,
+    )
+
+
 def centered_wrapped_text(
     draw: ImageDraw.ImageDraw,
     text: str,
@@ -452,14 +471,27 @@ def build_cover(episode: dict[str, Any], destination: Path) -> None:
         "#27364d",
         spacing=18,
     )
+    qr = qr_code_image(RESEARCH_REPORTS_URL, 158)
+    image.paste(qr, (145, 1622))
     draw.text(
-        (540, 1680),
-        "School of Industrial Technology\nUniversiti Sains Malaysia",
+        (350, 1635),
+        "SCAN FOR THE FULL RESEARCH REPORTS",
+        font=font(24, bold=True),
+        fill="#173f73",
+    )
+    draw.multiline_text(
+        (350, 1685),
+        "indtech.usm.my/index.php/\nresearch/reports",
+        font=font(27, serif=True),
+        fill="#27364d",
+        spacing=7,
+    )
+    draw.text(
+        (540, 1810),
+        "School of Industrial Technology · Universiti Sains Malaysia",
         anchor="mm",
-        align="center",
-        font=font(29),
-        fill="#42526b",
-        spacing=9,
+        font=font(21),
+        fill="#526278",
     )
     destination.parent.mkdir(parents=True, exist_ok=True)
     image.save(destination, format="PNG", optimize=True)
@@ -759,6 +791,7 @@ def write_text_outputs(episode: dict[str, Any]) -> None:
         f"{episode['selected_journal']['name']}, and the "
         f"{episode['selected_keyword']['name']} research theme.\n\n"
         f"Read the complete report: {REPORT_URL}\n\n"
+        f"USM research reports: {RESEARCH_REPORTS_URL}\n\n"
         "#USM #PPTI #ResearchTrends #Scopus #ResearchImpact"
     )
     (LATEST_DIR / "social_caption.txt").write_text(
@@ -844,6 +877,9 @@ def main() -> None:
     ).strip()
     speed = float(os.environ.get("ELEVENLABS_SPEED", "0.98"))
     script_hash = hashlib.sha256(episode["script"].encode("utf-8")).hexdigest()
+    cover_hash = hashlib.sha256(
+        (LATEST_DIR / "cover.png").read_bytes()
+    ).hexdigest()
 
     metadata_path = LATEST_DIR / "episode_metadata.json"
     existing_metadata: dict[str, Any] = {}
@@ -864,6 +900,11 @@ def main() -> None:
         and not existing_metadata.get("voice_id")
     )
     same_audio = exact_audio_match or recoverable_partial_audio
+    if (
+        (LATEST_DIR / "ppti_research_brief_vertical.mp4").exists()
+        and existing_metadata.get("cover_sha256") != cover_hash
+    ):
+        (LATEST_DIR / "ppti_research_brief_vertical.mp4").unlink()
 
     audio_generated = False
     audio_normalized = bool(existing_metadata.get("audio_normalized"))
@@ -960,6 +1001,8 @@ def main() -> None:
         "estimated_duration_seconds": episode["estimated_duration_seconds"],
         "duration_seconds": duration_seconds,
         "script_sha256": script_hash,
+        "cover_sha256": cover_hash,
+        "institutional_reports_url": RESEARCH_REPORTS_URL,
         "selected_journal": episode["selected_journal"],
         "selected_keyword": episode["selected_keyword"],
         "latest_month": episode["latest_month"],
