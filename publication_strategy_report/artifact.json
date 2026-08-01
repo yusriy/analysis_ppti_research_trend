@@ -5,7 +5,7 @@
     "surface": "report",
     "title": "PPTI Research Publication Trends and Strategic Positioning",
     "description": "A bibliometric report on recent PPTI publication activity, journal distribution, citation visibility, open-access status, and research themes.",
-    "generatedAt": "2026-08-01T11:03:54+08:00",
+    "generatedAt": "2026-08-01T18:33:10+08:00",
     "cards": [
       {
         "id": "distinct_publications",
@@ -741,7 +741,7 @@
   },
   "snapshot": {
     "version": 1,
-    "generatedAt": "2026-08-01T11:03:54+08:00",
+    "generatedAt": "2026-08-01T18:33:10+08:00",
     "status": "ready",
     "datasets": {
       "summary": [
@@ -1713,6 +1713,68 @@
           "oa_share": 1.0,
           "movement": "Stable",
           "top_themes": "China, Circular Economy, Industrial Waste Management"
+        }
+      ],
+      "latest_month_journal_signals": [
+        {
+          "journal": "Biomass Conversion and Biorefinery",
+          "tier": "Developing (2–4)",
+          "latest_month_publications": 1,
+          "publications": 3,
+          "citations": 27,
+          "median_citations": 3.0,
+          "oa_share": 0.0,
+          "top_themes": "Automotive, Bio-Composite, Bioleather"
+        },
+        {
+          "journal": "Peerj",
+          "tier": "Developing (2–4)",
+          "latest_month_publications": 1,
+          "publications": 2,
+          "citations": 1,
+          "median_citations": 0.5,
+          "oa_share": 1.0,
+          "top_themes": "Artificial Neural Networks, Biopolymer, Edge Computing"
+        },
+        {
+          "journal": "Separation and Purification Technology",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citations": 1,
+          "median_citations": 1.0,
+          "oa_share": 0.0,
+          "top_themes": "Amaranthus Spp., Aquaculture Wastewater, Biofertilizer"
+        },
+        {
+          "journal": "Chemical Papers",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citations": 0,
+          "median_citations": 0.0,
+          "oa_share": 0.0,
+          "top_themes": "Activated Carbon, Adsorption, Banana Stem"
+        },
+        {
+          "journal": "Journal of Materials Science",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citations": 0,
+          "median_citations": 0.0,
+          "oa_share": 0.0,
+          "top_themes": null
+        },
+        {
+          "journal": "Molecular Nutrition Food Research",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citations": 0,
+          "median_citations": 0.0,
+          "oa_share": 0.0,
+          "top_themes": "Gut–Vaginal Axis, Lactiplantibacillus Plantarum Probio87, Nugent Score"
         }
       ],
       "journal_map": [
@@ -2983,6 +3045,318 @@
           "top_journals": "Food Engineering Reviews (1)"
         }
       ],
+      "latest_month_keyword_signals": [
+        {
+          "keyword": "Chitosan",
+          "tier": "Established (5+)",
+          "latest_month_publications": 1,
+          "publications": 8,
+          "citation_weight": 34,
+          "citations_per_publication": 4.2,
+          "journal_reach": 7,
+          "top_journals": "Polymer Engineering and Science (2); European Food Research and Technology (1); Express Polymer Letters (1)"
+        },
+        {
+          "keyword": "Sustainable Materials",
+          "tier": "Established (5+)",
+          "latest_month_publications": 1,
+          "publications": 7,
+          "citation_weight": 40,
+          "citations_per_publication": 5.7,
+          "journal_reach": 6,
+          "top_journals": "Express Polymer Letters (2); Biofuels Bioproducts and Biorefining (1); Biomass Conversion and Biorefinery (1)"
+        },
+        {
+          "keyword": "Activated Carbon",
+          "tier": "Established (5+)",
+          "latest_month_publications": 1,
+          "publications": 7,
+          "citation_weight": 19,
+          "citations_per_publication": 2.7,
+          "journal_reach": 7,
+          "top_journals": "Biofuels Bioproducts and Biorefining (1); Bioresource Technology Reports (1); Chemical Papers (1)"
+        },
+        {
+          "keyword": "Adsorption",
+          "tier": "Established (5+)",
+          "latest_month_publications": 1,
+          "publications": 6,
+          "citation_weight": 35,
+          "citations_per_publication": 5.8,
+          "journal_reach": 6,
+          "top_journals": "ACS Food Science and Technology (1); Chemical Papers (1); Emerging Science Journal (1)"
+        },
+        {
+          "keyword": "Polyethylene Terephthalate",
+          "tier": "Developing (2–4)",
+          "latest_month_publications": 1,
+          "publications": 3,
+          "citation_weight": 0,
+          "citations_per_publication": 0.0,
+          "journal_reach": 3,
+          "top_journals": "Chemical Papers (1); Journal of Applied Phycology (1); Malaysian Journal of Chemistry (1)"
+        },
+        {
+          "keyword": "Microplastic",
+          "tier": "Developing (2–4)",
+          "latest_month_publications": 1,
+          "publications": 2,
+          "citation_weight": 5,
+          "citations_per_publication": 2.5,
+          "journal_reach": 2,
+          "top_journals": "Chemical Papers (1); Controlling Environmental Pollution Practical Solutions (1)"
+        },
+        {
+          "keyword": "Occupational Safety And Health",
+          "tier": "Developing (2–4)",
+          "latest_month_publications": 1,
+          "publications": 2,
+          "citation_weight": 2,
+          "citations_per_publication": 1.0,
+          "journal_reach": 2,
+          "top_journals": "Journal of Sustainability Science and Management (1); Peerj (1)"
+        },
+        {
+          "keyword": "Predictive Analytics",
+          "tier": "Developing (2–4)",
+          "latest_month_publications": 1,
+          "publications": 2,
+          "citation_weight": 1,
+          "citations_per_publication": 0.5,
+          "journal_reach": 2,
+          "top_journals": "Analytical Science Advances (1); Peerj (1)"
+        },
+        {
+          "keyword": "Amaranthus Spp.",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 1,
+          "citations_per_publication": 1.0,
+          "journal_reach": 1,
+          "top_journals": "Separation and Purification Technology (1)"
+        },
+        {
+          "keyword": "Aquaculture Wastewater",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 1,
+          "citations_per_publication": 1.0,
+          "journal_reach": 1,
+          "top_journals": "Separation and Purification Technology (1)"
+        },
+        {
+          "keyword": "Artificial Neural Networks",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 1,
+          "citations_per_publication": 1.0,
+          "journal_reach": 1,
+          "top_journals": "Peerj (1)"
+        },
+        {
+          "keyword": "Biofertilizer",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 1,
+          "citations_per_publication": 1.0,
+          "journal_reach": 1,
+          "top_journals": "Separation and Purification Technology (1)"
+        },
+        {
+          "keyword": "Edge Computing",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 1,
+          "citations_per_publication": 1.0,
+          "journal_reach": 1,
+          "top_journals": "Peerj (1)"
+        },
+        {
+          "keyword": "Health Risk Assessment",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 1,
+          "citations_per_publication": 1.0,
+          "journal_reach": 1,
+          "top_journals": "Peerj (1)"
+        },
+        {
+          "keyword": "Indoor Environmental Quality (Ieq)",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 1,
+          "citations_per_publication": 1.0,
+          "journal_reach": 1,
+          "top_journals": "Peerj (1)"
+        },
+        {
+          "keyword": "Internet Of Things",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 1,
+          "citations_per_publication": 1.0,
+          "journal_reach": 1,
+          "top_journals": "Peerj (1)"
+        },
+        {
+          "keyword": "Occupational Hygiene",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 1,
+          "citations_per_publication": 1.0,
+          "journal_reach": 1,
+          "top_journals": "Peerj (1)"
+        },
+        {
+          "keyword": "Response Surface Methodology, Solid Recovery",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 1,
+          "citations_per_publication": 1.0,
+          "journal_reach": 1,
+          "top_journals": "Separation and Purification Technology (1)"
+        },
+        {
+          "keyword": "Tinyml",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 1,
+          "citations_per_publication": 1.0,
+          "journal_reach": 1,
+          "top_journals": "Peerj (1)"
+        },
+        {
+          "keyword": "Total Volatile Organic Compounds (Tvoc)",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 1,
+          "citations_per_publication": 1.0,
+          "journal_reach": 1,
+          "top_journals": "Peerj (1)"
+        },
+        {
+          "keyword": "Automotive",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 0,
+          "citations_per_publication": 0.0,
+          "journal_reach": 1,
+          "top_journals": "Biomass Conversion and Biorefinery (1)"
+        },
+        {
+          "keyword": "Banana Stem",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 0,
+          "citations_per_publication": 0.0,
+          "journal_reach": 1,
+          "top_journals": "Chemical Papers (1)"
+        },
+        {
+          "keyword": "Bioleather",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 0,
+          "citations_per_publication": 0.0,
+          "journal_reach": 1,
+          "top_journals": "Biomass Conversion and Biorefinery (1)"
+        },
+        {
+          "keyword": "Gut–Vaginal Axis",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 0,
+          "citations_per_publication": 0.0,
+          "journal_reach": 1,
+          "top_journals": "Molecular Nutrition Food Research (1)"
+        },
+        {
+          "keyword": "Lactiplantibacillus Plantarum Probio87",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 0,
+          "citations_per_publication": 0.0,
+          "journal_reach": 1,
+          "top_journals": "Molecular Nutrition Food Research (1)"
+        },
+        {
+          "keyword": "Methylene Blue",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 0,
+          "citations_per_publication": 0.0,
+          "journal_reach": 1,
+          "top_journals": "Chemical Papers (1)"
+        },
+        {
+          "keyword": "Nugent Score",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 0,
+          "citations_per_publication": 0.0,
+          "journal_reach": 1,
+          "top_journals": "Molecular Nutrition Food Research (1)"
+        },
+        {
+          "keyword": "Pineapple Biomass",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 0,
+          "citations_per_publication": 0.0,
+          "journal_reach": 1,
+          "top_journals": "Biomass Conversion and Biorefinery (1)"
+        },
+        {
+          "keyword": "Probiotic Clinical Trial",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 0,
+          "citations_per_publication": 0.0,
+          "journal_reach": 1,
+          "top_journals": "Molecular Nutrition Food Research (1)"
+        },
+        {
+          "keyword": "Textiles",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 0,
+          "citations_per_publication": 0.0,
+          "journal_reach": 1,
+          "top_journals": "Biomass Conversion and Biorefinery (1)"
+        },
+        {
+          "keyword": "Women'S Health",
+          "tier": "Exploratory (1)",
+          "latest_month_publications": 1,
+          "publications": 1,
+          "citation_weight": 0,
+          "citations_per_publication": 0.0,
+          "journal_reach": 1,
+          "top_journals": "Molecular Nutrition Food Research (1)"
+        }
+      ],
       "emerging_keywords": [
         {
           "keyword": "Microplastics",
@@ -3128,7 +3502,7 @@
         "language": "sql",
         "sql": "SELECT *\nFROM scopus_publications\nWHERE date(Date) BETWEEN date('2024-08-01') AND date('2026-07-31')",
         "description": "Loads Scopus-derived publication records within the last 24 completed months. The report builder deduplicates articles by Scopus link and compares the current edition with the preceding monthly snapshot when available.",
-        "executed_at": "2026-08-01T11:03:54+08:00",
+        "executed_at": "2026-08-01T18:33:10+08:00",
         "tables_used": [
           "scopus_publications"
         ],

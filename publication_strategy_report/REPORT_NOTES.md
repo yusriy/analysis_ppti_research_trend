@@ -16,7 +16,8 @@
 
 After the analytical artifact and portable report are built, the monthly runner
 calls `scripts/build_podcast.sh`. The podcast generator reads the artifact as its
-sole evidence source, selects a changing or rotating journal and keyword signal,
+sole evidence source, selects a journal and keyword represented in the latest
+completed month, and ranks them by repeated support across the rolling window,
 and produces a short PPTI Research Brief. The current MP3, synchronized captions,
 vertical social video, transcript, cover, social copy, and metadata are stored in
 `podcast/latest/`; the preceding edition is archived under `podcast/archive/YYYY-MM/`.
@@ -70,6 +71,12 @@ rows. Tier summary tables account for the complete portfolio. Signal tables then
 The signal tables are intentionally tier-aware. A single-publication journal or keyword
 is not ranked as equivalent to an entity supported by repeated publications. Monthly
 movement labels identify new entries, increases, decreases, and stable signals.
+
+The podcast's "This Month's Signals" panel is selected separately from those tier
+tables. Candidates must occur in the latest completed month. The top three journals
+are ranked by latest-month publications, rolling-window publications, and citations.
+The top three themes use the same recency and repeated-support principle; unsupported
+one-word fragments are excluded from the featured slots.
 
 Tier summaries use tables rather than charts because each has only three categories
 and exact counts and shares are the primary reading task. This avoids underpowered

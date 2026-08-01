@@ -373,7 +373,9 @@ def build_artifact() -> dict:
     ).astype(str)
     journal_stats["tier"] = journal_stats["publications"].map(portfolio_tier)
 
-    keyword_rows = articles[["Link", "Journal", "Keywords", "Citations"]].copy()
+    keyword_rows = articles[
+        ["Link", "Journal", "Date", "Keywords", "Citations"]
+    ].copy()
     keyword_rows["keyword"] = (
         keyword_rows["Keywords"].fillna("").astype(str).str.split(";")
     )
@@ -454,6 +456,7 @@ def build_artifact() -> dict:
 
     months = pd.period_range(START_DATE, END_DATE, freq="M")
     articles["month"] = articles["Date"].dt.to_period("M")
+    keyword_rows["month"] = keyword_rows["Date"].dt.to_period("M")
     monthly_total = articles.groupby("month").size().reindex(months, fill_value=0)
     monthly_oa = (
         articles.loc[articles["is_oa"]]
@@ -522,6 +525,80 @@ def build_artifact() -> dict:
     prior_month_publications = int(monthly_total.loc[prior_month])
     preceding_six_month_average = float(
         monthly_total.loc[latest_month - 6 : latest_month - 1].mean()
+    )
+
+    latest_journal_counts = (
+        articles.loc[articles["month"] == latest_month]
+        .groupby("Journal")["Link"]
+        .nunique()
+        .rename("latest_month_publications")
+    )
+    latest_journal_signals_dataset = (
+        journal_stats.merge(
+            latest_journal_counts,
+            left_on="Journal",
+            right_index=True,
+            how="inner",
+        )
+        .sort_values(
+            ["latest_month_publications", "publications", "citations", "Journal"],
+            ascending=[False, False, False, True],
+        )[
+            [
+                "Journal",
+                "tier",
+                "latest_month_publications",
+                "publications",
+                "citations",
+                "median_citations",
+                "oa_share",
+                "top_themes",
+            ]
+        ]
+        .rename(columns={"Journal": "journal"})
+    )
+    latest_journal_signals_dataset["median_citations"] = (
+        latest_journal_signals_dataset["median_citations"].round(1)
+    )
+
+    latest_keyword_counts = (
+        keyword_rows.loc[keyword_rows["month"] == latest_month]
+        .groupby("keyword")["Link"]
+        .nunique()
+        .rename("latest_month_publications")
+    )
+    latest_keyword_signals_dataset = (
+        keyword_stats.merge(
+            latest_keyword_counts,
+            left_on="keyword",
+            right_index=True,
+            how="inner",
+        )
+        .sort_values(
+            [
+                "latest_month_publications",
+                "publications",
+                "citation_weight",
+                "journal_reach",
+                "keyword_label",
+            ],
+            ascending=[False, False, False, False, True],
+        )[
+            [
+                "keyword_label",
+                "tier",
+                "latest_month_publications",
+                "publications",
+                "citation_weight",
+                "citations_per_publication",
+                "journal_reach",
+                "top_journals",
+            ]
+        ]
+        .rename(columns={"keyword_label": "keyword"})
+    )
+    latest_keyword_signals_dataset["citations_per_publication"] = (
+        latest_keyword_signals_dataset["citations_per_publication"].round(1)
     )
 
     journal_counts_snapshot = {
@@ -1679,11 +1756,17 @@ def build_artifact() -> dict:
                 "top_journals": records(top_journals_dataset),
                 "journal_tiers": records(journal_tiers_dataset),
                 "journal_signals": records(journal_signals_dataset),
+                "latest_month_journal_signals": records(
+                    latest_journal_signals_dataset
+                ),
                 "journal_map": records(journal_map_dataset),
                 "journal_shortlist": records(journal_shortlist_dataset),
                 "top_keywords": records(top_keywords_dataset),
                 "keyword_tiers": records(keyword_tiers_dataset),
                 "keyword_signals": records(keyword_signals_dataset),
+                "latest_month_keyword_signals": records(
+                    latest_keyword_signals_dataset
+                ),
                 "emerging_keywords": records(emerging_dataset),
                 "monthly_comparison": monthly_comparison,
             },

@@ -82,54 +82,65 @@ def month_label(period_end: str) -> str:
     return parsed.strftime("%B %Y")
 
 
+def rolling_window_label(period_end: str, months: int = 24) -> str:
+    """Return the inclusive month range for a completed rolling window."""
+    parsed = date.fromisoformat(period_end)
+    start_index = parsed.year * 12 + parsed.month - 1 - (months - 1)
+    start = date(start_index // 12, start_index % 12 + 1, 1)
+    return f"{start:%b %Y}–{parsed:%b %Y}"
+
+
 def spoken_percent(value: float) -> str:
     return f"{value * 100:.1f} percent"
 
 
-def movement_priority(value: str) -> int:
-    if value == "New":
-        return 0
-    if value.startswith("↑"):
-        return 1
-    if value.startswith("↓"):
-        return 2
-    if value == "Baseline":
-        return 3
-    return 4
+def is_meaningful_theme(row: dict) -> bool:
+    """Reject unsupported one-word fragments from the featured theme slot."""
+    label = str(row.get("keyword", "")).strip()
+    words = re.findall(r"[A-Za-z0-9]+", label)
+    return int(row.get("publications", 0)) >= 2 or len(words) >= 2
 
 
-def rotating_signal(
-    rows: list[dict],
-    tier: str,
-    period_end: str,
-    offset: int = 0,
-) -> dict:
-    candidates = [row for row in rows if row.get("tier") == tier]
-    if not candidates:
+def select_latest_month_signals(
+    rows: list[dict], kind: str, limit: int = 3
+) -> list[dict]:
+    """Select current-month signals with strong rolling-window support."""
+    if kind == "keyword":
+        candidates = [row for row in rows if is_meaningful_theme(row)]
+        key = lambda row: (
+            -int(row.get("latest_month_publications", 0)),
+            -int(row.get("publications", 0)),
+            -float(row.get("citation_weight", 0)),
+            -int(row.get("journal_reach", 0)),
+            str(row.get("keyword", "")).lower(),
+        )
+    elif kind == "journal":
         candidates = rows
+        key = lambda row: (
+            -int(row.get("latest_month_publications", 0)),
+            -int(row.get("publications", 0)),
+            -float(row.get("citations", 0)),
+            str(row.get("journal", "")).lower(),
+        )
+    else:
+        raise ValueError(f"Unknown monthly signal kind: {kind}")
+
     if not candidates:
-        raise ValueError(f"No signal rows available for {tier}")
+        raise ValueError(f"No eligible latest-month {kind} signals available")
+    return sorted(candidates, key=key)[:limit]
 
-    changed = [
-        row
-        for row in candidates
-        if row.get("movement") not in (None, "Stable", "Baseline")
-    ]
-    if changed:
-        return sorted(
-            changed,
-            key=lambda row: (
-                movement_priority(str(row.get("movement"))),
-                -int(row.get("publications", 0)),
-                -float(row.get("citations", row.get("citation_weight", 0))),
-                str(row.get("journal", row.get("keyword", ""))),
-            ),
-        )[0]
 
-    parsed = date.fromisoformat(period_end)
-    shortlist = candidates[: min(6, len(candidates))]
-    index = (parsed.year * 12 + parsed.month + offset) % len(shortlist)
-    return shortlist[index]
+def select_latest_month_signal(rows: list[dict], kind: str) -> dict:
+    """Return the leading signal for backward-compatible callers."""
+    return select_latest_month_signals(rows, kind, limit=1)[0]
+
+
+def natural_list(values: list[str]) -> str:
+    if len(values) == 1:
+        return values[0]
+    if len(values) == 2:
+        return " and ".join(values)
+    return ", ".join(values[:-1]) + f", and {values[-1]}"
 
 
 def sign_phrase(value: int, noun: str) -> str:
@@ -157,22 +168,16 @@ def build_episode(artifact: dict[str, Any]) -> dict[str, Any]:
     latest_activity = all_activity[-1]
     previous_activity = all_activity[-2]
 
-    tier = (
-        "Developing (2–4)"
-        if date.fromisoformat(period_end).month % 2 == 0
-        else "Exploratory (1)"
+    journals = select_latest_month_signals(
+        datasets.get("latest_month_journal_signals", []),
+        "journal",
     )
-    journal = rotating_signal(
-        datasets.get("journal_signals", []),
-        tier,
-        period_end,
+    keywords = select_latest_month_signals(
+        datasets.get("latest_month_keyword_signals", []),
+        "keyword",
     )
-    keyword = rotating_signal(
-        datasets.get("keyword_signals", []),
-        tier,
-        period_end,
-        offset=2,
-    )
+    journal = journals[0]
+    keyword = keywords[0]
 
     if comparison.get("comparison_available"):
         publication_delta = int(comparison.get("publication_delta") or 0)
@@ -198,31 +203,19 @@ def build_episode(artifact: dict[str, Any]) -> dict[str, Any]:
     else:
         activity_phrase = "held steady"
 
-    if tier.startswith("Developing"):
-        tier_phrase = "Beyond the most frequently used journals, a developing outlet to note is"
-        keyword_phrase = "A developing research theme is"
-    else:
-        tier_phrase = "In the exploratory journal portfolio, one visible outlet is"
-        keyword_phrase = "An exploratory research theme to watch is"
-
-    journal_citations = int(journal.get("citations", 0))
+    journal_names = [str(row["journal"]) for row in journals]
     journal_sentence = (
-        f"{tier_phrase} {journal['journal']}. It carries "
-        f"{int(journal['publications'])} publication"
-        f"{'' if int(journal['publications']) == 1 else 's'} and "
-        f"{journal_citations} current citation"
-        f"{'' if journal_citations == 1 else 's'} in the reporting window."
+        "Three journals represented in the latest completed month are "
+        f"{natural_list(journal_names)}."
     )
 
-    keyword_publications = int(keyword["publications"])
-    keyword_reach = int(keyword.get("journal_reach", 0))
+    keyword_names = [str(row["keyword"]) for row in keywords]
+    keyword_publication_counts = [str(int(row["publications"])) for row in keywords]
     keyword_sentence = (
-        f"{keyword_phrase} {keyword['keyword']}, represented by "
-        f"{keyword_publications} publication"
-        f"{'' if keyword_publications == 1 else 's'} across "
-        f"{keyword_reach} journal{'' if keyword_reach == 1 else 's'}, "
-        f"with {float(keyword.get('citations_per_publication', 0)):.1f} citations "
-        "per publication at the time of collection."
+        "Three recurring themes represented that month are "
+        f"{natural_list(keyword_names)}. They appear in "
+        f"{natural_list(keyword_publication_counts)} rolling-window publications, "
+        "respectively."
     )
 
     script = " ".join(
@@ -268,26 +261,37 @@ def build_episode(artifact: dict[str, Any]) -> dict[str, Any]:
         "episode_title": f"PPTI Research Brief — {issue_label}",
         "period_end": period_end,
         "issue_label": issue_label,
+        "rolling_window_label": rolling_window_label(period_end),
         "script": script,
         "word_count": word_count,
         "estimated_duration_seconds": round(estimated_duration, 1),
-        "selected_journal": {
-            "name": journal["journal"],
-            "tier": journal.get("tier"),
-            "publications": int(journal["publications"]),
-            "citations": journal_citations,
-            "movement": journal.get("movement"),
-        },
-        "selected_keyword": {
-            "name": keyword["keyword"],
-            "tier": keyword.get("tier"),
-            "publications": keyword_publications,
-            "journal_reach": keyword_reach,
-            "citations_per_publication": float(
-                keyword.get("citations_per_publication", 0)
-            ),
-            "movement": keyword.get("movement"),
-        },
+        "selected_journals": [
+            {
+                "name": row["journal"],
+                "tier": row.get("tier"),
+                "publications": int(row["publications"]),
+                "latest_month_publications": int(
+                    row.get("latest_month_publications", 0)
+                ),
+                "citations": int(row.get("citations", 0)),
+            }
+            for row in journals
+        ],
+        "selected_keywords": [
+            {
+                "name": row["keyword"],
+                "tier": row.get("tier"),
+                "publications": int(row["publications"]),
+                "latest_month_publications": int(
+                    row.get("latest_month_publications", 0)
+                ),
+                "journal_reach": int(row.get("journal_reach", 0)),
+                "citations_per_publication": float(
+                    row.get("citations_per_publication", 0)
+                ),
+            }
+            for row in keywords
+        ],
         "latest_month": {
             "month": latest_activity["month"],
             "publications": int(latest_activity["publications"]),
@@ -313,12 +317,14 @@ def archive_previous_episode(new_period_end: str) -> None:
     print(f"Archived prior podcast edition as {destination.relative_to(REPO_DIR)}")
 
 
-def font(size: int, bold: bool = False, serif: bool = False) -> ImageFont.FreeTypeFont:
-    family = "Georgia" if serif else "Arial"
-    suffix = " Bold" if bold else ""
-    path = Path(f"/System/Library/Fonts/Supplemental/{family}{suffix}.ttf")
+def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
+    """Return Helvetica for clean, consistent digital-media typography."""
+    path = Path("/System/Library/Fonts/Helvetica.ttc")
     if path.exists():
-        return ImageFont.truetype(str(path), size)
+        return ImageFont.truetype(str(path), size, index=1 if bold else 0)
+    fallback = Path("/System/Library/Fonts/Supplemental/Arial.ttf")
+    if fallback.exists():
+        return ImageFont.truetype(str(fallback), size)
     return ImageFont.load_default()
 
 
@@ -441,20 +447,38 @@ def build_cover(episode: dict[str, Any], destination: Path) -> None:
         "PPTI Research Brief",
         y,
         830,
-        font(84, bold=True, serif=True),
+        font(72, bold=True),
         "#14213d",
         spacing=15,
     )
-    y += 42
-    y = centered_wrapped_text(
-        draw,
-        episode["issue_label"],
-        y,
-        760,
-        font(48, bold=True),
-        "#173f73",
+    y += 34
+    issue_font = font(46, bold=True)
+    issue_bounds = draw.textbbox((0, 0), episode["issue_label"], font=issue_font)
+    issue_width = issue_bounds[2] - issue_bounds[0]
+    issue_height = issue_bounds[3] - issue_bounds[1]
+    badge_width = issue_width + 84
+    badge_height = issue_height + 38
+    badge_left = (width - badge_width) / 2
+    draw.rounded_rectangle(
+        (badge_left, y, badge_left + badge_width, y + badge_height),
+        radius=badge_height / 2,
+        fill="#1f64b5",
     )
-    y += 80
+    draw.text(
+        (width / 2, y + badge_height / 2),
+        episode["issue_label"],
+        anchor="mm",
+        font=issue_font,
+        fill="#ffffff",
+    )
+    draw.text(
+        (width / 2, y + badge_height + 28),
+        f"ROLLING WINDOW  ·  {episode['rolling_window_label'].upper()}",
+        anchor="ma",
+        font=font(22, bold=True),
+        fill="#526278",
+    )
+    y += badge_height + 88
 
     summary = episode["summary"]
     metrics = [
@@ -481,7 +505,7 @@ def build_cover(episode: dict[str, Any], destination: Path) -> None:
 
     y += 230
     draw.rounded_rectangle(
-        (135, y, 945, y + 330),
+        (135, y, 945, y + 380),
         radius=30,
         fill=signal_panel,
         outline=signal_outline,
@@ -494,18 +518,53 @@ def build_cover(episode: dict[str, Any], destination: Path) -> None:
         font=font(24, bold=True),
         fill="#173f73",
     )
-    journal_text = (
-        f"Journal: {episode['selected_journal']['name']}\n"
-        f"Theme: {episode['selected_keyword']['name']}"
+    journal_text = natural_list(
+        [row["name"] for row in episode["selected_journals"]]
     )
+    theme_text = natural_list(
+        [row["name"] for row in episode["selected_keywords"]]
+    )
+    label_font = font(20, bold=True)
+    for label, label_y, label_fill in (
+        ("JOURNALS", y + 82, "#1f64b5"),
+        ("THEMES", y + 247, "#a86f08"),
+    ):
+        label_bounds = draw.textbbox((0, 0), label, font=label_font)
+        label_width = label_bounds[2] - label_bounds[0] + 48
+        draw.rounded_rectangle(
+            (
+                (width - label_width) / 2,
+                label_y,
+                (width + label_width) / 2,
+                label_y + 38,
+            ),
+            radius=19,
+            fill=label_fill,
+        )
+        draw.text(
+            (width / 2, label_y + 19),
+            label,
+            anchor="mm",
+            font=label_font,
+            fill="#ffffff",
+        )
     centered_wrapped_text(
         draw,
         journal_text,
-        y + 105,
+        y + 130,
         710,
-        font(34, serif=True),
+        font(30),
         "#27364d",
-        spacing=18,
+        spacing=10,
+    )
+    centered_wrapped_text(
+        draw,
+        theme_text,
+        y + 295,
+        710,
+        font(32, bold=True),
+        "#173f73",
+        spacing=10,
     )
     qr = qr_code_image(RESEARCH_REPORTS_URL, 158)
     image.paste(qr, (145, 1622))
@@ -518,7 +577,7 @@ def build_cover(episode: dict[str, Any], destination: Path) -> None:
     draw.multiline_text(
         (350, 1685),
         "indtech.usm.my/index.php/\nresearch/reports",
-        font=font(27, serif=True),
+        font=font(27),
         fill="#27364d",
         spacing=7,
     )
@@ -823,9 +882,10 @@ def write_text_outputs(episode: dict[str, Any]) -> None:
     )
     social_caption = (
         f"{episode['episode_title']}\n\n"
-        f"This brief highlights current publication activity, "
-        f"{episode['selected_journal']['name']}, and the "
-        f"{episode['selected_keyword']['name']} research theme.\n\n"
+        "This brief highlights current publication activity, including "
+        f"{natural_list([row['name'] for row in episode['selected_journals']])}, "
+        "and the themes "
+        f"{natural_list([row['name'] for row in episode['selected_keywords']])}.\n\n"
         f"Read the complete report: {REPORT_URL}\n\n"
         f"USM research reports: {RESEARCH_REPORTS_URL}\n\n"
         "#USM #PPTI #ResearchTrends #Scopus #ResearchImpact"
@@ -921,6 +981,7 @@ def main() -> None:
     existing_metadata: dict[str, Any] = {}
     if metadata_path.exists():
         existing_metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    cover_changed = existing_metadata.get("cover_sha256") != cover_hash
     audio_path = LATEST_DIR / "ppti_research_brief.mp3"
     exact_audio_match = (
         audio_path.exists()
@@ -985,6 +1046,10 @@ def main() -> None:
             (LATEST_DIR / "ppti_research_brief_vertical.mp4").unlink(
                 missing_ok=True
             )
+        if cover_changed:
+            (LATEST_DIR / "ppti_research_brief_vertical.mp4").unlink(
+                missing_ok=True
+            )
         if duration_seconds is None:
             duration_seconds = aligned_duration
         if not audio_normalized:
@@ -1040,8 +1105,8 @@ def main() -> None:
         "cover_sha256": cover_hash,
         "institutional_reports_url": RESEARCH_REPORTS_URL,
         "cover_theme": cover_theme(episode["period_end"]),
-        "selected_journal": episode["selected_journal"],
-        "selected_keyword": episode["selected_keyword"],
+        "selected_journals": episode["selected_journals"],
+        "selected_keywords": episode["selected_keywords"],
         "latest_month": episode["latest_month"],
         "audio_generated_this_run": audio_generated,
         "audio_normalized": audio_normalized,
