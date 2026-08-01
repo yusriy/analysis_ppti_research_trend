@@ -1,8 +1,8 @@
 {
   "description": "Tracks the reporting period represented by each current HTML report. The monthly runner uses this state to archive an edition before replacing it.",
   "current_editions": {
-    "ppti_journal_report.html": "2026-06-30",
-    "ppti_keywords_report.html": "2026-06-30",
-    "ppti_publication_strategy_report.html": "2026-06-30"
+    "ppti_journal_report.html": "2026-07-31",
+    "ppti_keywords_report.html": "2026-07-31",
+    "ppti_publication_strategy_report.html": "2026-07-31"
   }
 }

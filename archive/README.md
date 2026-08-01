@@ -8,4 +8,10 @@ Each folder preserves the report edition that was current before the next comple
 - [Keyword Impact Report](../ppti_keywords_report.html)
 - [PPTI Research Publication Trends and Strategic Positioning](../ppti_publication_strategy_report.html)
 
-Previous editions will appear here automatically when the next monthly report replaces the current edition.
+## Previous editions
+
+### 2026-06
+
+- [Ppti Journal Report](2026-06/ppti_journal_report.html)
+- [Ppti Keywords Report](2026-06/ppti_keywords_report.html)
+- [Ppti Publication Strategy Report](2026-06/ppti_publication_strategy_report.html)

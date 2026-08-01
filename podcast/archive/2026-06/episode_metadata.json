@@ -1,0 +1,45 @@
+{
+  "episode_title": "PPTI Research Brief — June 2026",
+  "period_end": "2026-06-30",
+  "generated_at": "2026-07-28T00:48:37+08:00",
+  "source_report_generated_at": "2026-07-27T23:36:15+08:00",
+  "source_report_url": "https://yusriy.github.io/analysis_ppti_research_trend/ppti_publication_strategy_report.html",
+  "status": "audio_ready",
+  "word_count": 154,
+  "estimated_duration_seconds": 63.7,
+  "duration_seconds": 69.984943,
+  "script_sha256": "b3f5df78bb1c2ffa0c46535bb2c33f9c44f3941f5c7f098f8b81ffc9287e51a9",
+  "cover_sha256": "e65af9998aba2e455fd090430166cd7d18a58b36858c6a7875445cb6daf0fa3e",
+  "institutional_reports_url": "https://indtech.usm.my/index.php/research/reports",
+  "cover_theme": {
+    "name": "Institutional white",
+    "background": "#f9fbff"
+  },
+  "selected_journal": {
+    "name": "Clean Technologies and Environmental Policy",
+    "tier": "Developing (2–4)",
+    "publications": 4,
+    "citations": 24,
+    "movement": "Baseline"
+  },
+  "selected_keyword": {
+    "name": "Lentil Proteins",
+    "tier": "Developing (2–4)",
+    "publications": 4,
+    "journal_reach": 4,
+    "citations_per_publication": 11.2,
+    "movement": "Baseline"
+  },
+  "latest_month": {
+    "month": "2026-06-01",
+    "publications": 27,
+    "previous_publications": 10
+  },
+  "audio_generated_this_run": false,
+  "audio_normalized": true,
+  "voice_id": "9x6m5PBXrn5YLEWGif5F",
+  "model_id": "eleven_multilingual_v2",
+  "output_format": "mp3_44100_128",
+  "speed": 0.98,
+  "elevenlabs_response": {}
+}

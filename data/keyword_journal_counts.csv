@@ -358,8 +358,10 @@ Biological Conservation,Soil biodiversity,1
 Biological Conservation,Soil compaction,1
 Biological Conservation,Weight,1
 Biomass Conversion and Biorefinery,Anaerobic digestion,1
+Biomass Conversion and Biorefinery,Automotive,1
 Biomass Conversion and Biorefinery,Bio-composite,3
 Biomass Conversion and Biorefinery,Biogas,1
+Biomass Conversion and Biorefinery,Bioleather,1
 Biomass Conversion and Biorefinery,Biomaterials,3
 Biomass Conversion and Biorefinery,Blend films,3
 Biomass Conversion and Biorefinery,Carboxymethyl Cellulose,3
@@ -368,8 +370,11 @@ Biomass Conversion and Biorefinery,Hemicellulose,3
 Biomass Conversion and Biorefinery,Mycelium,3
 Biomass Conversion and Biorefinery,Oil palm trunk,3
 Biomass Conversion and Biorefinery,POME,1
+Biomass Conversion and Biorefinery,Pineapple biomass,1
 Biomass Conversion and Biorefinery,Pleurotus ostreatus,3
 Biomass Conversion and Biorefinery,Rubber wood sawdust,3
+Biomass Conversion and Biorefinery,Sustainable materials,1
+Biomass Conversion and Biorefinery,Textiles,1
 Biomass Conversion and Biorefinery,Thermal properties,3
 Biomass Conversion and Biorefinery,Trimetallic nanoparticles,1
 Biomass Processing for Sustainable Circular Economy,Biochemical,1
@@ -708,9 +713,16 @@ Current Opinion in Electrochemistry,Electrolyte engineering,2
 Current Opinion in Electrochemistry,Flow battery,2
 Current Opinion in Electrochemistry,Manganese,2
 Current Opinion in Electrochemistry,Reversibility,2
+Current Research in Nutrition and Food Science,AMR,1
 Current Research in Nutrition and Food Science,Chlamydomonas Reinhardtii,1
+Current Research in Nutrition and Food Science,Contaminant,1
+Current Research in Nutrition and Food Science,Food Safety,1
+Current Research in Nutrition and Food Science,Food Security,1
+Current Research in Nutrition and Food Science,Heavy Metal,1
+Current Research in Nutrition and Food Science,Mariculture,1
 Current Research in Nutrition and Food Science,Natural Preservatives,1
 Current Research in Nutrition and Food Science,Protein Extraction,1
+Current Research in Nutrition and Food Science,Risk Assessment,1
 Current Research in Nutrition and Food Science,Shrimp Preservation,1
 Current Research in Nutrition and Food Science,Total Viable Count,1
 Current Research in Structural Biology,Digestibility,1
@@ -787,9 +799,14 @@ Drug Delivery and Translational Research,Microemulsion formulation,3
 Drug Delivery and Translational Research,Streptococcus mutans,3
 E Polymers,acetyl groups,2
 E Polymers,acetylation,2
+E Polymers,butterfly pea,3
 E Polymers,degree of substitution,2
-E Polymers,encapsulation,2
+E Polymers,encapsulation,5
+E Polymers,physical modification,3
+E Polymers,sago starch,3
+E Polymers,spray drying,3
 E Polymers,surface-modified tapioca starches,2
+E Polymers,wall material,3
 Earth Systems and Environment,Atmosphere–ocean interaction,1
 Earth Systems and Environment,Atmospheric CO2 concentration,1
 Earth Systems and Environment,CO2 flux,1
@@ -1892,6 +1909,11 @@ Journal of Applied Biotechnology Reports,Bioactivities,2
 Journal of Applied Biotechnology Reports,Nutrient Supplementation,2
 Journal of Applied Biotechnology Reports,Secondary Metabolites,2
 Journal of Applied Biotechnology Reports,Tetraselmis suecica,2
+Journal of Applied Phycology,Cyanobacteria,2
+Journal of Applied Phycology,Phosphorus-solubilising microbes,2
+Journal of Applied Phycology,Plastic degradation,2
+Journal of Applied Phycology,Polyethylene terephthalate,2
+Journal of Applied Phycology,Polypropylene,2
 Journal of Applied Polymer Science,anhydride ratio,3
 Journal of Applied Polymer Science,biodegradable,3
 Journal of Applied Polymer Science,biomaterials,9
@@ -1976,20 +1998,28 @@ Journal of Environmental Chemical Engineering,Biochar,1
 Journal of Environmental Chemical Engineering,Biomass,1
 Journal of Environmental Chemical Engineering,Bioprocess,2
 Journal of Environmental Chemical Engineering,Bioreactor,2
+Journal of Environmental Chemical Engineering,CO2 reduction,1
 Journal of Environmental Chemical Engineering,Catalytic co-pyrolysis,1
+Journal of Environmental Chemical Engineering,Defect engineering,1
 Journal of Environmental Chemical Engineering,Environmental Bioprocess,2
 Journal of Environmental Chemical Engineering,Fermentation,2
+Journal of Environmental Chemical Engineering,Hydrothermal precipitation,1
 Journal of Environmental Chemical Engineering,Industrial solid waste,1
+Journal of Environmental Chemical Engineering,Lutetium,1
 Journal of Environmental Chemical Engineering,Melamine,1
+Journal of Environmental Chemical Engineering,Methane production,1
 Journal of Environmental Chemical Engineering,Microbiology,2
 Journal of Environmental Chemical Engineering,Palm kernel shells,1
 Journal of Environmental Chemical Engineering,Paraquat,1
+Journal of Environmental Chemical Engineering,Photocatalysis,1
 Journal of Environmental Chemical Engineering,Plastic,1
+Journal of Environmental Chemical Engineering,Rare earth doping,1
 Journal of Environmental Chemical Engineering,Rice husk silica nanoparticles,3
 Journal of Environmental Chemical Engineering,Seaweed films,3
 Journal of Environmental Chemical Engineering,Sustainable packaging,3
 Journal of Environmental Chemical Engineering,Textile waste,1
 Journal of Environmental Chemical Engineering,Water treatment,1
+Journal of Environmental Chemical Engineering,Zinc oxide nanoparticles,1
 Journal of Environmental Management,Advanced oxidation process,1
 Journal of Environmental Management,Hematite,1
 Journal of Environmental Management,Iron based catalyst,1
@@ -2245,11 +2275,16 @@ Journal of Molecular Liquids,Melamine,1
 Journal of Molecular Liquids,Modified biochar,1
 Journal of Molecular Liquids,Palm Kernel Shells,1
 Journal of Natural Fibers,Alkaline treatment,2
+Journal of Natural Fibers,Sugar palm fiber,1
 Journal of Natural Fibers,bonding,2
+Journal of Natural Fibers,fire test,1
 Journal of Natural Fibers,interfacial adhesion,2
+Journal of Natural Fibers,layering sequence,1
+Journal of Natural Fibers,natural fiber,1
 Journal of Natural Fibers,natural fibre,2
 Journal of Natural Fibers,sugar palm fibre,2
 Journal of Natural Fibers,wettability,2
+Journal of Natural Fibers,woven carbon fiber,1
 Journal of Photochemistry and Photobiology A Chemistry,Boron Oxide,1
 Journal of Photochemistry and Photobiology A Chemistry,Germanium Oxide,1
 Journal of Photochemistry and Photobiology A Chemistry,Phenol,1
@@ -2757,6 +2792,11 @@ Microorganisms for Sustainability,Saccharomyces cerevisiae,1
 Microorganisms for Sustainability,Sugar utilization,1
 Microorganisms for Sustainability,UASB reactors,1
 Microorganisms for Sustainability,Wastewater treatment,1
+Molecular Nutrition Food Research,Lactiplantibacillus plantarum Probio87,1
+Molecular Nutrition Food Research,Nugent score,1
+Molecular Nutrition Food Research,gut–vaginal axis,1
+Molecular Nutrition Food Research,probiotic clinical trial,1
+Molecular Nutrition Food Research,women's health,1
 Molecular Nutrition and Food Research,HPV-positive women,2
 Molecular Nutrition and Food Research,Lactiplantibacillus plantarum,1
 Molecular Nutrition and Food Research,bacterial,2
@@ -2946,11 +2986,21 @@ Parasites and Vectors,Aedes albopictus,1
 Parasites and Vectors,Attractive toxic sugar bait (ATSB),1
 Parasites and Vectors,Banana,1
 Parasites and Vectors,Mango,1
+Peerj,Artificial Neural Networks,1
 Peerj,Biopolymer,1
+Peerj,Edge Computing,1
+Peerj,Health Risk Assessment,1
 Peerj,Hydropuntia sp,1
+Peerj,Indoor Environmental Quality (IEQ),1
+Peerj,Internet of Things,1
 Peerj,Marine food,1
+Peerj,Occupational Hygiene,1
+Peerj,Occupational Safety and Health,1
 Peerj,Polysaccharides,1
+Peerj,Predictive Analytics,1
 Peerj,Seaweed,1
+Peerj,TinyML,1
+Peerj,Total Volatile Organic Compounds (TVOC),1
 Pertanika Journal of Science and Technology,Antimicrobial resistance (AMR),2
 Pertanika Journal of Science and Technology,Aqueous two-phase system,1
 Pertanika Journal of Science and Technology,Autohydrolysis,3
@@ -3160,7 +3210,7 @@ Polymer Composites Derived from Animal Sources,sustainability,1
 Polymer Composites Derived from Animal Sources,tissue engineering,2
 Polymer Composites Derived from Animal Sources,tissue regeneration,1
 Polymer Composites Derived from Animal Sources,wound healing,1
-Polymer Engineering and Science,3D printing,1
+Polymer Engineering and Science,3D printing,2
 Polymer Engineering and Science,PHBV biocomposites,3
 Polymer Engineering and Science,PLA/PBAT blends,1
 Polymer Engineering and Science,antibacterial,1
@@ -3181,13 +3231,16 @@ Polymer Engineering and Science,chitosan,2
 Polymer Engineering and Science,coffee waste,3
 Polymer Engineering and Science,compatibilization,1
 Polymer Engineering and Science,cosmetic applications,2
+Polymer Engineering and Science,diabetic wound healing,1
 Polymer Engineering and Science,eco-friendly,4
 Polymer Engineering and Science,freeze–thaw,3
 Polymer Engineering and Science,gelatin,1
 Polymer Engineering and Science,green material,1
 Polymer Engineering and Science,green materials,2
 Polymer Engineering and Science,halochromic polymers,1
+Polymer Engineering and Science,hydrogel,1
 Polymer Engineering and Science,insulation,1
+Polymer Engineering and Science,machine learning,1
 Polymer Engineering and Science,pH-responsive materials,1
 Polymer Engineering and Science,palm oil empty fruit bunch,3
 Polymer Engineering and Science,plant phytic acid,1
@@ -3196,11 +3249,14 @@ Polymer Engineering and Science,porose materials,1
 Polymer Engineering and Science,rambutan extract,1
 Polymer Engineering and Science,raw seaweed,4
 Polymer Engineering and Science,recycling waste,3
+Polymer Engineering and Science,regenerative medicine,1
 Polymer Engineering and Science,semi-refined carrageenan,4
 Polymer Engineering and Science,skin care,2
+Polymer Engineering and Science,smart materials,1
 Polymer Engineering and Science,sodium alginate,1
 Polymer Engineering and Science,spent coffee ground,3
 Polymer Engineering and Science,spent coffee grounds,3
+Polymer Engineering and Science,stimuli-responsive system,1
 Polymer Engineering and Science,sustainable materials,3
 Polymer Engineering and Science,sustainable packaging,7
 Polymer Engineering and Science,thermal conductivity,1
