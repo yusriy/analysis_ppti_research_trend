@@ -1,83 +1,83 @@
 {
-  "episode_title": "PPTI Research Brief — July 2026",
-  "period_end": "2026-07-31",
-  "generated_at": "2026-08-01T19:05:09+08:00",
-  "source_report_generated_at": "2026-08-01T18:33:10+08:00",
+  "episode_title": "PPTI Research Brief — August 2026",
+  "period_end": "2026-08-31",
+  "generated_at": "2026-09-01T22:46:18+08:00",
+  "source_report_generated_at": "2026-09-01T22:45:45+08:00",
   "source_report_url": "https://yusriy.github.io/analysis_ppti_research_trend/ppti_publication_strategy_report.html",
   "status": "audio_ready",
-  "word_count": 146,
-  "estimated_duration_seconds": 60.4,
-  "duration_seconds": 71.053061,
-  "script_sha256": "20e89106601203be151a48265226e4e59a0a8ff94f497de9f0d35bd3b6526f46",
-  "cover_sha256": "117fa182584be7d4997e9699007f71857074c76c2645307df6994e7e0f7a7a8c",
+  "word_count": 148,
+  "estimated_duration_seconds": 61.2,
+  "duration_seconds": 72.910658,
+  "script_sha256": "19e28de4335bbcf280d544a039b69564932c4998a13dcb95f1b00c243c352c7a",
+  "cover_sha256": "e29d6937e803c7cf72ad6b4cda521791969579e412993b37c54a90024096772d",
   "institutional_reports_url": "https://indtech.usm.my/index.php/research/reports",
   "cover_theme": {
-    "name": "Powder blue",
-    "background": "#e6eef4"
+    "name": "Muted mint",
+    "background": "#e6f0ed"
   },
   "selected_journals": [
     {
-      "name": "Biomass Conversion and Biorefinery",
+      "name": "International Journal of Biological Macromolecules",
+      "tier": "Established (5+)",
+      "publications": 22,
+      "latest_month_publications": 1,
+      "citations": 140
+    },
+    {
+      "name": "Biomass and Bioenergy",
+      "tier": "Established (5+)",
+      "publications": 9,
+      "latest_month_publications": 1,
+      "citations": 44
+    },
+    {
+      "name": "Journal of Food Science",
       "tier": "Developing (2–4)",
       "publications": 3,
       "latest_month_publications": 1,
-      "citations": 27
-    },
-    {
-      "name": "Peerj",
-      "tier": "Developing (2–4)",
-      "publications": 2,
-      "latest_month_publications": 1,
-      "citations": 1
-    },
-    {
-      "name": "Separation and Purification Technology",
-      "tier": "Exploratory (1)",
-      "publications": 1,
-      "latest_month_publications": 1,
-      "citations": 1
+      "citations": 8
     }
   ],
   "selected_keywords": [
     {
-      "name": "Chitosan",
-      "tier": "Established (5+)",
-      "publications": 8,
-      "latest_month_publications": 1,
-      "journal_reach": 7,
-      "citations_per_publication": 4.2
-    },
-    {
-      "name": "Sustainable Materials",
-      "tier": "Established (5+)",
-      "publications": 7,
-      "latest_month_publications": 1,
-      "journal_reach": 6,
-      "citations_per_publication": 5.7
-    },
-    {
-      "name": "Activated Carbon",
+      "name": "Bioethanol",
       "tier": "Established (5+)",
       "publications": 7,
       "latest_month_publications": 1,
       "journal_reach": 7,
-      "citations_per_publication": 2.7
+      "citations_per_publication": 4.4
+    },
+    {
+      "name": "Bioremediation",
+      "tier": "Established (5+)",
+      "publications": 5,
+      "latest_month_publications": 1,
+      "journal_reach": 4,
+      "citations_per_publication": 0.6
+    },
+    {
+      "name": "Energy Efficiency",
+      "tier": "Developing (2–4)",
+      "publications": 4,
+      "latest_month_publications": 1,
+      "journal_reach": 4,
+      "citations_per_publication": 5.2
     }
   ],
   "latest_month": {
-    "month": "2026-07-01",
+    "month": "2026-08-01",
     "publications": 6,
-    "previous_publications": 27
+    "previous_publications": 7
   },
-  "audio_generated_this_run": false,
+  "audio_generated_this_run": true,
   "audio_normalized": true,
   "voice_id": "9x6m5PBXrn5YLEWGif5F",
   "model_id": "eleven_multilingual_v2",
   "output_format": "mp3_44100_128",
   "speed": 0.98,
   "elevenlabs_response": {
-    "character_cost": "1029",
-    "request_id": "Ev1Hd1xdel2Fu1t2UWGv",
-    "trace_id": "77e7c8da54519567479e14f895b1300e"
+    "character_cost": "1043",
+    "request_id": "AtvIvVH2bUQK8ucxKQkI",
+    "trace_id": "8f5a4e3e9e5e7505d2515b818cfe5be8"
   }
 }

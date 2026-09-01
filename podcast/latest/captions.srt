@@ -1,83 +1,83 @@
 1
-00:00:00,058 --> 00:00:03,704
-Welcome to the PPTI Research Brief for July 2026.
+00:00:00,070 --> 00:00:03,657
+Welcome to the PPTI Research Brief for August 2026.
 
 2
-00:00:04,017 --> 00:00:07,082
+00:00:03,971 --> 00:00:06,850
 This edition covers the rolling twenty-four-month period ending
 
 3
-00:00:07,512 --> 00:00:09,555
-31 July 2026.
+00:00:07,268 --> 00:00:09,451
+31 August 2026.
 
 4
-00:00:09,787 --> 00:00:14,687
-The portfolio contains 552 distinct Scopus-indexed publications
+00:00:09,764 --> 00:00:15,290
+The portfolio contains 546 distinct Scopus-indexed publications
 
 5
-00:00:14,733 --> 00:00:19,865
-from 63 PPTI contributors, appearing across 313 journals.
+00:00:15,325 --> 00:00:20,120
+from 63 PPTI contributors, appearing across 310 journals.
 
 6
-00:00:20,352 --> 00:00:24,520
-Open-access articles account for 42.8 percent of the portfolio.
+00:00:20,619 --> 00:00:24,740
+Open-access articles account for 41.8 percent of the portfolio.
 
 7
-00:00:24,915 --> 00:00:29,037
-In the latest completed month, publication output fell from 27
+00:00:25,356 --> 00:00:28,769
+In the latest completed month, publication output fell from 7
 
 8
-00:00:29,106 --> 00:00:30,174
+00:00:29,164 --> 00:00:30,348
 to 6 articles.
 
 9
-00:00:30,569 --> 00:00:33,587
+00:00:30,963 --> 00:00:34,702
 Compared with the preceding monthly edition, the rolling portfolio
 
 10
-00:00:33,657 --> 00:00:37,186
-recorded a decrease of 11 publications and a decrease of
+00:00:34,772 --> 00:00:37,988
+recorded a decrease of 6 publications and a decrease of
 
 11
-00:00:37,256 --> 00:00:38,870
-150 citations.
+00:00:38,057 --> 00:00:39,357
+22 citations.
 
 12
-00:00:39,392 --> 00:00:42,806
+00:00:39,694 --> 00:00:43,026
 Three journals represented in the latest completed month are
 
 13
-00:00:42,841 --> 00:00:47,566
-Biomass Conversion and Biorefinery, Peerj, and Separation and
+00:00:43,073 --> 00:00:47,461
+International Journal of Biological Macromolecules, Biomass and
 
 14
-00:00:47,612 --> 00:00:49,063
-Purification Technology.
+00:00:47,519 --> 00:00:50,062
+Bioenergy, and Journal of Food Science.
 
 15
-00:00:49,458 --> 00:00:53,730
-Three recurring themes represented that month are Chitosan, Sustainable
+00:00:50,341 --> 00:00:53,986
+Three recurring themes represented that month are Bioethanol,
 
 16
-00:00:53,765 --> 00:00:55,634
-Materials, and Activated Carbon.
+00:00:54,230 --> 00:00:56,970
+Bioremediation, and Energy Efficiency.
 
 17
-00:00:56,029 --> 00:01:00,406
-They appear in 8, 7, and 7 rolling-window publications, respectively.
+00:00:57,307 --> 00:01:01,986
+They appear in 7, 5, and 4 rolling-window publications, respectively.
 
 18
-00:01:00,929 --> 00:01:04,191
+00:01:02,508 --> 00:01:05,934
 These signals show both established strength and activity beyond
 
 19
-00:01:04,237 --> 00:01:06,153
+00:01:05,980 --> 00:01:08,093
 the highest-volume outlets and themes.
 
 20
-00:01:06,768 --> 00:01:10,251
+00:01:08,801 --> 00:01:12,087
 Read the full PPTI publication trends report for the complete
 
 21
-00:01:10,286 --> 00:01:10,832
+00:01:12,133 --> 00:01:12,667
 evidence.

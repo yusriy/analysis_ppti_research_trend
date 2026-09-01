@@ -368,16 +368,16 @@ Bioresource Technology Reports,Interfacial interactions,3
 Bioresource Technology Reports,Lignin extraction,3
 Bioresource Technology Reports,Patchouli waste fiber,3
 Bioresource Technology Reports,Raman spectroscopy,3
+Bioresources,Alginate-lignin adhesive,1
 Bioresources,Biomaterials,1
 Bioresources,Cellulose,1
 Bioresources,Cow dung compost,1
 Bioresources,Duck dung compost,1
 Bioresources,Etching effect,1
 Bioresources,Goose dung compost,1
+Bioresources,Morphology study,1
 Bioresources,Nitrogen plasma,1
-Bioresources,Peat addition,1
-Bioresources,Plasma treatment,1
-Bioresources,Solid organic wastes,1
+Bioresources,Particleboard,1
 Biotechnology Advances,Additives,2
 Biotechnology Advances,Heterotrophic microbes,2
 Biotechnology Advances,Microbial plastic degradation,2
@@ -456,6 +456,11 @@ Chembioeng Reviews,Bacteriocin,1
 Chembioeng Reviews,Limitations,1
 Chembioeng Reviews,Methods,1
 Chembioeng Reviews,Purification,1
+Chemical Engineering and Processing Process Intensification,Biological methanation,2
+Chemical Engineering and Processing Process Intensification,Biomethane upgrading,2
+Chemical Engineering and Processing Process Intensification,Biotrickling filter reactor,2
+Chemical Engineering and Processing Process Intensification,Power-to-gas,2
+Chemical Engineering and Processing Process Intensification,Process intensification,2
 Chemical Papers,Activated carbon,1
 Chemical Papers,Adsorption,1
 Chemical Papers,Banana stem,1
@@ -628,12 +633,12 @@ Drug Delivery and Translational Research,Dental caries,3
 Drug Delivery and Translational Research,Enterocin CC2,3
 Drug Delivery and Translational Research,Microemulsion formulation,3
 Drug Delivery and Translational Research,Streptococcus mutans,3
-E Polymers,encapsulation,5
-E Polymers,butterfly pea,3
-E Polymers,physical modification,3
-E Polymers,sago starch,3
-E Polymers,spray drying,3
-E Polymers,wall material,3
+E Polymers,encapsulation,6
+E Polymers,butterfly pea,4
+E Polymers,physical modification,4
+E Polymers,sago starch,4
+E Polymers,spray drying,4
+E Polymers,wall material,4
 E Polymers,acetyl groups,2
 E Polymers,acetylation,2
 E Polymers,degree of substitution,2
@@ -729,6 +734,13 @@ Environmental Monitoring and Assessment,Paddy irrigation,3
 Environmental Monitoring and Assessment,Pumping well yield,3
 Environmental Monitoring and Assessment,Southeast Asian catchments,3
 Environmental Monitoring and Assessment,Spectroscopy characterization,3
+Environmental Progress and Sustainable Energy,Chlorococcum sp.,1
+Environmental Progress and Sustainable Energy,microalgae,1
+Environmental Progress and Sustainable Energy,palm oil mill effluent,1
+Environmental Progress and Sustainable Energy,polishing pond,1
+Environmental Progress and Sustainable Energy,renewable energy,1
+Environmental Progress and Sustainable Energy,sustainability,1
+Environmental Progress and Sustainable Energy,wastewater,1
 Environmental Science and Pollution Research,Batch and continuous modes,2
 Environmental Science and Pollution Research,Biofuel,2
 Environmental Science and Pollution Research,Feedstock,2
@@ -977,16 +989,16 @@ Frontiers in Microbiology,HMO-utilizing Bifidobacterium,1
 Frontiers in Microbiology,Lactobacillus,1
 Frontiers in Microbiology,PhACs,1
 Frontiers in Microbiology,artificial intelligence,1
-Frontiers in Nutrition,probiotic,3
+Frontiers in Nutrition,probiotic,4
+Frontiers in Nutrition,randomized controlled trial,3
 Frontiers in Nutrition,gut microbiota,2
-Frontiers in Nutrition,randomized controlled trial,2
 Frontiers in Nutrition,respiratory tract infections,2
 Frontiers in Nutrition,Bifidobacterium,1
 Frontiers in Nutrition,Bifidobacterium infantis,1
 Frontiers in Nutrition,Bifidobacterium infantis YLGB-1496,1
 Frontiers in Nutrition,Bifidobacterium longum subsp. infantis YLGB-1496,1
 Frontiers in Nutrition,Drosophila melanogaster,1
-Frontiers in Nutrition,antibiotic resistant genes,1
+Frontiers in Nutrition,Lactiplantibacillus plantarum Probio87,1
 Functional Composites and Structures,finite element analysis,1
 Functional Composites and Structures,oil palm trunk,1
 Functional Composites and Structures,polymer composites,1
@@ -1412,6 +1424,11 @@ Journal of Coatings Technology and Research,SEM,1
 Journal of Coatings Technology and Research,Surface roughness,1
 Journal of Coatings Technology and Research,Thermal,1
 Journal of Coatings Technology and Research,Vegetable oil,1
+Journal of Composite Materials,PLA,1
+Journal of Composite Materials,anhydride treatment,1
+Journal of Composite Materials,compatibility,1
+Journal of Composite Materials,interfacial properties,1
+Journal of Composite Materials,lignocellulosic fiber,1
 Journal of Environmental Chemical Engineering,Barrier properties,3
 Journal of Environmental Chemical Engineering,Bio-nanocomposites,3
 Journal of Environmental Chemical Engineering,Rice husk silica nanoparticles,3
@@ -1453,13 +1470,13 @@ Journal of Food Biochemistry,synergism,1
 Journal of Food Measurement and Characterization,Antimicrobial,5
 Journal of Food Measurement and Characterization,Emulsification,5
 Journal of Food Measurement and Characterization,Food preservation,4
+Journal of Food Measurement and Characterization,Natural deep eutectic solvents,4
+Journal of Food Measurement and Characterization,Optimization,4
+Journal of Food Measurement and Characterization,Ultrasonic-assisted extraction,4
 Journal of Food Measurement and Characterization,Antioxidant,3
 Journal of Food Measurement and Characterization,Essential oil encapsulation,3
 Journal of Food Measurement and Characterization,Functional food,3
 Journal of Food Measurement and Characterization,Milk fortification,3
-Journal of Food Measurement and Characterization,Active packaging,2
-Journal of Food Measurement and Characterization,Bioactive ingredient,2
-Journal of Food Measurement and Characterization,Cocoa rind,2
 Journal of Food Process Engineering,agro-waste,1
 Journal of Food Process Engineering,antioxidant,1
 Journal of Food Process Engineering,bibliometrics,1
@@ -1541,12 +1558,16 @@ Journal of Materials Research,Ceramic coating,1
 Journal of Materials Research,Dicalcium phosphate dihydrate,1
 Journal of Materials Research,Osteoblast cells,1
 Journal of Materials Research,β-TCP scaffold,1
-Journal of Microbiology and Biotechnology,Bifidobacterium,1
+Journal of Microbiology and Biotechnology,Bifidobacterium,2
 Journal of Microbiology and Biotechnology,Children,1
+Journal of Microbiology and Biotechnology,Gut microbiota,1
 Journal of Microbiology and Biotechnology,Gut-lung axis,1
 Journal of Microbiology and Biotechnology,Lactiplantibacillus,1
+Journal of Microbiology and Biotechnology,Probiotic,1
 Journal of Microbiology and Biotechnology,Probiotics,1
+Journal of Microbiology and Biotechnology,Randomized controlled trial,1
 Journal of Microbiology and Biotechnology,Recurrent respiratory tract infections,1
+Journal of Microbiology and Biotechnology,Travel,1
 Journal of Molecular Liquids,"2,4-Dichlorophenoxyacetic acid",1
 Journal of Molecular Liquids,Adsorption,1
 Journal of Molecular Liquids,Melamine,1
@@ -1625,11 +1646,11 @@ Journal of Sustainability Science and Management,Spent oil,4
 Journal of Sustainability Science and Management,health,4
 Journal of Sustainability Science and Management,pollution,4
 Journal of Sustainability Science and Management,toxicity,4
+Journal of Sustainability Science and Management,Bioaerogels,3
 Journal of Sustainability Science and Management,Household chemical products,3
 Journal of Sustainability Science and Management,Malaysia National Poison Center,3
 Journal of Sustainability Science and Management,Stimulating learning,3
 Journal of Sustainability Science and Management,biofuel,3
-Journal of Sustainability Science and Management,poison reagent,3
 Journal of Texture Studies,cheese,1
 Journal of Texture Studies,extensibility,1
 Journal of Texture Studies,imitation cheese,1
@@ -2077,6 +2098,11 @@ Parasites and Vectors,Aedes albopictus,1
 Parasites and Vectors,Attractive toxic sugar bait (ATSB),1
 Parasites and Vectors,Banana,1
 Parasites and Vectors,Mango,1
+Patient Preference and Adherence,children,1
+Patient Preference and Adherence,gut–lung axis,1
+Patient Preference and Adherence,probiotics,1
+Patient Preference and Adherence,real-world study,1
+Patient Preference and Adherence,respiratory tract infections,1
 Peerj,Artificial Neural Networks,1
 Peerj,Biopolymer,1
 Peerj,Edge Computing,1
@@ -2510,8 +2536,13 @@ Water Air and Soil Pollution,Landfill gas emissions,1
 Water Environment Research,Langmuir equilibrium model,1
 Water Environment Research,activated carbon,1
 Water Environment Research,adsorption efficiency,1
+Water Environment Research,bioreactor,1
+Water Environment Research,bioremediation,1
+Water Environment Research,biostimulation,1
+Water Environment Research,central composite design,1
 Water Environment Research,reactive dyes,1
-Water Environment Research,wastewater treatment,1
+Water Environment Research,tannase enzyme,1
+Water Environment Research,tannery,1
 Water Science and Engineering,Capturing,1
 Water Science and Engineering,Colloidal,1
 Water Science and Engineering,Interactions,1
