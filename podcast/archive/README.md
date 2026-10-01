@@ -4,5 +4,6 @@ Each folder preserves the narration, transcript, captions, social copy, cover ar
 
 ## Editions
 
+- [2026-08](2026-08/)
 - [2026-07](2026-07/)
 - [2026-06](2026-06/)

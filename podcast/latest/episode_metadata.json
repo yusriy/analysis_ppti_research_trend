@@ -1,73 +1,73 @@
 {
-  "episode_title": "PPTI Research Brief — August 2026",
-  "period_end": "2026-08-31",
-  "generated_at": "2026-09-01T22:46:18+08:00",
-  "source_report_generated_at": "2026-09-01T22:45:45+08:00",
+  "episode_title": "PPTI Research Brief — September 2026",
+  "period_end": "2026-09-30",
+  "generated_at": "2026-10-01T21:54:03+08:00",
+  "source_report_generated_at": "2026-10-01T20:35:45+08:00",
   "source_report_url": "https://yusriy.github.io/analysis_ppti_research_trend/ppti_publication_strategy_report.html",
   "status": "audio_ready",
-  "word_count": 148,
-  "estimated_duration_seconds": 61.2,
-  "duration_seconds": 72.910658,
-  "script_sha256": "19e28de4335bbcf280d544a039b69564932c4998a13dcb95f1b00c243c352c7a",
-  "cover_sha256": "e29d6937e803c7cf72ad6b4cda521791969579e412993b37c54a90024096772d",
+  "word_count": 145,
+  "estimated_duration_seconds": 60.0,
+  "duration_seconds": 71.61034,
+  "script_sha256": "2b84196392b294e722e2499081cc6b50285e0f87497f7220cea618df602b906f",
+  "cover_sha256": "feb126b802b9e9379a8b08241b788019b057f7f7ea6766687620e3d382997848",
   "institutional_reports_url": "https://indtech.usm.my/index.php/research/reports",
   "cover_theme": {
-    "name": "Muted mint",
-    "background": "#e6f0ed"
+    "name": "Soft parchment",
+    "background": "#f2ede3"
   },
   "selected_journals": [
     {
-      "name": "International Journal of Biological Macromolecules",
-      "tier": "Established (5+)",
-      "publications": 22,
-      "latest_month_publications": 1,
-      "citations": 140
+      "name": "Energy and Fuels",
+      "tier": "Developing (2–4)",
+      "publications": 2,
+      "latest_month_publications": 2,
+      "citations": 0
     },
     {
-      "name": "Biomass and Bioenergy",
+      "name": "Polymer Engineering and Science",
       "tier": "Established (5+)",
       "publications": 9,
       "latest_month_publications": 1,
-      "citations": 44
+      "citations": 71
     },
     {
-      "name": "Journal of Food Science",
-      "tier": "Developing (2–4)",
-      "publications": 3,
+      "name": "ACS Omega",
+      "tier": "Established (5+)",
+      "publications": 7,
       "latest_month_publications": 1,
-      "citations": 8
+      "citations": 4
     }
   ],
   "selected_keywords": [
     {
-      "name": "Bioethanol",
+      "name": "Antioxidant",
+      "tier": "Established (5+)",
+      "publications": 9,
+      "latest_month_publications": 1,
+      "journal_reach": 8,
+      "citations_per_publication": 2.0
+    },
+    {
+      "name": "Antioxidant Activity",
+      "tier": "Established (5+)",
+      "publications": 7,
+      "latest_month_publications": 1,
+      "journal_reach": 6,
+      "citations_per_publication": 9.4
+    },
+    {
+      "name": "Hydrogel",
       "tier": "Established (5+)",
       "publications": 7,
       "latest_month_publications": 1,
       "journal_reach": 7,
-      "citations_per_publication": 4.4
-    },
-    {
-      "name": "Bioremediation",
-      "tier": "Established (5+)",
-      "publications": 5,
-      "latest_month_publications": 1,
-      "journal_reach": 4,
-      "citations_per_publication": 0.6
-    },
-    {
-      "name": "Energy Efficiency",
-      "tier": "Developing (2–4)",
-      "publications": 4,
-      "latest_month_publications": 1,
-      "journal_reach": 4,
-      "citations_per_publication": 5.2
+      "citations_per_publication": 6.3
     }
   ],
   "latest_month": {
-    "month": "2026-08-01",
-    "publications": 6,
-    "previous_publications": 7
+    "month": "2026-09-01",
+    "publications": 9,
+    "previous_publications": 11
   },
   "audio_generated_this_run": true,
   "audio_normalized": true,
@@ -76,8 +76,8 @@
   "output_format": "mp3_44100_128",
   "speed": 0.98,
   "elevenlabs_response": {
-    "character_cost": "1043",
-    "request_id": "AtvIvVH2bUQK8ucxKQkI",
-    "trace_id": "8f5a4e3e9e5e7505d2515b818cfe5be8"
+    "character_cost": "1014",
+    "request_id": "sUqNs8gTIghXEzRLH47x",
+    "trace_id": "b4384874b1ba3fee8d177081409e87ca"
   }
 }

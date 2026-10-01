@@ -6,7 +6,9 @@ CONDA_BIN="$HOME/miniforge3/bin/conda"
 NODE_BIN="$HOME/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node"
 DELIVER_SCRIPT=""
 
-for candidate in "$HOME"/.codex/plugins/cache/openai-curated-remote/data-analytics/*/skills/build-report/scripts/deliver_portable_artifact.mjs; do
+for candidate in \
+  "$HOME"/.codex/plugins/cache/openai-curated-remote/data-analytics/*/skills/build-report/scripts/deliver_portable_artifact.mjs \
+  "$HOME"/.codex/.tmp/plugins/plugins/data-analytics/skills/build-report/scripts/deliver_portable_artifact.mjs; do
   if [ -f "$candidate" ]; then
     DELIVER_SCRIPT="$candidate"
   fi
