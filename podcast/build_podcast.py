@@ -310,6 +310,15 @@ def archive_previous_episode(new_period_end: str) -> None:
     if not previous_period or previous_period == new_period_end:
         return
     destination = ARCHIVE_DIR / previous_period[:7]
+    archived_metadata = destination / "episode_metadata.json"
+    if archived_metadata.exists():
+        archived = json.loads(archived_metadata.read_text(encoding="utf-8"))
+        if archived.get("period_end") == previous_period:
+            print(
+                "Prior podcast archive already exists; preserving "
+                f"{destination.relative_to(REPO_DIR)}"
+            )
+            return
     destination.mkdir(parents=True, exist_ok=True)
     for source in LATEST_DIR.iterdir():
         if source.is_file():

@@ -64,6 +64,12 @@ def archive_current_reports(target_period: str) -> None:
         edition_dir = ARCHIVE_DIR / previous_period[:7]
         edition_dir.mkdir(parents=True, exist_ok=True)
         destination = edition_dir / report_name
+        if destination.exists():
+            print(
+                f"Archive already exists; preserving "
+                f"{destination.relative_to(REPO_DIR)}"
+            )
+            continue
         shutil.copy2(source, destination)
         print(f"Archived {report_name} as {destination.relative_to(REPO_DIR)}")
 
