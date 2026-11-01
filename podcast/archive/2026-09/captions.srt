@@ -1,0 +1,79 @@
+1
+00:00:00,058 --> 00:00:04,110
+Welcome to the PPTI Research Brief for September 2026.
+
+2
+00:00:04,493 --> 00:00:07,593
+This edition covers the rolling twenty-four-month period ending
+
+3
+00:00:08,104 --> 00:00:10,054
+30 September 2026.
+
+4
+00:00:10,391 --> 00:00:15,360
+The portfolio contains 559 distinct Scopus-indexed publications
+
+5
+00:00:15,418 --> 00:00:20,295
+from 64 PPTI contributors, appearing across 314 journals.
+
+6
+00:00:20,806 --> 00:00:25,055
+Open-access articles account for 42.8 percent of the portfolio.
+
+7
+00:00:25,577 --> 00:00:29,350
+In the latest completed month, publication output fell from 11
+
+8
+00:00:29,420 --> 00:00:30,558
+to 9 articles.
+
+9
+00:00:30,895 --> 00:00:34,041
+Compared with the preceding monthly edition, the rolling portfolio
+
+10
+00:00:34,111 --> 00:00:37,884
+recorded an increase of 13 publications and an increase of
+
+11
+00:00:38,000 --> 00:00:39,927
+251 citations.
+
+12
+00:00:40,542 --> 00:00:43,677
+Three journals represented in the latest completed month are
+
+13
+00:00:43,793 --> 00:00:49,134
+Energy and Fuels, Polymer Engineering and Science, and ACS Omega.
+
+14
+00:00:49,749 --> 00:00:53,244
+Three recurring themes represented that month are Antioxidant,
+
+15
+00:00:53,453 --> 00:00:56,239
+Antioxidant Activity, and Hydrogel.
+
+16
+00:00:56,576 --> 00:01:01,139
+They appear in 9, 7, and 7 rolling-window publications, respectively.
+
+17
+00:01:01,533 --> 00:01:04,877
+These signals show both established strength and activity beyond
+
+18
+00:01:04,923 --> 00:01:07,071
+the highest-volume outlets and themes.
+
+19
+00:01:07,466 --> 00:01:10,786
+Read the full PPTI publication trends report for the complete
+
+20
+00:01:10,821 --> 00:01:11,379
+evidence.

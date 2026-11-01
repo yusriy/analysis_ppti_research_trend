@@ -10,6 +10,12 @@ Each folder preserves the report edition that was current before the next comple
 
 ## Previous editions
 
+### 2026-09
+
+- [Ppti Journal Report](2026-09/ppti_journal_report.html)
+- [Ppti Keywords Report](2026-09/ppti_keywords_report.html)
+- [Ppti Publication Strategy Report](2026-09/ppti_publication_strategy_report.html)
+
 ### 2026-08
 
 - [Ppti Journal Report](2026-08/ppti_journal_report.html)

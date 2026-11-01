@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import base64
 import hashlib
 import json
 import os
@@ -13,6 +12,7 @@ import shutil
 import subprocess
 import tempfile
 import textwrap
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -29,7 +29,13 @@ PODCAST_DIR = Path(__file__).resolve().parent
 LATEST_DIR = PODCAST_DIR / "latest"
 ARCHIVE_DIR = PODCAST_DIR / "archive"
 ARTIFACT_PATH = REPO_DIR / "publication_strategy_report" / "artifact.json"
-DEFAULT_ENV_PATH = REPO_DIR / ".secrets" / "elevenlabs.env"
+DEFAULT_ENV_PATH = REPO_DIR / ".secrets" / "voicebox.env"
+DEFAULT_VOICEBOX_SERVER = Path(
+    "/Applications/Voicebox.app/Contents/MacOS/voicebox-server"
+)
+DEFAULT_VOICEBOX_DATA_DIR = (
+    Path.home() / "Library" / "Application Support" / "sh.voicebox.app"
+)
 REPORT_URL = (
     "https://yusriy.github.io/analysis_ppti_research_trend/"
     "ppti_publication_strategy_report.html"
@@ -601,59 +607,180 @@ def build_cover(episode: dict[str, Any], destination: Path) -> None:
     image.save(destination, format="PNG", optimize=True)
 
 
-def request_narration(
-    script: str,
-    api_key: str,
-    voice_id: str,
-    model_id: str,
-    output_format: str,
-    speed: float,
-) -> tuple[dict[str, Any], dict[str, str]]:
-    encoded_voice_id = urllib.parse.quote(voice_id, safe="")
-    encoded_format = urllib.parse.quote(output_format, safe="")
-    url = (
-        f"https://api.elevenlabs.io/v1/text-to-speech/{encoded_voice_id}"
-        f"/with-timestamps?output_format={encoded_format}"
-    )
-    body = json.dumps(
-        {
-            "text": script,
-            "model_id": model_id,
-            "voice_settings": {
-                "stability": 0.5,
-                "similarity_boost": 0.75,
-                "style": 0.1,
-                "use_speaker_boost": True,
-                "speed": speed,
-            },
-        }
-    ).encode("utf-8")
+def voicebox_json(
+    url: str,
+    *,
+    payload: dict[str, Any] | None = None,
+    timeout: float = 30,
+) -> Any:
+    data = None
+    method = "GET"
+    headers = {"Accept": "application/json"}
+    if payload is not None:
+        data = json.dumps(payload).encode("utf-8")
+        method = "POST"
+        headers["Content-Type"] = "application/json"
     request = urllib.request.Request(
         url,
-        data=body,
-        method="POST",
-        headers={
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "xi-api-key": api_key,
-        },
+        data=data,
+        method=method,
+        headers=headers,
     )
     try:
-        with urllib.request.urlopen(request, timeout=120) as response:
-            payload = json.loads(response.read().decode("utf-8"))
-            response_headers = {
-                "character_cost": response.headers.get("character-cost", ""),
-                "request_id": response.headers.get("request-id", ""),
-                "trace_id": response.headers.get("x-trace-id", ""),
-            }
-            return payload, response_headers
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            return json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as exc:
         detail = exc.read().decode("utf-8", errors="replace")
         raise RuntimeError(
-            f"ElevenLabs returned HTTP {exc.code}: {detail[:500]}"
+            f"Voicebox returned HTTP {exc.code}: {detail[:500]}"
         ) from exc
     except urllib.error.URLError as exc:
-        raise RuntimeError(f"Could not reach ElevenLabs: {exc.reason}") from exc
+        raise RuntimeError(f"Could not reach Voicebox: {exc.reason}") from exc
+
+
+def voicebox_is_ready(base_url: str) -> bool:
+    try:
+        health = voicebox_json(f"{base_url}/health", timeout=2)
+    except RuntimeError:
+        return False
+    return health.get("status") in {"ok", "healthy"}
+
+
+def resolve_voicebox_profile(base_url: str, requested: str) -> dict[str, Any]:
+    profiles = voicebox_json(f"{base_url}/profiles")
+    requested_casefold = requested.casefold()
+    for profile in profiles:
+        if (
+            str(profile.get("id", "")).casefold() == requested_casefold
+            or str(profile.get("name", "")).casefold() == requested_casefold
+        ):
+            return profile
+    available = ", ".join(sorted(str(item.get("name")) for item in profiles))
+    raise RuntimeError(
+        f"Voicebox profile {requested!r} was not found. Available profiles: {available}"
+    )
+
+
+def request_voicebox_narration(
+    script: str,
+    *,
+    base_url: str,
+    profile_name_or_id: str,
+    engine: str,
+    model_size: str,
+    instruct: str,
+    timeout_seconds: float,
+) -> tuple[bytes, dict[str, Any]]:
+    profile = resolve_voicebox_profile(base_url, profile_name_or_id)
+    generation = voicebox_json(
+        f"{base_url}/generate",
+        payload={
+            "profile_id": profile["id"],
+            "text": script,
+            "language": profile.get("language") or "en",
+            "model_size": model_size,
+            "instruct": instruct or None,
+            "engine": engine,
+            "personality": False,
+            "max_chunk_chars": 800,
+            "crossfade_ms": 50,
+            "normalize": True,
+        },
+        timeout=timeout_seconds,
+    )
+    generation_id = generation["id"]
+    deadline = time.monotonic() + timeout_seconds
+    while True:
+        current = voicebox_json(
+            f"{base_url}/history/{urllib.parse.quote(generation_id, safe='')}",
+            timeout=15,
+        )
+        status = current.get("status")
+        if status == "completed":
+            generation = current
+            break
+        if status in {"failed", "cancelled"}:
+            raise RuntimeError(
+                f"Voicebox generation {status}: {current.get('error') or 'unknown error'}"
+            )
+        if time.monotonic() >= deadline:
+            raise RuntimeError(
+                f"Voicebox generation did not finish within {timeout_seconds:.0f} seconds."
+            )
+        time.sleep(2)
+
+    audio_url = f"{base_url}/audio/{urllib.parse.quote(generation_id, safe='')}"
+    try:
+        with urllib.request.urlopen(audio_url, timeout=60) as response:
+            audio_bytes = response.read()
+    except urllib.error.URLError as exc:
+        raise RuntimeError(f"Could not download Voicebox audio: {exc.reason}") from exc
+    if not audio_bytes:
+        raise RuntimeError("Voicebox returned an empty audio file.")
+    details = {
+        "generation_id": generation_id,
+        "profile_id": profile["id"],
+        "profile_name": profile["name"],
+        "engine": generation.get("engine") or engine,
+        "model_size": generation.get("model_size") or model_size,
+        "voicebox_duration_seconds": generation.get("duration"),
+    }
+    return audio_bytes, details
+
+
+def start_voicebox_server(
+    base_url: str,
+    server_path: Path,
+    data_dir: Path,
+    startup_timeout_seconds: float = 60,
+) -> subprocess.Popen[bytes] | None:
+    """Start a private Voicebox server only when one is not already available."""
+    if voicebox_is_ready(base_url):
+        return None
+    parsed = urllib.parse.urlparse(base_url)
+    if parsed.scheme != "http" or parsed.hostname not in {"127.0.0.1", "localhost"}:
+        raise RuntimeError(
+            "VOICEBOX_BASE_URL must use a local http://127.0.0.1 or localhost address."
+        )
+    if not server_path.is_file():
+        raise RuntimeError(f"Voicebox server executable was not found: {server_path}")
+    port = parsed.port or 80
+    process = subprocess.Popen(
+        [
+            str(server_path),
+            "--data-dir",
+            str(data_dir),
+            "--port",
+            str(port),
+        ],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    deadline = time.monotonic() + startup_timeout_seconds
+    while time.monotonic() < deadline:
+        if voicebox_is_ready(base_url):
+            return process
+        if process.poll() is not None:
+            raise RuntimeError(
+                f"Voicebox server exited during startup with code {process.returncode}."
+            )
+        time.sleep(1)
+    process.terminate()
+    process.wait(timeout=10)
+    raise RuntimeError(
+        f"Voicebox server did not become ready within {startup_timeout_seconds:.0f} seconds."
+    )
+
+
+def stop_voicebox_server(process: subprocess.Popen[bytes] | None) -> None:
+    if process is None or process.poll() is not None:
+        return
+    process.terminate()
+    try:
+        process.wait(timeout=15)
+    except subprocess.TimeoutExpired:
+        process.kill()
+        process.wait(timeout=5)
 
 
 def srt_timestamp(seconds: float) -> str:
@@ -664,45 +791,60 @@ def srt_timestamp(seconds: float) -> str:
     return f"{hours:02d}:{minutes:02d}:{secs:02d},{millis:03d}"
 
 
-def alignment_to_srt(alignment: dict[str, Any]) -> tuple[str, float]:
-    characters = alignment.get("characters") or []
-    starts = alignment.get("character_start_times_seconds") or []
-    ends = alignment.get("character_end_times_seconds") or []
-    if not characters or not (len(characters) == len(starts) == len(ends)):
-        raise ValueError("ElevenLabs response did not include usable timing alignment")
-
-    rendered_text = "".join(characters)
-    word_spans = list(re.finditer(r"\S+", rendered_text))
-    captions: list[tuple[int, int, str]] = []
-    group_start = 0
+def script_to_srt(
+    script: str,
+    duration_seconds: float,
+) -> tuple[str, dict[str, Any]]:
+    """Create readable caption segments when the local TTS has no word alignment."""
+    words = re.findall(r"\S+", script)
+    phrases: list[str] = []
     current_words: list[str] = []
-    for index, match in enumerate(word_spans):
-        current_words.append(match.group())
+    for word in words:
+        current_words.append(word)
         phrase = " ".join(current_words)
-        sentence_end = bool(re.search(r"[.!?][\"']?$", match.group()))
+        sentence_end = bool(re.search(r"[.!?][\"']?$", word))
         if len(current_words) >= 10 or len(phrase) >= 60 or sentence_end:
-            captions.append((group_start, index, phrase))
-            group_start = index + 1
+            phrases.append(phrase)
             current_words = []
     if current_words:
-        captions.append(
-            (group_start, len(word_spans) - 1, " ".join(current_words))
-        )
+        phrases.append(" ".join(current_words))
+    if not phrases:
+        raise ValueError("Cannot create captions from an empty podcast script.")
 
+    weights = [max(1, len(re.findall(r"[A-Za-z0-9]+", phrase))) for phrase in phrases]
+    total_weight = sum(weights)
+    cursor = 0.0
     lines: list[str] = []
-    for number, (start_word, end_word, phrase) in enumerate(captions, start=1):
-        first_char = word_spans[start_word].start()
-        last_char = word_spans[end_word].end() - 1
+    segments: list[dict[str, Any]] = []
+    for number, (phrase, weight) in enumerate(zip(phrases, weights), start=1):
+        end = (
+            duration_seconds
+            if number == len(phrases)
+            else cursor + duration_seconds * weight / total_weight
+        )
         lines.extend(
             [
                 str(number),
-                f"{srt_timestamp(float(starts[first_char]))} --> "
-                f"{srt_timestamp(float(ends[last_char]))}",
+                f"{srt_timestamp(cursor)} --> {srt_timestamp(end)}",
                 phrase,
                 "",
             ]
         )
-    return "\n".join(lines), float(ends[-1])
+        segments.append(
+            {
+                "start_seconds": round(cursor, 3),
+                "end_seconds": round(end, 3),
+                "text": phrase,
+            }
+        )
+        cursor = end
+    timing = {
+        "provider": "voicebox",
+        "alignment": "proportional_by_word_count",
+        "duration_seconds": duration_seconds,
+        "segments": segments,
+    }
+    return "\n".join(lines), timing
 
 
 def parse_srt_timestamp(value: str) -> float:
@@ -804,6 +946,34 @@ def normalize_audio(audio_path: Path) -> None:
         check=True,
     )
     normalized_path.replace(audio_path)
+
+
+def convert_and_normalize_audio(source_path: Path, destination_path: Path) -> None:
+    """Convert Voicebox WAV output to the normalized MP3 used by the podcast."""
+    ffmpeg = shutil.which("ffmpeg")
+    if not ffmpeg:
+        raise RuntimeError("ffmpeg is required to convert Voicebox audio")
+    subprocess.run(
+        [
+            ffmpeg,
+            "-y",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-i",
+            str(source_path),
+            "-af",
+            "loudnorm=I=-16:LRA=7:TP=-1.5",
+            "-ar",
+            "44100",
+            "-ac",
+            "1",
+            "-b:a",
+            "128k",
+            str(destination_path),
+        ],
+        check=True,
+    )
 
 
 def render_social_video(latest_dir: Path, duration_seconds: float) -> None:
@@ -944,17 +1114,12 @@ def main() -> None:
     parser.add_argument(
         "--env-file",
         type=Path,
-        default=Path(os.environ.get("ELEVENLABS_ENV_FILE", DEFAULT_ENV_PATH)),
+        default=Path(os.environ.get("VOICEBOX_ENV_FILE", DEFAULT_ENV_PATH)),
     )
     parser.add_argument(
         "--script-only",
         action="store_true",
-        help="Create the editorial package without calling ElevenLabs.",
-    )
-    parser.add_argument(
-        "--require-audio",
-        action="store_true",
-        help="Fail instead of falling back to script-only mode when credentials are absent.",
+        help="Create the editorial package without generating Voicebox audio.",
     )
     parser.add_argument(
         "--force",
@@ -970,17 +1135,23 @@ def main() -> None:
     write_text_outputs(episode)
     write_archive_readme()
 
-    api_key = os.environ.get("ELEVENLABS_API_KEY", "").strip()
-    voice_id = os.environ.get("ELEVENLABS_VOICE_ID", "").strip()
-    model_id = os.environ.get(
-        "ELEVENLABS_MODEL_ID",
-        "eleven_multilingual_v2",
+    voicebox_base_url = os.environ.get(
+        "VOICEBOX_BASE_URL", "http://127.0.0.1:17494"
+    ).rstrip("/")
+    voicebox_server_path = Path(
+        os.environ.get("VOICEBOX_SERVER_PATH", str(DEFAULT_VOICEBOX_SERVER))
+    )
+    voicebox_data_dir = Path(
+        os.environ.get("VOICEBOX_DATA_DIR", str(DEFAULT_VOICEBOX_DATA_DIR))
+    )
+    voicebox_profile = os.environ.get("VOICEBOX_PROFILE", "Yusri").strip()
+    voicebox_engine = os.environ.get("VOICEBOX_ENGINE", "qwen").strip()
+    voicebox_model_size = os.environ.get("VOICEBOX_MODEL_SIZE", "1.7B").strip()
+    voicebox_instruct = os.environ.get(
+        "VOICEBOX_INSTRUCT",
+        "Speak clearly in a warm, professional research-briefing style at a measured pace.",
     ).strip()
-    output_format = os.environ.get(
-        "ELEVENLABS_OUTPUT_FORMAT",
-        "mp3_44100_128",
-    ).strip()
-    speed = float(os.environ.get("ELEVENLABS_SPEED", "0.98"))
+    voicebox_timeout = float(os.environ.get("VOICEBOX_TIMEOUT_SECONDS", "900"))
     script_hash = hashlib.sha256(episode["script"].encode("utf-8")).hexdigest()
     cover_hash = hashlib.sha256(
         (LATEST_DIR / "cover.png").read_bytes()
@@ -995,17 +1166,12 @@ def main() -> None:
     exact_audio_match = (
         audio_path.exists()
         and existing_metadata.get("script_sha256") == script_hash
-        and existing_metadata.get("voice_id") == voice_id
-        and existing_metadata.get("model_id") == model_id
+        and existing_metadata.get("narration_provider") == "voicebox"
+        and existing_metadata.get("voicebox_profile") == voicebox_profile
+        and existing_metadata.get("voicebox_engine") == voicebox_engine
+        and existing_metadata.get("voicebox_model_size") == voicebox_model_size
     )
-    recoverable_partial_audio = (
-        audio_path.exists()
-        and (LATEST_DIR / "captions.srt").exists()
-        and (LATEST_DIR / "timing.json").exists()
-        and existing_metadata.get("script_sha256") == script_hash
-        and not existing_metadata.get("voice_id")
-    )
-    same_audio = exact_audio_match or recoverable_partial_audio
+    same_audio = exact_audio_match
     if (
         (LATEST_DIR / "ppti_research_brief_vertical.mp4").exists()
         and existing_metadata.get("cover_sha256") != cover_hash
@@ -1015,36 +1181,23 @@ def main() -> None:
     audio_generated = False
     audio_normalized = bool(existing_metadata.get("audio_normalized"))
     duration_seconds: float | None = None
-    response_headers: dict[str, str] = {}
+    voicebox_generation: dict[str, Any] = existing_metadata.get(
+        "voicebox_generation", {}
+    )
     if args.script_only:
         if audio_path.exists() and existing_metadata.get("script_sha256") == script_hash:
             status = "audio_ready"
             duration_seconds = existing_metadata.get("duration_seconds")
-            response_headers = existing_metadata.get("elevenlabs_response", {})
-            voice_id = existing_metadata.get("voice_id") or voice_id
-            model_id = existing_metadata.get("model_id") or model_id
-            output_format = existing_metadata.get("output_format") or output_format
-            speed = float(existing_metadata.get("speed") or speed)
         else:
             status = "script_ready"
-    elif not api_key or not voice_id:
-        if args.require_audio:
-            raise SystemExit(
-                f"ElevenLabs credentials are missing. Add them to {args.env_file}."
-            )
-        status = "awaiting_credentials"
-        print(
-            f"Podcast script package created. Add ElevenLabs credentials to "
-            f"{args.env_file} to generate audio."
-        )
     elif same_audio and not args.force:
         status = "audio_ready"
         duration_seconds = existing_metadata.get("duration_seconds")
-        response_headers = existing_metadata.get("elevenlabs_response", {})
-        saved_alignment = json.loads(
-            (LATEST_DIR / "timing.json").read_text(encoding="utf-8")
+        if duration_seconds is None:
+            duration_seconds = probe_duration(audio_path)
+        refreshed_captions, refreshed_timing = script_to_srt(
+            episode["script"], duration_seconds
         )
-        refreshed_captions, aligned_duration = alignment_to_srt(saved_alignment)
         captions_path = LATEST_DIR / "captions.srt"
         captions_changed = (
             not captions_path.exists()
@@ -1052,6 +1205,10 @@ def main() -> None:
         )
         if captions_changed:
             captions_path.write_text(refreshed_captions, encoding="utf-8")
+            (LATEST_DIR / "timing.json").write_text(
+                json.dumps(refreshed_timing, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
             (LATEST_DIR / "ppti_research_brief_vertical.mp4").unlink(
                 missing_ok=True
             )
@@ -1059,8 +1216,6 @@ def main() -> None:
             (LATEST_DIR / "ppti_research_brief_vertical.mp4").unlink(
                 missing_ok=True
             )
-        if duration_seconds is None:
-            duration_seconds = aligned_duration
         if not audio_normalized:
             normalize_audio(audio_path)
             audio_normalized = True
@@ -1070,32 +1225,51 @@ def main() -> None:
             )
         if not (LATEST_DIR / "ppti_research_brief_vertical.mp4").exists():
             render_social_video(LATEST_DIR, duration_seconds)
-        print("Existing narration matches the current script; ElevenLabs call skipped.")
+        print("Existing Voicebox narration matches the current script; generation skipped.")
     else:
-        payload, response_headers = request_narration(
-            episode["script"],
-            api_key,
-            voice_id,
-            model_id,
-            output_format,
-            speed,
+        server_process = start_voicebox_server(
+            voicebox_base_url,
+            voicebox_server_path,
+            voicebox_data_dir,
         )
-        audio_path.write_bytes(base64.b64decode(payload["audio_base64"]))
-        alignment = payload.get("normalized_alignment") or payload.get("alignment")
-        captions, duration_seconds = alignment_to_srt(alignment or {})
+        try:
+            audio_bytes, voicebox_generation = request_voicebox_narration(
+                episode["script"],
+                base_url=voicebox_base_url,
+                profile_name_or_id=voicebox_profile,
+                engine=voicebox_engine,
+                model_size=voicebox_model_size,
+                instruct=voicebox_instruct,
+                timeout_seconds=voicebox_timeout,
+            )
+        finally:
+            stop_voicebox_server(server_process)
+
+        with tempfile.NamedTemporaryFile(
+            prefix="ppti-voicebox-",
+            suffix=".wav",
+            dir=LATEST_DIR,
+            delete=False,
+        ) as temporary_audio:
+            temporary_audio.write(audio_bytes)
+            voicebox_wav_path = Path(temporary_audio.name)
+        try:
+            convert_and_normalize_audio(voicebox_wav_path, audio_path)
+        finally:
+            voicebox_wav_path.unlink(missing_ok=True)
+        audio_normalized = True
+        duration_seconds = probe_duration(audio_path)
         if duration_seconds > MAX_DURATION_SECONDS:
             raise RuntimeError(
                 f"Narration is {duration_seconds:.1f} seconds; maximum is "
                 f"{MAX_DURATION_SECONDS:.0f} seconds."
             )
+        captions, timing = script_to_srt(episode["script"], duration_seconds)
         (LATEST_DIR / "captions.srt").write_text(captions, encoding="utf-8")
         (LATEST_DIR / "timing.json").write_text(
-            json.dumps(alignment, indent=2, ensure_ascii=False) + "\n",
+            json.dumps(timing, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
         )
-        normalize_audio(audio_path)
-        audio_normalized = True
-        duration_seconds = probe_duration(audio_path)
         render_social_video(LATEST_DIR, duration_seconds)
         audio_generated = True
         status = "audio_ready"
@@ -1119,11 +1293,13 @@ def main() -> None:
         "latest_month": episode["latest_month"],
         "audio_generated_this_run": audio_generated,
         "audio_normalized": audio_normalized,
-        "voice_id": voice_id or None,
-        "model_id": model_id,
-        "output_format": output_format,
-        "speed": speed,
-        "elevenlabs_response": response_headers,
+        "narration_provider": "voicebox",
+        "voicebox_profile": voicebox_profile,
+        "voicebox_engine": voicebox_engine,
+        "voicebox_model_size": voicebox_model_size,
+        "voicebox_instruct": voicebox_instruct,
+        "voicebox_generation": voicebox_generation,
+        "output_format": "mp3_44100_128",
     }
     metadata_path.write_text(
         json.dumps(metadata, indent=2, ensure_ascii=False) + "\n",

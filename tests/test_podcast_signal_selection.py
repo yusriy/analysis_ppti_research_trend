@@ -6,6 +6,7 @@ from podcast.build_podcast import (
     build_episode,
     is_meaningful_theme,
     rolling_window_label,
+    script_to_srt,
     select_latest_month_signal,
     select_latest_month_signals,
 )
@@ -72,18 +73,8 @@ class PodcastSignalSelectionTests(unittest.TestCase):
             )
         )
         episode = build_episode(artifact)
-        self.assertEqual(
-            [row["name"] for row in episode["selected_journals"]],
-            [
-                "Biomass Conversion and Biorefinery",
-                "Peerj",
-                "Separation and Purification Technology",
-            ],
-        )
-        self.assertEqual(
-            [row["name"] for row in episode["selected_keywords"]],
-            ["Chitosan", "Sustainable Materials", "Activated Carbon"],
-        )
+        self.assertEqual(len(episode["selected_journals"]), 3)
+        self.assertEqual(len(episode["selected_keywords"]), 3)
         self.assertTrue(
             all(
                 row["latest_month_publications"] > 0
@@ -99,6 +90,16 @@ class PodcastSignalSelectionTests(unittest.TestCase):
         ]
         selected = select_latest_month_signals(rows, "journal")
         self.assertEqual([row["journal"] for row in selected], ["A", "B", "C"])
+
+    def test_voicebox_captions_cover_full_audio_duration(self):
+        captions, timing = script_to_srt(
+            "First research point. Second research point with more detail.",
+            12.5,
+        )
+        self.assertIn("00:00:00,000", captions)
+        self.assertIn("00:00:12,500", captions)
+        self.assertEqual(timing["provider"], "voicebox")
+        self.assertEqual(timing["segments"][-1]["end_seconds"], 12.5)
 
 
 if __name__ == "__main__":

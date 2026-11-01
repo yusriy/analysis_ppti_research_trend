@@ -1,83 +1,88 @@
 {
-  "episode_title": "PPTI Research Brief — September 2026",
-  "period_end": "2026-09-30",
-  "generated_at": "2026-10-01T21:54:03+08:00",
-  "source_report_generated_at": "2026-10-01T20:35:45+08:00",
+  "episode_title": "PPTI Research Brief — October 2026",
+  "period_end": "2026-10-31",
+  "generated_at": "2026-11-01T13:59:00+08:00",
+  "source_report_generated_at": "2026-11-01T11:25:42+08:00",
   "source_report_url": "https://yusriy.github.io/analysis_ppti_research_trend/ppti_publication_strategy_report.html",
   "status": "audio_ready",
-  "word_count": 145,
-  "estimated_duration_seconds": 60.0,
-  "duration_seconds": 71.61034,
-  "script_sha256": "2b84196392b294e722e2499081cc6b50285e0f87497f7220cea618df602b906f",
-  "cover_sha256": "feb126b802b9e9379a8b08241b788019b057f7f7ea6766687620e3d382997848",
+  "word_count": 149,
+  "estimated_duration_seconds": 61.7,
+  "duration_seconds": 67.710454,
+  "script_sha256": "067b6e5c148fb12189afd4c7efe5bccf2a2c3f16023f4502b42918e72601d8ee",
+  "cover_sha256": "968c20597fb288c5b96ec788ab2fff9392d6f4ba073542ce4a4752e87857544e",
   "institutional_reports_url": "https://indtech.usm.my/index.php/research/reports",
   "cover_theme": {
-    "name": "Soft parchment",
-    "background": "#f2ede3"
+    "name": "Dusty rose",
+    "background": "#f1e7e9"
   },
   "selected_journals": [
     {
-      "name": "Energy and Fuels",
-      "tier": "Developing (2–4)",
-      "publications": 2,
-      "latest_month_publications": 2,
-      "citations": 0
-    },
-    {
-      "name": "Polymer Engineering and Science",
-      "tier": "Established (5+)",
-      "publications": 9,
-      "latest_month_publications": 1,
-      "citations": 71
-    },
-    {
       "name": "ACS Omega",
       "tier": "Established (5+)",
-      "publications": 7,
+      "publications": 13,
+      "latest_month_publications": 4,
+      "citations": 8
+    },
+    {
+      "name": "Clean Technologies and Environmental Policy",
+      "tier": "Established (5+)",
+      "publications": 5,
       "latest_month_publications": 1,
-      "citations": 4
+      "citations": 29
+    },
+    {
+      "name": "Journal of Environmental Chemical Engineering",
+      "tier": "Developing (2–4)",
+      "publications": 4,
+      "latest_month_publications": 1,
+      "citations": 18
     }
   ],
   "selected_keywords": [
     {
-      "name": "Antioxidant",
+      "name": "Chitosan",
       "tier": "Established (5+)",
       "publications": 9,
       "latest_month_publications": 1,
-      "journal_reach": 8,
-      "citations_per_publication": 2.0
+      "journal_reach": 9,
+      "citations_per_publication": 3.4
     },
     {
-      "name": "Antioxidant Activity",
+      "name": "Shelf Life",
       "tier": "Established (5+)",
-      "publications": 7,
+      "publications": 8,
+      "latest_month_publications": 1,
+      "journal_reach": 8,
+      "citations_per_publication": 5.0
+    },
+    {
+      "name": "Digestibility",
+      "tier": "Established (5+)",
+      "publications": 6,
       "latest_month_publications": 1,
       "journal_reach": 6,
-      "citations_per_publication": 9.4
-    },
-    {
-      "name": "Hydrogel",
-      "tier": "Established (5+)",
-      "publications": 7,
-      "latest_month_publications": 1,
-      "journal_reach": 7,
-      "citations_per_publication": 6.3
+      "citations_per_publication": 4.8
     }
   ],
   "latest_month": {
-    "month": "2026-09-01",
-    "publications": 9,
+    "month": "2026-10-01",
+    "publications": 11,
     "previous_publications": 11
   },
   "audio_generated_this_run": true,
   "audio_normalized": true,
-  "voice_id": "9x6m5PBXrn5YLEWGif5F",
-  "model_id": "eleven_multilingual_v2",
-  "output_format": "mp3_44100_128",
-  "speed": 0.98,
-  "elevenlabs_response": {
-    "character_cost": "1014",
-    "request_id": "sUqNs8gTIghXEzRLH47x",
-    "trace_id": "b4384874b1ba3fee8d177081409e87ca"
-  }
+  "narration_provider": "voicebox",
+  "voicebox_profile": "Yusri",
+  "voicebox_engine": "qwen",
+  "voicebox_model_size": "1.7B",
+  "voicebox_instruct": "Speak clearly in a warm, professional research-briefing style at a measured pace.",
+  "voicebox_generation": {
+    "generation_id": "5c9598d6-1fd7-4ba6-b62d-8cf64a4c598b",
+    "profile_id": "55e1f4a3-8198-4336-82a5-9369c88870d0",
+    "profile_name": "Yusri",
+    "engine": "qwen",
+    "model_size": "1.7B",
+    "voicebox_duration_seconds": 67.71
+  },
+  "output_format": "mp3_44100_128"
 }

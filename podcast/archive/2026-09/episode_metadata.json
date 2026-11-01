@@ -1,0 +1,83 @@
+{
+  "episode_title": "PPTI Research Brief — September 2026",
+  "period_end": "2026-09-30",
+  "generated_at": "2026-10-01T21:54:03+08:00",
+  "source_report_generated_at": "2026-10-01T20:35:45+08:00",
+  "source_report_url": "https://yusriy.github.io/analysis_ppti_research_trend/ppti_publication_strategy_report.html",
+  "status": "audio_ready",
+  "word_count": 145,
+  "estimated_duration_seconds": 60.0,
+  "duration_seconds": 71.61034,
+  "script_sha256": "2b84196392b294e722e2499081cc6b50285e0f87497f7220cea618df602b906f",
+  "cover_sha256": "feb126b802b9e9379a8b08241b788019b057f7f7ea6766687620e3d382997848",
+  "institutional_reports_url": "https://indtech.usm.my/index.php/research/reports",
+  "cover_theme": {
+    "name": "Soft parchment",
+    "background": "#f2ede3"
+  },
+  "selected_journals": [
+    {
+      "name": "Energy and Fuels",
+      "tier": "Developing (2–4)",
+      "publications": 2,
+      "latest_month_publications": 2,
+      "citations": 0
+    },
+    {
+      "name": "Polymer Engineering and Science",
+      "tier": "Established (5+)",
+      "publications": 9,
+      "latest_month_publications": 1,
+      "citations": 71
+    },
+    {
+      "name": "ACS Omega",
+      "tier": "Established (5+)",
+      "publications": 7,
+      "latest_month_publications": 1,
+      "citations": 4
+    }
+  ],
+  "selected_keywords": [
+    {
+      "name": "Antioxidant",
+      "tier": "Established (5+)",
+      "publications": 9,
+      "latest_month_publications": 1,
+      "journal_reach": 8,
+      "citations_per_publication": 2.0
+    },
+    {
+      "name": "Antioxidant Activity",
+      "tier": "Established (5+)",
+      "publications": 7,
+      "latest_month_publications": 1,
+      "journal_reach": 6,
+      "citations_per_publication": 9.4
+    },
+    {
+      "name": "Hydrogel",
+      "tier": "Established (5+)",
+      "publications": 7,
+      "latest_month_publications": 1,
+      "journal_reach": 7,
+      "citations_per_publication": 6.3
+    }
+  ],
+  "latest_month": {
+    "month": "2026-09-01",
+    "publications": 9,
+    "previous_publications": 11
+  },
+  "audio_generated_this_run": true,
+  "audio_normalized": true,
+  "voice_id": "9x6m5PBXrn5YLEWGif5F",
+  "model_id": "eleven_multilingual_v2",
+  "output_format": "mp3_44100_128",
+  "speed": 0.98,
+  "elevenlabs_response": {
+    "character_cost": "1014",
+    "request_id": "sUqNs8gTIghXEzRLH47x",
+    "trace_id": "b4384874b1ba3fee8d177081409e87ca"
+  }
+}
